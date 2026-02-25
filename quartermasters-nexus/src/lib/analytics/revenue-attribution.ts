@@ -6,7 +6,7 @@ import { trackEvent } from './posthog';
  *
  * Tracks which service, channel, and Q flow generated each dollar of revenue.
  * Attributes revenue to:
- * - Service vertical (HR, Management, Financial, etc.)
+ * - Service vertical (Tech R&D, IT Services, etc.)
  * - Acquisition channel (Q chat, direct checkout, booking → checkout)
  * - Q conversation flow (express vs executive track)
  * - First-touch vs last-touch attribution

@@ -1,11 +1,7 @@
 'use client';
 
 const hashtags = [
-  '#FinancialAdvisory',
-  '#HumanCapital',
-  '#ManagementConsulting',
   '#TechInnovation',
-  '#EventLogistics',
   '#ITServices',
   '#Strategy',
   '#Innovation',

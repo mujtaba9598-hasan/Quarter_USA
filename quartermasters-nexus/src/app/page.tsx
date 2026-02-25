@@ -12,25 +12,25 @@ import { HomePageClient } from "@/components/home/HomePageClient";
 
 export const metadata: Metadata = {
   title:
-    "Quartermasters — Strategic Consulting & Advisory",
+    "Quartermasters — Technology Consulting & IT Services",
   description:
-    "Premium consulting across Financial Advisory, Human Capital, Technology & Innovation, Events & Experiences, and Strategic Management. California-based, globally connected.",
+    "Premium technology consulting and IT services. Digital transformation, software development, cloud infrastructure, and AI integration. California-based, globally connected.",
   keywords: [
-    "strategic consulting",
-    "financial advisory",
-    "human capital consulting",
     "technology consulting",
-    "event management consulting",
-    "management consulting",
-    "business advisory",
-    "California consulting firm",
-    "premium consulting",
+    "IT services",
+    "software development",
+    "digital transformation",
+    "cloud infrastructure",
+    "AI integration",
+    "web application development",
+    "California tech consulting",
+    "enterprise technology",
   ],
   authors: [{ name: "Quartermasters" }],
   openGraph: {
-    title: "Quartermasters — Strategic Consulting & Advisory",
+    title: "Quartermasters — Technology Consulting & IT Services",
     description:
-      "Premium consulting across six integrated verticals. California-based, globally connected.",
+      "Premium technology consulting and IT services. California-based, globally connected.",
     type: "website",
     locale: "en_US",
   },
@@ -50,34 +50,18 @@ export default function HomePage() {
         {/* SEO-critical static content — sr-only for crawlers */}
         <section className="sr-only" aria-label="Company overview">
           <h1>
-            Quartermasters — Strategic Consulting & Advisory
+            Quartermasters — Technology Consulting & IT Services
           </h1>
           <p>
-            Premium consulting firm delivering integrated advisory across
-            Financial Advisory, Human Capital, Technology & Innovation,
-            Events & Experiences, and Strategic Management.
+            Premium technology consulting firm delivering digital
+            transformation, software development, cloud infrastructure,
+            and AI-driven innovation.
           </p>
-          <h2>Our Six Service Verticals</h2>
+          <h2>Our Service Verticals</h2>
           <ul>
-            <li>
-              Financial Advisory — Strategic advisory on financial planning,
-              capital structuring, and investment strategy.
-            </li>
-            <li>
-              Human Capital — Talent acquisition, workforce strategy,
-              and organizational development.
-            </li>
             <li>
               Technology & Innovation — Digital transformation, technology
               strategy, and R&D advisory.
-            </li>
-            <li>
-              Events & Experiences — High-impact event strategy, logistics,
-              and experiential design.
-            </li>
-            <li>
-              Strategic Management — Organizational design, governance
-              frameworks, and executive decision-making.
             </li>
             <li>
               IT Services — Software development, web applications,

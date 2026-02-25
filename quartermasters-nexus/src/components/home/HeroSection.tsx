@@ -58,7 +58,7 @@ export function HeroSection() {
               className="mb-10 max-w-lg text-lg sm:text-xl text-white/60 leading-relaxed"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              California-based advisory across six integrated verticals. Financial strategy, human capital, technology, events, management, and IT services.
+              California-based technology consulting and IT services. Digital transformation, software development, cloud infrastructure, and AI-driven innovation.
             </motion.p>
 
             {/* CTAs */}
@@ -84,15 +84,14 @@ export function HeroSection() {
             {/* Trust Badges -> Service Verticals */}
             <motion.div variants={staggerItem} className="w-full border-t border-white/10 pt-8">
               <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-white/40">
-                Six Integrated Verticals
+                Core Capabilities
               </p>
               <div className="flex flex-wrap items-center gap-3">
-                <span className="pill-tag pill-tag--financial">#Financial</span>
-                <span className="pill-tag pill-tag--hr">#HumanCapital</span>
                 <span className="pill-tag pill-tag--tech">#Technology</span>
-                <span className="pill-tag pill-tag--events">#Events</span>
-                <span className="pill-tag pill-tag--mgmt">#Management</span>
                 <span className="pill-tag pill-tag--it">#ITServices</span>
+                <span className="pill-tag pill-tag--tech">#DigitalTransformation</span>
+                <span className="pill-tag pill-tag--it">#CloudInfrastructure</span>
+                <span className="pill-tag pill-tag--tech">#AI_Innovation</span>
               </div>
             </motion.div>
           </motion.div>
@@ -270,7 +269,7 @@ export function HeroSection() {
               >
                 <div className="flex flex-col">
                   <span className="text-xs text-[#C15A2C] font-semibold tracking-wide uppercase">Advisory</span>
-                  <span className="text-sm text-white font-medium">Six Verticals</span>
+                  <span className="text-sm text-white font-medium">Tech & IT</span>
                 </div>
               </motion.div>
 

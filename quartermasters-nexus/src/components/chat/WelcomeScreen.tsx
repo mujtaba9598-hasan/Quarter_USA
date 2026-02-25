@@ -13,8 +13,6 @@ const CHIP_STAGGER = 120; // ms between each chip
 const CHIPS = [
     { label: 'I need a new website', variant: 'it', sparkColor: '#6366F1' },
     { label: 'Website redesign', variant: 'it', sparkColor: '#6366F1' },
-    { label: 'Business strategy', variant: 'mgmt', sparkColor: '#1B3A4B' },
-    { label: 'Financial advisory', variant: 'financial', sparkColor: '#C8872E' },
     { label: 'Explore pricing', variant: 'copper', sparkColor: '#C15A2C' },
     { label: 'Book a call', variant: 'copper', sparkColor: '#C15A2C' },
 ] as const;

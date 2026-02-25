@@ -10,39 +10,11 @@ import { motion } from "framer-motion";
 
 const services = [
     {
-        title: "Financial Advisory",
-        tagline: "Venture Capital & Structuring",
-        visual: "financial" as const,
-        href: "/financial-advisory",
-        accent: "var(--sector-financial)"
-    },
-    {
-        title: "Management",
-        tagline: "Corporate Strategy & Operations",
-        visual: "management" as const,
-        href: "/management",
-        accent: "var(--sector-mgmt)"
-    },
-    {
         title: "Technology & R&D",
         tagline: "Innovation Infrastructure",
         visual: "tech" as const,
         href: "/tech-rnd",
         accent: "var(--sector-tech)"
-    },
-    {
-        title: "Human Capital",
-        tagline: "Organizational Psychology",
-        visual: "hr" as const,
-        href: "/human-capital",
-        accent: "var(--sector-hr)"
-    },
-    {
-        title: "Event Logistics",
-        tagline: "High-Stakes Planning",
-        visual: "events" as const,
-        href: "/event-logistics",
-        accent: "var(--sector-events)"
     },
     {
         title: "IT Services",
@@ -74,12 +46,12 @@ export default function ServicesPage() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.1 }}
                     >
-                        Explore our specialized divisions engineered to deploy structural change across critical sectors, driving enterprise endurance.
+                        Explore our specialized divisions engineered to deploy cutting-edge technology and AI-driven innovation across enterprise infrastructure.
                     </motion.p>
                 </div>
 
                 <div className="mx-auto max-w-5xl px-6 relative z-20">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
                         {services.map((service) => (
                             <ClickSpark key={service.title} sparkColor={service.accent} sparkSize={6} sparkRadius={15} sparkCount={8} duration={400}>
                                 <GlassSurface width="100%" height={280} borderRadius={16} backgroundOpacity={0.15}>

@@ -44,11 +44,7 @@ export async function ingestDocuments() {
 
         // Determine service based on filename if possible
         let service: string | null = null
-        if (file.includes('banking')) service = 'financial-advisory'
-        else if (file.includes('human')) service = 'human-capital'
-        else if (file.includes('management-consultancy')) service = 'management'
-        else if (file.includes('tech')) service = 'tech-rnd'
-        else if (file.includes('event') || file.includes('organization')) service = 'event-logistics'
+        if (file.includes('tech')) service = 'tech-rnd'
 
         // 1. Insert Document
         const { data: doc, error: docError } = await supabase

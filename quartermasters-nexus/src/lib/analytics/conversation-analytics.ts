@@ -118,11 +118,7 @@ export function detectObjections(userMessages: string[]): ObjectionCategory[] {
 // ─── Service Detection ────────────────────────────────────────────
 
 const SERVICE_KEYWORDS: Record<string, RegExp[]> = {
-    'financial-advisory': [/financ/i, /banking/i, /invest/i, /regulatory/i, /compliance/i, /audit/i],
-    'human-capital': [/hr\b/i, /human.*resource/i, /recruit/i, /hiring/i, /talent/i, /workforce/i],
-    'management': [/management/i, /strategy/i, /operational/i, /business.*plan/i, /growth/i],
     'tech-rnd': [/tech/i, /r&d/i, /research/i, /innovation/i, /education/i, /edtech/i],
-    'event-logistics': [/event/i, /conference/i, /logistics/i, /venue/i, /planning/i],
     'it-services': [/software/i, /web.*app/i, /develop/i, /coding/i, /website/i, /saas/i],
 };
 

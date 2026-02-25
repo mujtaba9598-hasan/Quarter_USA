@@ -6,7 +6,7 @@ export function JsonLd() {
     url: "https://quartermasters.me", // TODO: Replace with final domain
     logo: "/og-image.jpg",
     description:
-      "Premium strategic consulting across six verticals: Financial Advisory, Human Capital, Technology & Innovation, Events & Experiences, Strategic Management, and IT Services.",
+      "Premium strategic consulting across two verticals: Technology & Innovation and IT Services.",
     address: {
       "@type": "PostalAddress",
       addressRegion: "California",
@@ -30,31 +30,11 @@ export function JsonLd() {
       addressCountry: "US",
     },
     description:
-      "Premium consulting firm operating across six integrated verticals: Financial Advisory, Human Capital, Technology & Innovation, Events & Experiences, Strategic Management, and IT Services.",
+      "Premium consulting firm operating across two integrated verticals: Technology & Innovation and IT Services.",
     priceRange: "$$$$",
   };
 
   const services = [
-    {
-      name: "Financial Advisory",
-      description:
-        "Strategic advisory on financial planning, capital structuring, investment strategy, and regulatory compliance.",
-    },
-    {
-      name: "Human Capital Consulting",
-      description:
-        "Talent acquisition, workforce strategy, organizational development, and HR transformation.",
-    },
-    {
-      name: "Strategic Management Consulting",
-      description:
-        "Strategic management advisory, organizational design, governance frameworks, and executive decision-making support.",
-    },
-    {
-      name: "Events & Experiences",
-      description:
-        "High-impact event strategy, logistics coordination, brand activations, and experiential design at scale.",
-    },
     {
       name: "Technology & Innovation Consulting",
       description:
@@ -91,7 +71,7 @@ export function JsonLd() {
         name: "What services does Quartermasters offer?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Quartermasters provides six integrated consulting services: Financial Advisory, Human Capital, Technology & Innovation, Events & Experiences, Strategic Management, and IT Services.",
+          text: "Quartermasters provides two integrated consulting services: Technology & Innovation and IT Services.",
         },
       },
       {

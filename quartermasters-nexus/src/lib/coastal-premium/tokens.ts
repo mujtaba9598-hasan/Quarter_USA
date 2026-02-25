@@ -69,40 +69,12 @@ export const colors = {
 
   // Sector accents — lighter, coastal-appropriate versions
   sectors: {
-    financial: {
-      primary: "#C8872E",    // Sunset Gold
-      secondary: "#E8C87A",  // Sand Gold
-      glow: "rgba(200, 135, 46, 0.15)",
-      label: "Financial Advisory",
-      metaphor: "The Lighthouse",
-    },
-    hr: {
-      primary: "#2A9D8F",    // Seafoam
-      secondary: "#7ECEC4",  // Light Seafoam
-      glow: "rgba(42, 157, 143, 0.15)",
-      label: "Human Capital",
-      metaphor: "The Harbor",
-    },
     tech: {
       primary: "#3B82C4",    // Ocean Blue
       secondary: "#7BB3E0",  // Sky Blue
       glow: "rgba(59, 130, 196, 0.15)",
       label: "Technology & Innovation",
       metaphor: "The Observatory",
-    },
-    events: {
-      primary: "#D4763C",    // Coral
-      secondary: "#E8A87C",  // Light Coral
-      glow: "rgba(212, 118, 60, 0.15)",
-      label: "Events & Experiences",
-      metaphor: "The Compass",
-    },
-    management: {
-      primary: "#1B3A4B",    // Ocean Deep
-      secondary: "#4A7A8C",  // Tidal
-      glow: "rgba(27, 58, 75, 0.12)",
-      label: "Strategic Management",
-      metaphor: "The Helm",
     },
   },
 } as const;

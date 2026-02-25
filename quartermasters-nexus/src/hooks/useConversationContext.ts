@@ -1,21 +1,14 @@
 import { useMemo, useEffect, useState } from 'react';
 
 // Define the service domains mapped to the S8-04 spec
+// NOTE: financial-advisory, human-capital, management, event-logistics removed — services killed.
 export type ServiceTheme =
-    | 'financial-advisory'
-    | 'human-capital'
-    | 'management'
     | 'tech-rnd'
-    | 'event-logistics'
     | 'it-services'
     | 'idle';
 
 const THEME_KEYWORDS: Record<ServiceTheme, string[]> = {
-    'financial-advisory': ['financial', 'banking', 'investment', 'cfo', 'audit', 'wealth', 'capital', 'finance'],
-    'human-capital': ['hr', 'human capital', 'recruitment', 'talent', 'workforce', 'staffing', 'culture', 'employees'],
-    'management': ['management', 'strategy', 'operations', 'growth', 'transformation', 'restructuring', 'expansion'],
     'tech-rnd': ['technology', 'r&d', 'innovation', 'ai', 'prototype', 'research', 'scientific', 'invention'],
-    'event-logistics': ['event', 'conference', 'exhibition', 'logistics', 'venue', 'production', 'concert', 'festival'],
     'it-services': ['it', 'software', 'web', 'development', 'infrastructure', 'cloud', 'security', 'network'],
     'idle': [] // 'idle' represents the default SilkBackground state
 };

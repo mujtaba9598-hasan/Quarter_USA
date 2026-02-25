@@ -4,20 +4,12 @@ import { motion } from "framer-motion";
 import { PRICING_TABLE, type PackageDetails } from "@/lib/pricing/packages";
 
 const SERVICE_LABELS: Record<string, string> = {
-    "financial-advisory": "Financial Advisory",
-    "human-capital": "Human Capital",
-    "management": "Management Consultancy",
     "tech-rnd": "Technology R&D",
-    "event-logistics": "Event Management",
     "it-services": "IT Services",
 };
 
 const SERVICE_COLORS: Record<string, string> = {
-    "financial-advisory": "#C8872E",
-    "human-capital": "#2A9D8F",
-    "management": "#1B3A4B",
     "tech-rnd": "#3B82C4",
-    "event-logistics": "#D4763C",
     "it-services": "#6366F1",
 };
 

@@ -6,26 +6,6 @@ import { Footer } from "@/components/layout/Footer";
 export default function KnowledgeBaseIndex() {
     const categories = [
         {
-            title: "Banking Services Consultancy",
-            slug: "banking-services",
-            description: "Regulatory compliance, capital structuring, and financial frameworks.",
-        },
-        {
-            title: "Human Resources Consultancy",
-            slug: "human-resources",
-            description: "Talent acquisition strategy, workforce planning, and labor law compliance.",
-        },
-        {
-            title: "Management Consultancies",
-            slug: "management-consultancy",
-            description: "Organizational design, governance frameworks, and operational excellence.",
-        },
-        {
-            title: "Organization & Event Management",
-            slug: "event-management",
-            description: "High-stakes logistics, venue coordination, and event strategy.",
-        },
-        {
             title: "Technology Education R&D",
             slug: "technology-education",
             description: "Digital transformation, EdTech infrastructure, and R&D strategy.",
@@ -43,8 +23,8 @@ export default function KnowledgeBaseIndex() {
                         </span>
                         <h1 className="heading-1 mb-6">Strategic Intelligence.</h1>
                         <p className="max-w-2xl text-lg text-[var(--text-muted)]">
-                            Deep dives into our methodologies, regulatory frameworks, and
-                            operational standards across six key consultancy verticals.
+                            Deep dives into our methodologies, technology frameworks, and
+                            operational standards across our core verticals.
                         </p>
                     </div>
 

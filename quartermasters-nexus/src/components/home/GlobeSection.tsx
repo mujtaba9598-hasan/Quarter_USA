@@ -49,11 +49,11 @@ export function GlobeSection() {
                 </span>
               </motion.h2>
               <motion.div variants={staggerItem} className="flex flex-wrap gap-3 mb-8">
-                <span className="pill-tag pill-tag--financial">#Global_Markets</span>
-                <span className="pill-tag pill-tag--tech">#Cross_Border_Advisory</span>
-                <span className="pill-tag pill-tag--events">#Emerging_Economies</span>
-                <span className="pill-tag pill-tag--hr">#Strategic_Corridors</span>
-                <span className="pill-tag pill-tag--mgmt">#International_Networks</span>
+                <span className="pill-tag pill-tag--tech">#Global_Markets</span>
+                <span className="pill-tag pill-tag--it">#Cross_Border_Advisory</span>
+                <span className="pill-tag pill-tag--tech">#Emerging_Economies</span>
+                <span className="pill-tag pill-tag--it">#Strategic_Corridors</span>
+                <span className="pill-tag pill-tag--tech">#International_Networks</span>
               </motion.div>
 
               <motion.p

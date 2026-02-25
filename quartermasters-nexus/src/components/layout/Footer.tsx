@@ -5,11 +5,7 @@ import { CookiePreferencesButton } from "@/components/layout/CookiePreferencesBu
 
 const footerLinks = {
   services: [
-    { label: "Financial Advisory", href: "/financial-advisory" },
-    { label: "Human Capital", href: "/human-capital" },
     { label: "Technology & Innovation", href: "/tech-rnd" },
-    { label: "Events & Experiences", href: "/event-logistics" },
-    { label: "Strategic Management", href: "/management" },
     { label: "IT Services", href: "/it-services" },
   ],
   company: [
@@ -66,16 +62,12 @@ export function Footer() {
                 className="mt-4 max-w-sm text-sm leading-relaxed"
                 style={{ color: "rgba(255,255,255,0.6)" }}
               >
-                Premium strategic consulting across six verticals:
-                Financial Advisory, Human Capital, Technology &amp; Innovation,
-                Events &amp; Experiences, Strategic Management, and IT Services.
+                Premium technology consulting and IT services —
+                driving innovation, digital transformation, and scalable
+                solutions for modern enterprises.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
-                <span className="pill-tag pill-tag--financial">#FinancialAdvisory</span>
-                <span className="pill-tag pill-tag--hr">#HumanCapital</span>
                 <span className="pill-tag pill-tag--tech">#TechInnovation</span>
-                <span className="pill-tag pill-tag--events">#EventLogistics</span>
-                <span className="pill-tag pill-tag--mgmt">#Management</span>
                 <span className="pill-tag pill-tag--it">#ITServices</span>
               </div>
             </div>

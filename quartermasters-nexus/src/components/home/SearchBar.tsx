@@ -6,10 +6,10 @@ import { Search, ArrowRight, X, Loader2 } from "lucide-react";
 import { fadeInUp, scrollViewport } from "@/lib/animations";
 
 const suggestions = [
-  "How can you help with HR compliance?",
-  "What banking advisory services do you offer?",
-  "Tell me about event management capabilities",
   "Can you build a custom web application for us?",
+  "How can you help with digital transformation?",
+  "What cloud infrastructure services do you offer?",
+  "Tell me about your AI and automation capabilities",
 ];
 
 export function SearchBar() {

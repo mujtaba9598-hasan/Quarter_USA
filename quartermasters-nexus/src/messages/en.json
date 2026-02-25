@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Quartermasters — Strategic Consulting & Advisory",
-    "description": "Premium consulting across six verticals: Financial Advisory, Human Capital, Technology & Innovation, Events & Experiences, IT Services, and Strategic Management."
+    "description": "Premium technology consulting across two specialized verticals: Technology & Innovation and IT Services."
   },
   "nav": {
     "home": "Home",
@@ -15,37 +15,17 @@
   "hero": {
     "tagline": "Strategic Consulting & Advisory",
     "headline": "Your Strategic Advantage Starts Here",
-    "subheadline": "Six verticals. One mission. Accelerating your growth with precision consulting from California to the world.",
+    "subheadline": "Two verticals. One mission. Accelerating your growth with precision technology consulting from California to the world.",
     "cta_primary": "Start a Conversation",
     "cta_secondary": "Explore Services"
   },
   "services": {
     "title": "Our Service Verticals",
-    "subtitle": "Six specialized practices. One unified strategy.",
-    "financial_advisory": {
-      "name": "Financial Advisory",
-      "tagline": "Navigate complexity with clarity",
-      "description": "Banking services consultancy, regulatory compliance, investment strategy, and financial restructuring for organizations seeking fiscal excellence."
-    },
-    "human_capital": {
-      "name": "Human Capital",
-      "tagline": "Your people, your edge",
-      "description": "HR consultancy, talent strategy, organizational design, and workforce planning to build high-performing teams."
-    },
-    "management": {
-      "name": "Strategic Management",
-      "tagline": "From vision to execution",
-      "description": "Management consultancy, operational excellence, growth strategy, and business transformation for ambitious organizations."
-    },
+    "subtitle": "Two specialized practices. One unified strategy.",
     "tech_rnd": {
       "name": "Technology & R&D",
       "tagline": "Innovate with purpose",
       "description": "Consulting and R&D in technology education, digital transformation, emerging tech strategy, and innovation programs."
-    },
-    "event_logistics": {
-      "name": "Events & Experiences",
-      "tagline": "Memorable moments, flawless execution",
-      "description": "Organization and event management, logistics, venue strategy, and experience design for impactful corporate events."
     },
     "it_services": {
       "name": "IT Services",
@@ -73,7 +53,7 @@
     "title": "Q",
     "subtitle": "Senior Strategy Consultant",
     "placeholder": "Ask about our services, pricing, or methodology...",
-    "empty_state": "Engage Quartermasters intelligence. Ask about our 6 service verticals, pricing, or methodology.",
+    "empty_state": "Engage Quartermasters intelligence. Ask about our technology services, pricing, or methodology.",
     "send": "Send",
     "typing": "Q is thinking..."
   },

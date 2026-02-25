@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Quartermasters — 战略咨询与顾问",
-    "description": "六大垂直领域的优质咨询：金融顾问、人力资本、科技与创新、活动与体验、IT服务和战略管理。"
+    "description": "两大专业垂直领域的优质技术咨询：科技与创新和IT服务。"
   },
   "nav": {
     "home": "首页",
@@ -15,37 +15,17 @@
   "hero": {
     "tagline": "战略咨询与顾问",
     "headline": "您的战略优势从这里开始",
-    "subheadline": "六大垂直领域。一个使命。以精准咨询加速您的增长，从加利福尼亚走向世界。",
+    "subheadline": "两大垂直领域。一个使命。以精准技术咨询加速您的增长，从加利福尼亚走向世界。",
     "cta_primary": "开始对话",
     "cta_secondary": "探索服务"
   },
   "services": {
     "title": "我们的服务领域",
-    "subtitle": "六大专业实践。一个统一战略。",
-    "financial_advisory": {
-      "name": "金融顾问",
-      "tagline": "以清晰的视角应对复杂局面",
-      "description": "银行服务咨询、合规监管、投资策略和财务重组，为追求卓越财务的组织服务。"
-    },
-    "human_capital": {
-      "name": "人力资本",
-      "tagline": "人才是您的竞争优势",
-      "description": "人力资源咨询、人才战略、组织设计和劳动力规划，打造高绩效团队。"
-    },
-    "management": {
-      "name": "战略管理",
-      "tagline": "从愿景到执行",
-      "description": "管理咨询、运营卓越、增长战略和业务转型，服务于有雄心的组织。"
-    },
+    "subtitle": "两大专业实践。一个统一战略。",
     "tech_rnd": {
       "name": "科技与研发",
       "tagline": "有目标的创新",
       "description": "技术教育咨询与研发、数字化转型、新兴技术战略和创新项目。"
-    },
-    "event_logistics": {
-      "name": "活动与体验",
-      "tagline": "难忘时刻，完美执行",
-      "description": "活动组织与管理、物流、场地策略和体验设计，打造有影响力的企业活动。"
     },
     "it_services": {
       "name": "IT服务",
@@ -73,7 +53,7 @@
     "title": "Q",
     "subtitle": "高级战略顾问",
     "placeholder": "询问我们的服务、定价或方法论...",
-    "empty_state": "启动Quartermasters智能。询问我们的6大服务领域、定价或方法论。",
+    "empty_state": "启动Quartermasters智能。询问我们的技术服务、定价或方法论。",
     "send": "发送",
     "typing": "Q正在思考..."
   },

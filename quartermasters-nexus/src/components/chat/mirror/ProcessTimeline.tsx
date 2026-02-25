@@ -3,35 +3,11 @@
 import { motion } from "framer-motion";
 
 const SERVICE_PROCESSES: Record<string, { step: string; desc: string }[]> = {
-    "financial-advisory": [
-        { step: "Discovery", desc: "Financial health assessment & goal alignment" },
-        { step: "Analysis", desc: "Market research, risk modeling & opportunity mapping" },
-        { step: "Strategy", desc: "Custom financial plan with actionable recommendations" },
-        { step: "Implementation", desc: "Execute strategy with banking introductions & monitoring" },
-    ],
-    "human-capital": [
-        { step: "Audit", desc: "Workforce analysis, compliance review & gap assessment" },
-        { step: "Design", desc: "Policy frameworks, compensation structures & org design" },
-        { step: "Recruit", desc: "Talent acquisition strategy & pipeline development" },
-        { step: "Optimize", desc: "Performance systems, retention programs & L&D" },
-    ],
-    "management": [
-        { step: "Diagnose", desc: "Operations audit, process mapping & bottleneck identification" },
-        { step: "Strategize", desc: "Growth roadmap, market positioning & competitive analysis" },
-        { step: "Transform", desc: "Change management, process redesign & system integration" },
-        { step: "Sustain", desc: "KPI dashboards, quarterly reviews & continuous improvement" },
-    ],
     "tech-rnd": [
         { step: "Research", desc: "Technology landscape analysis & innovation scouting" },
         { step: "Prototype", desc: "Proof of concept, feasibility study & architecture design" },
         { step: "Develop", desc: "Full implementation with agile methodology" },
         { step: "Scale", desc: "Deployment, optimization & knowledge transfer" },
-    ],
-    "event-logistics": [
-        { step: "Brief", desc: "Event objectives, audience profiling & budget framework" },
-        { step: "Plan", desc: "Venue selection, vendor coordination & logistics mapping" },
-        { step: "Execute", desc: "On-ground management, live coordination & contingency" },
-        { step: "Review", desc: "Post-event analytics, ROI report & feedback synthesis" },
     ],
     "it-services": [
         { step: "Assess", desc: "Technical requirements, stack evaluation & security audit" },

@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Quartermasters — Consultoria Estratégica e Assessoria",
-    "description": "Consultoria premium em seis verticais: Assessoria Financeira, Capital Humano, Tecnologia e Inovação, Eventos e Experiências, Serviços de TI e Gestão Estratégica."
+    "description": "Consultoria tecnológica premium em duas verticais especializadas: Tecnologia e Inovação e Serviços de TI."
   },
   "nav": {
     "home": "Início",
@@ -15,37 +15,17 @@
   "hero": {
     "tagline": "Consultoria Estratégica e Assessoria",
     "headline": "Sua Vantagem Estratégica Começa Aqui",
-    "subheadline": "Seis verticais. Uma missão. Acelerando seu crescimento com consultoria de precisão da Califórnia para o mundo.",
+    "subheadline": "Duas verticais. Uma missão. Acelerando seu crescimento com consultoria tecnológica de precisão da Califórnia para o mundo.",
     "cta_primary": "Iniciar uma Conversa",
     "cta_secondary": "Explorar Serviços"
   },
   "services": {
     "title": "Nossas Verticais de Serviço",
-    "subtitle": "Seis práticas especializadas. Uma estratégia unificada.",
-    "financial_advisory": {
-      "name": "Assessoria Financeira",
-      "tagline": "Navegar a complexidade com clareza",
-      "description": "Consultoria em serviços bancários, conformidade regulatória, estratégia de investimento e reestruturação financeira para organizações que buscam excelência fiscal."
-    },
-    "human_capital": {
-      "name": "Capital Humano",
-      "tagline": "Suas pessoas, sua vantagem",
-      "description": "Consultoria de RH, estratégia de talentos, design organizacional e planejamento de força de trabalho para construir equipes de alto desempenho."
-    },
-    "management": {
-      "name": "Gestão Estratégica",
-      "tagline": "Da visão à execução",
-      "description": "Consultoria de gestão, excelência operacional, estratégia de crescimento e transformação empresarial para organizações ambiciosas."
-    },
+    "subtitle": "Duas práticas especializadas. Uma estratégia unificada.",
     "tech_rnd": {
       "name": "Tecnologia e P&D",
       "tagline": "Inovar com propósito",
       "description": "Consultoria e P&D em educação tecnológica, transformação digital, estratégia de tecnologias emergentes e programas de inovação."
-    },
-    "event_logistics": {
-      "name": "Eventos e Experiências",
-      "tagline": "Momentos memoráveis, execução impecável",
-      "description": "Organização e gestão de eventos, logística, estratégia de locais e design de experiências para eventos corporativos impactantes."
     },
     "it_services": {
       "name": "Serviços de TI",
@@ -73,7 +53,7 @@
     "title": "Q",
     "subtitle": "Consultor Sênior de Estratégia",
     "placeholder": "Pergunte sobre nossos serviços, preços ou metodologia...",
-    "empty_state": "Ative a inteligência Quartermasters. Pergunte sobre nossas 6 verticais de serviço, preços ou metodologia.",
+    "empty_state": "Ative a inteligência Quartermasters. Pergunte sobre nossos serviços tecnológicos, preços ou metodologia.",
     "send": "Enviar",
     "typing": "Q está pensando..."
   },

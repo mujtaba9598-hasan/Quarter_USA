@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Quartermasters — Strategische Beratung & Consulting",
-    "description": "Premium-Beratung in sechs Bereichen: Finanzberatung, Personalwesen, Technologie & Innovation, Events & Erlebnisse, IT-Services und Strategisches Management."
+    "description": "Premium-Technologieberatung in zwei spezialisierten Bereichen: Technologie & Innovation und IT-Services."
   },
   "nav": {
     "home": "Startseite",
@@ -15,37 +15,17 @@
   "hero": {
     "tagline": "Strategische Beratung & Consulting",
     "headline": "Ihr Strategischer Vorteil Beginnt Hier",
-    "subheadline": "Sechs Bereiche. Eine Mission. Ihr Wachstum beschleunigen mit Präzisionsberatung von Kalifornien in die Welt.",
+    "subheadline": "Zwei Bereiche. Eine Mission. Ihr Wachstum beschleunigen mit präziser Technologieberatung von Kalifornien in die Welt.",
     "cta_primary": "Gespräch Starten",
     "cta_secondary": "Leistungen Entdecken"
   },
   "services": {
     "title": "Unsere Leistungsbereiche",
-    "subtitle": "Sechs spezialisierte Bereiche. Eine einheitliche Strategie.",
-    "financial_advisory": {
-      "name": "Finanzberatung",
-      "tagline": "Komplexität mit Klarheit navigieren",
-      "description": "Bankdienstleistungsberatung, regulatorische Compliance, Investitionsstrategie und finanzielle Restrukturierung für Organisationen, die fiskalische Exzellenz anstreben."
-    },
-    "human_capital": {
-      "name": "Personalwesen",
-      "tagline": "Ihre Mitarbeiter, Ihr Vorteil",
-      "description": "HR-Beratung, Talentstrategie, Organisationsdesign und Personalplanung für den Aufbau leistungsstarker Teams."
-    },
-    "management": {
-      "name": "Strategisches Management",
-      "tagline": "Von der Vision zur Umsetzung",
-      "description": "Managementberatung, operative Exzellenz, Wachstumsstrategie und Unternehmenstransformation für ambitionierte Organisationen."
-    },
+    "subtitle": "Zwei spezialisierte Bereiche. Eine einheitliche Strategie.",
     "tech_rnd": {
       "name": "Technologie & F&E",
       "tagline": "Zielgerichtet innovieren",
       "description": "Beratung und F&E in technologischer Bildung, digitaler Transformation, Strategie für aufkommende Technologien und Innovationsprogramme."
-    },
-    "event_logistics": {
-      "name": "Events & Erlebnisse",
-      "tagline": "Unvergessliche Momente, makellose Umsetzung",
-      "description": "Organisation und Eventmanagement, Logistik, Veranstaltungsstrategie und Erlebnisdesign für wirkungsvolle Firmenveranstaltungen."
     },
     "it_services": {
       "name": "IT-Services",
@@ -73,7 +53,7 @@
     "title": "Q",
     "subtitle": "Senior Strategieberater",
     "placeholder": "Fragen Sie nach unseren Leistungen, Preisen oder Methodik...",
-    "empty_state": "Aktivieren Sie die Quartermasters-Intelligenz. Fragen Sie nach unseren 6 Leistungsbereichen, Preisen oder Methodik.",
+    "empty_state": "Aktivieren Sie die Quartermasters-Intelligenz. Fragen Sie nach unseren Technologieleistungen, Preisen oder Methodik.",
     "send": "Senden",
     "typing": "Q denkt nach..."
   },
