@@ -1,7 +1,6 @@
 import { useMemo, useEffect, useState } from 'react';
 
-// Define the service domains mapped to the S8-04 spec
-// NOTE: financial-advisory, human-capital, management, event-logistics removed — services killed.
+// Define the service domains
 export type ServiceTheme =
     | 'tech-rnd'
     | 'it-services'

@@ -68,8 +68,6 @@ export const ITServicesTheme = () => (
 );
 
 // Theme Mapper
-// NOTE: financial-advisory, human-capital, management, event-logistics removed — services killed.
-// Their theme components above are preserved as reusable visual assets.
 export const ThemeRenderer = ({ theme }: { theme: ServiceTheme }) => {
     switch (theme) {
         case 'tech-rnd': return <TechRnDTheme />;
