@@ -122,39 +122,20 @@ const sections: Section[] = [
     content: (
       <>
         <p>
-          Quartermasters is a multi-vertical consultancy firm operating under
-          six (6) core service verticals. Our services are <strong>advisory and consultancy in
+          Quartermasters is a technology services firm operating under
+          two (2) core service areas. Our services are <strong>technical and consultancy in
             nature</strong> and include:
         </p>
         <ol className="list-decimal pl-6 space-y-2 mt-4">
           <li>
-            <strong>Human Resources Consultancy</strong> &mdash; Advisory
-            services relating to workforce planning, talent acquisition
-            strategy, HR policy development, organizational design, and
-            human capital management.
+            <strong>Technology Research &amp; Development</strong> &mdash; Web
+            development, AI integration, custom software architecture, cloud
+            infrastructure consulting, and digital transformation advisory.
           </li>
           <li>
-            <strong>Management Consultancies</strong> &mdash; Strategic
-            advisory, operational improvement consulting, business
-            transformation guidance, and corporate governance advisory.
-          </li>
-          <li>
-            <strong>Consulting &amp; R&amp;D in Technology Education</strong>{" "}
-            &mdash; Research, consulting, and development services in the
-            field of technology education, including curriculum advisory,
-            edtech strategy, and learning technology consulting.
-          </li>
-          <li>
-            <strong>Organization &amp; Event Management</strong> &mdash;
-            Consulting and management services for corporate events,
-            conferences, seminars, trade exhibitions, and organizational
-            logistics.
-          </li>
-          <li>
-            <strong>Banking Services Consultancy</strong> &mdash; Advisory
-            and consulting services related to banking operations, financial
-            strategy, regulatory compliance advisory, and financial services
-            consulting.
+            <strong>IT Services</strong> &mdash; Website redesign, feature
+            injection, express builds, managed development, and ongoing
+            technical support.
           </li>
         </ol>
         <div
@@ -174,7 +155,7 @@ const sections: Section[] = [
             Important Notice
           </p>
           <p className="text-sm" style={{ color: "var(--text-muted)" }}>
-            All services provided by Quartermasters are consultancy and advisory
+            All services provided by Quartermasters are technical and advisory
             in nature. We do not provide regulated financial services, direct
             employment or labor supply, or accredited educational
             certifications. Please refer to Section 4 (Scope Limitations) for
@@ -193,154 +174,97 @@ const sections: Section[] = [
     content: (
       <>
         <p>
-          Pursuant to the scope of our services and applicable
-          law, the following limitations apply to our service offerings. Users
+          The following limitations apply to our service offerings. Users
           and clients must read and understand these limitations before engaging
           our services.
         </p>
 
-        {/* Banking */}
-        <h4
-          className="mt-8 mb-3 text-base font-semibold"
-          style={{ fontFamily: "var(--font-heading)", color: "var(--sector-financial)" }}
-        >
-          4.1 Banking Services Consultancy
-        </h4>
-        <p>
-          Quartermasters provides <strong>advisory and consulting services
-            only</strong> in relation to banking and financial matters. We
-          expressly confirm that we:
-        </p>
-        <ul className="list-disc pl-6 space-y-1 mt-2">
-          <li>
-            Do <strong>not</strong> accept deposits, hold client funds, or
-            operate as a bank or financial institution.
-          </li>
-          <li>
-            Do <strong>not</strong> provide lending, credit, or financing
-            services of any kind.
-          </li>
-          <li>
-            Do <strong>not</strong> engage in fund management, asset
-            management, or investment management.
-          </li>
-          <li>
-            Do <strong>not</strong> hold a license from the Securities and
-            Exchange Commission (SEC), the Financial Industry Regulatory
-            Authority (FINRA), or any state financial regulatory authority.
-          </li>
-          <li>
-            Do <strong>not</strong> provide insurance, brokerage, or
-            securities trading services.
-          </li>
-        </ul>
-        <p className="mt-3">
-          Any banking or financial advisory provided is strictly informational
-          and strategic in nature. Clients requiring regulated financial
-          services must engage appropriately licensed institutions.
-        </p>
-
-        {/* HR */}
-        <h4
-          className="mt-8 mb-3 text-base font-semibold"
-          style={{ fontFamily: "var(--font-heading)", color: "var(--sector-hr)" }}
-        >
-          4.2 Human Resources Consultancy
-        </h4>
-        <p>
-          Our HR services are limited to <strong>consultancy and advisory</strong>.
-          We expressly confirm that we:
-        </p>
-        <ul className="list-disc pl-6 space-y-1 mt-2">
-          <li>
-            Do <strong>not</strong> act as a direct employer, labor supplier,
-            or staffing agency unless separately and explicitly authorized
-            under applicable state and federal law.
-          </li>
-          <li>
-            Do <strong>not</strong> sponsor work visas, employment permits,
-            or immigration petitions for third-party personnel on behalf of clients.
-          </li>
-          <li>
-            Do <strong>not</strong> act as a Professional Employer Organization
-            (PEO) or Employer of Record (EOR) unless holding the requisite
-            approvals.
-          </li>
-        </ul>
-        <p className="mt-3">
-          All HR advisory services — including workforce planning, HR policy
-          development, and organizational consulting — are delivered as
-          consultancy engagements. Any direct employment or labor supply
-          activity would require separate regulatory approval and/or additional
-          licensing under applicable state and federal law.
-        </p>
-
-        {/* Education */}
+        {/* Technology Services */}
         <h4
           className="mt-8 mb-3 text-base font-semibold"
           style={{ fontFamily: "var(--font-heading)", color: "var(--sector-tech)" }}
         >
-          4.3 Consulting &amp; R&amp;D in Technology Education
+          4.1 Technology Services
         </h4>
         <p>
-          Our technology education services are limited to{" "}
-          <strong>consulting, research, and development</strong>. We expressly
-          confirm that we:
+          Quartermasters provides <strong>web development, software engineering,
+            and technical consulting services</strong>. We expressly confirm
+          that we:
         </p>
         <ul className="list-disc pl-6 space-y-1 mt-2">
           <li>
-            Do <strong>not</strong> operate as an accredited educational
-            institution, university, or training center.
+            Deliver custom web applications, website redesigns, feature
+            injections, and express builds as contracted deliverables.
           </li>
           <li>
-            Do <strong>not</strong> issue accredited degrees, diplomas,
-            certifications, or professional qualifications recognized by any
-            state or federal accreditation body, including the U.S. Department
-            of Education or regional accrediting agencies.
+            Provide cloud infrastructure consulting, architecture advisory,
+            and technical strategy as professional services.
           </li>
           <li>
-            Do <strong>not</strong> claim equivalency with any accredited
-            educational program.
+            Do <strong>not</strong> guarantee specific business outcomes,
+            revenue increases, or performance metrics resulting from
+            delivered technology unless explicitly warranted in a separate
+            written agreement.
+          </li>
+          <li>
+            Do <strong>not</strong> operate as a managed hosting provider
+            or internet service provider unless separately agreed upon.
+          </li>
+          <li>
+            Retain intellectual property rights over proprietary frameworks,
+            methodologies, and internal tools unless otherwise specified in
+            the applicable service agreement.
           </li>
         </ul>
         <p className="mt-3">
-          Any educational content, training materials, workshops, or
-          technology education research we provide is delivered solely in a
-          consulting and R&amp;D capacity. Persons seeking accredited
-          qualifications must engage institutions accredited by the appropriate
-          state or federal authority.
+          All technology services are delivered under the terms of the
+          applicable service agreement. Clients are responsible for
+          providing accurate requirements, timely feedback, and necessary
+          access to their systems as outlined in the project scope.
         </p>
 
-        {/* Events */}
+        {/* AI & Automation Services */}
         <h4
           className="mt-8 mb-3 text-base font-semibold"
-          style={{ fontFamily: "var(--font-heading)", color: "var(--sector-events)" }}
+          style={{ fontFamily: "var(--font-heading)", color: "var(--sector-tech)" }}
         >
-          4.4 Organization &amp; Event Management
+          4.2 AI &amp; Automation Services
         </h4>
         <p>
-          Event management services are provided within the scope of our
-          business operations. All events organized or managed by Quartermasters are
-          subject to applicable state and local health, safety, and security
-          regulations. We will obtain or assist in obtaining all necessary
-          event permits; however, final approval rests with the relevant
-          government authorities.
+          Quartermasters offers AI integration, custom model training,
+          and automation consulting. We expressly confirm that:
         </p>
-
-        {/* Management */}
-        <h4
-          className="mt-8 mb-3 text-base font-semibold"
-          style={{ fontFamily: "var(--font-heading)", color: "var(--sector-mgmt)" }}
-        >
-          4.5 Management Consultancies
-        </h4>
-        <p>
-          Management consultancy services are advisory in nature.
-          Quartermasters does not assume management control, fiduciary duty,
-          or board-level authority over client entities unless explicitly
-          contracted and agreed upon in a separate written engagement. All
-          strategic recommendations remain the client&rsquo;s responsibility
-          to evaluate, approve, and implement.
+        <ul className="list-disc pl-6 space-y-1 mt-2">
+          <li>
+            AI models and automations delivered by Quartermasters are{" "}
+            <strong>tools that assist human decision-making</strong> and are
+            not autonomous decision-makers. All material business decisions
+            must be reviewed and approved by qualified human professionals.
+          </li>
+          <li>
+            We do <strong>not</strong> guarantee the accuracy, completeness,
+            or reliability of AI-generated outputs. Clients must independently
+            verify AI outputs before relying upon them for business-critical
+            decisions.
+          </li>
+          <li>
+            Custom AI models are trained on client-provided or
+            publicly available data. Quartermasters is not responsible for
+            biases, inaccuracies, or limitations inherent in the training
+            data supplied by the client.
+          </li>
+          <li>
+            AI services may utilize third-party APIs and infrastructure
+            (including but not limited to Anthropic, OpenAI, and cloud
+            providers) subject to those providers&rsquo; respective terms
+            of service and data processing agreements.
+          </li>
+        </ul>
+        <p className="mt-3">
+          Clients engaging AI services acknowledge the inherent limitations
+          of artificial intelligence and agree to use AI deliverables in
+          compliance with all applicable laws and regulations, including
+          emerging AI governance frameworks.
         </p>
       </>
     ),
@@ -466,7 +390,7 @@ const sections: Section[] = [
         </h4>
         <p>
           Quartermasters may accept payments via bank transfer, online payment
-          gateways (including but not limited to Stripe and PayTabs), or such
+          gateways (including but not limited to Stripe), or such
           other methods as we may make available. All online payment processing
           is handled by PCI-DSS compliant third-party payment processors.
           Quartermasters does not directly store your complete payment card

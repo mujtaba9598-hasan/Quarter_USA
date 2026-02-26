@@ -103,12 +103,17 @@ export async function calculateLeadScore(
       score += SCORES.ASKED_PRICING;
     }
     if (
-      allSummaries.includes("hr") ||
-      allSummaries.includes("consulting") ||
-      allSummaries.includes("banking") ||
-      allSummaries.includes("advisory") ||
-      allSummaries.includes("it services") ||
-      allSummaries.includes("software")
+      allSummaries.includes("ai") ||
+      allSummaries.includes("machine learning") ||
+      allSummaries.includes("web development") ||
+      allSummaries.includes("next.js") ||
+      allSummaries.includes("react") ||
+      allSummaries.includes("api") ||
+      allSummaries.includes("cloud") ||
+      allSummaries.includes("automation") ||
+      allSummaries.includes("redesign") ||
+      allSummaries.includes("software") ||
+      allSummaries.includes("it services")
     ) {
       breakdown.asked_service = SCORES.ASKED_SERVICE;
       score += SCORES.ASKED_SERVICE;

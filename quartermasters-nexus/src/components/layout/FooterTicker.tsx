@@ -1,11 +1,14 @@
 'use client';
 
 const hashtags = [
-  '#TechInnovation',
-  '#ITServices',
-  '#Strategy',
-  '#Innovation',
-  '#GlobalReach',
+  '#WebDevelopment',
+  '#AIIntegration',
+  '#WebsiteRedesign',
+  '#FeatureInjection',
+  '#ExpressBuild',
+  '#CustomAIModels',
+  '#NextJS',
+  '#CaliforniaTech',
 ];
 
 export function FooterTicker() {

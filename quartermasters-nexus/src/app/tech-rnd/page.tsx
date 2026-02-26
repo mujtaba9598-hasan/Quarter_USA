@@ -4,38 +4,38 @@ import { TechRndClient } from "@/components/services/TechRndClient";
 
 const capabilities = [
   {
-    title: "Technology R&D Infrastructure",
+    title: "Custom Web Architecture",
     description:
-      "Laboratory setup, equipment procurement, technical compliance, and R&D licensing frameworks for government-certified innovation programs.",
+      "Enterprise-grade Next.js applications with server components, edge computing, and sub-200ms response times.",
   },
   {
-    title: "Education Technology Curriculum",
+    title: "AI Integration & Automation",
     description:
-      "Design and deployment of MOE-aligned curricula for STEM, coding, robotics, and digital literacy programs.",
+      "Claude API, OpenAI, custom model fine-tuning, RAG pipelines, and intelligent automation.",
   },
   {
-    title: "Technical Operations & Systems",
+    title: "Cloud Infrastructure",
     description:
-      "IT infrastructure setup, software procurement, SaaS negotiations, and operational technology integration.",
+      "Vercel, AWS, and hybrid cloud architectures optimized for performance and cost.",
   },
   {
-    title: "Innovation Program Management",
+    title: "Real-time Systems",
     description:
-      "Proof-of-concept execution, grant applications, incubation frameworks, and public-private partnership structuring.",
+      "WebSocket implementations, live collaboration tools, and streaming AI interfaces.",
   },
   {
-    title: "Digital Transformation Advisory",
+    title: "Security & Compliance",
     description:
-      "Process automation, cloud migration, digital workflow design, and change management for legacy system modernization.",
+      "SOC 2 preparation, OWASP-hardened codebases, and zero-trust architecture.",
   },
 ];
 
 export const metadata: Metadata = {
   title: "Technology & R&D Services | Quartermasters",
-  description: "Innovation Infrastructure & Technical Operations. From education technology to R&D frameworks.",
+  description: "Custom web architecture, AI integration, cloud infrastructure, real-time systems, and security compliance.",
   openGraph: {
     title: "Technology & R&D Services | Quartermasters",
-    description: "Innovation Infrastructure & Technical Operations. From education technology to R&D frameworks.",
+    description: "Custom web architecture, AI integration, cloud infrastructure, real-time systems, and security compliance.",
     url: 'https://quartermasters.me/tech-rnd',
   }
 };

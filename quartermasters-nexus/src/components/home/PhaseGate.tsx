@@ -12,13 +12,13 @@ const phases = [
   {
     step: "01",
     title: "Discovery",
-    description: "Initial assessment and scope definition across all six verticals.",
+    description: "Initial assessment and scope definition for your technology needs.",
     pill: "#Discovery",
   },
   {
     step: "02",
     title: "Strategy",
-    description: "Research-driven strategy formulation with compliance mapping.",
+    description: "Research-driven strategy formulation with technical architecture planning.",
     pill: "#Analysis",
   },
   {

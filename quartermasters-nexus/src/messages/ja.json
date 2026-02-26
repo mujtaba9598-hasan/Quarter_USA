@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Quartermasters — 戦略コンサルティング＆アドバイザリー",
-    "description": "2つの専門分野にわたるプレミアムテクノロジーコンサルティング：テクノロジー＆イノベーションとITサービス。"
+    "title": "Quartermasters — Web開発 & AIソリューション",
+    "description": "プレミアムWeb開発、AI統合、ウェブサイトリデザイン、エクスプレスビルド、カスタムAIモデルトレーニング。"
   },
   "nav": {
     "home": "ホーム",
@@ -13,24 +13,39 @@
     "login": "ログイン"
   },
   "hero": {
-    "tagline": "戦略コンサルティング＆アドバイザリー",
-    "headline": "あなたの戦略的優位性はここから始まる",
-    "subheadline": "2つの専門分野。1つのミッション。カリフォルニアから世界へ、精密なテクノロジーコンサルティングで成長を加速。",
+    "tagline": "Web開発 & AIソリューション",
+    "headline": "ウェブサイトを構築。AIモデルをトレーニング。",
+    "subheadline": "フルスタックWeb開発、AI統合、カスタムデジタルインフラ。カリフォルニア拠点。",
     "cta_primary": "対話を始める",
     "cta_secondary": "サービスを探る"
   },
   "services": {
-    "title": "サービス分野",
-    "subtitle": "2つの専門プラクティス。1つの統合戦略。",
-    "tech_rnd": {
-      "name": "テクノロジー＆R&D",
-      "tagline": "目的を持ったイノベーション",
-      "description": "テクノロジー教育のコンサルティング＆R&D、デジタルトランスフォーメーション、新興技術戦略、イノベーションプログラム。"
+    "title": "サービス",
+    "subtitle": "5つの専門モジュール。1つのエンジニアリングチーム。",
+    "web_development": {
+      "name": "Web開発",
+      "tagline": "フルスタック。エンタープライズグレード。",
+      "description": "サーバーコンポーネント、200ms以下の応答時間、エンタープライズグレードのアーキテクチャを備えたNext.js/React/TypeScriptアプリケーション。"
     },
-    "it_services": {
-      "name": "ITサービス",
-      "tagline": "構築。出荷。拡張。",
-      "description": "ソフトウェア開発、Webアプリケーション、SaaSプラットフォーム、クラウドアーキテクチャ、技術実装サービス。"
+    "website_redesign": {
+      "name": "ウェブサイトリデザイン",
+      "tagline": "モダンスタック。ゼロダウンタイム。",
+      "description": "WordPress、Wix、またはレガシープラットフォームからモダンなNext.jsアーキテクチャへの移行。SEO保持、ゼロダウンタイム。"
+    },
+    "feature_injection": {
+      "name": "機能インジェクション",
+      "tagline": "コードベースをアップグレード。",
+      "description": "既存のアプリケーションにAIチャットボット、決済システム、認証、リアルタイムダッシュボードなどを追加。"
+    },
+    "express_build": {
+      "name": "エクスプレスビルド",
+      "tagline": "72時間。完了。",
+      "description": "72時間でランディングページ、1週間でMVP、オンデマンドのキャンペーンサイト。品質を犠牲にしないスピード構築。"
+    },
+    "ai_model_training": {
+      "name": "カスタムAIモデルトレーニング",
+      "tagline": "あなたのデータ。あなたのモデル。",
+      "description": "ファインチューニング、RAGパイプライン、プロンプトエンジニアリング、ビジネスニーズに合わせたAIエージェントアーキテクチャ。"
     },
     "learn_more": "詳しく見る",
     "get_started": "始める"
@@ -51,15 +66,15 @@
   },
   "chat": {
     "title": "Q",
-    "subtitle": "シニア戦略コンサルタント",
+    "subtitle": "シニアアーキテクト",
     "placeholder": "サービス、料金、方法論について質問...",
-    "empty_state": "Quartermastersインテリジェンスを起動。テクノロジーサービス、料金、方法論についてお問い合わせください。",
+    "empty_state": "Quartermastersインテリジェンスを起動。Web開発サービス、AIモデルトレーニング、料金、方法論についてお問い合わせください。",
     "send": "送信",
     "typing": "Qが考えています..."
   },
   "booking": {
     "title": "相談を予約",
-    "subtitle": "戦略チームとの通話をスケジュール",
+    "subtitle": "エンジニアリングチームとの通話をスケジュール",
     "discovery": "ディスカバリーコール",
     "discovery_desc": "15分の導入通話でニーズを理解",
     "express_consult": "エクスプレス相談",
@@ -67,11 +82,11 @@
     "strategy_session": "戦略セッション",
     "strategy_desc": "課題を30分で深掘り",
     "executive_briefing": "エグゼクティブブリーフィング",
-    "executive_desc": "60分の包括的な戦略レビュー"
+    "executive_desc": "60分の包括的な技術レビュー"
   },
   "contact": {
     "title": "お問い合わせ",
-    "subtitle": "戦略的なニーズについて対話を始めましょう",
+    "subtitle": "プロジェクトについて対話を始めましょう",
     "name": "氏名",
     "email": "メールアドレス",
     "company": "会社名",
@@ -81,7 +96,7 @@
     "error": "メッセージの送信に失敗しました。もう一度お試しください。"
   },
   "footer": {
-    "tagline": "カリフォルニアから世界への戦略コンサルティング。",
+    "tagline": "カリフォルニアからのWeb開発 & AIソリューション。",
     "services": "サービス",
     "company": "会社",
     "legal": "法的事項",

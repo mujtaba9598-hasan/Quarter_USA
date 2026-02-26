@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Lightbulb, Code, Cloud, Cpu, Shield, Workflow } from "lucide-react";
+import { Code, RefreshCw, Puzzle, Zap, Brain, Shield } from "lucide-react";
 import {
   staggerContainer,
   staggerItem,
@@ -24,51 +24,51 @@ import {
 
 const expectations = [
   {
-    headline: "Technology Roadmapping",
+    headline: "Web Development",
     description:
-      "Our technology team partners with CTOs and engineering leaders to evaluate stack decisions, architect scalable infrastructure, and de-risk digital transformation initiatives.",
-    sector: "Technology & Innovation",
-    icon: Lightbulb,
-    accent: "var(--sector-tech)",
-  },
-  {
-    headline: "Digital Product Delivery",
-    description:
-      "From web applications to enterprise platforms, our engineering team delivers production-grade software using modern frameworks, CI/CD pipelines, and test-driven development.",
-    sector: "IT Services",
+      "Full-stack Next.js applications with server components, TypeScript, and sub-200ms response times.",
+    sector: "Web Development",
     icon: Code,
-    accent: "var(--sector-it)",
-  },
-  {
-    headline: "Cloud Infrastructure",
-    description:
-      "We design, deploy, and manage cloud-native architectures across AWS, Azure, and GCP — optimizing for performance, cost efficiency, and operational resilience at scale.",
-    sector: "Cloud & DevOps",
-    icon: Cloud,
     accent: "var(--sector-tech)",
   },
   {
-    headline: "AI & Automation",
+    headline: "Website Redesign",
     description:
-      "From intelligent automation to custom ML pipelines, we integrate AI into your workflows to accelerate decision-making, reduce manual overhead, and unlock new capabilities.",
-    sector: "AI & Machine Learning",
-    icon: Cpu,
+      "Migrate from WordPress/Wix to modern Next.js. Zero downtime, SEO preserved.",
+    sector: "Website Redesign",
+    icon: RefreshCw,
     accent: "var(--sector-it)",
   },
   {
-    headline: "Cybersecurity & Compliance",
+    headline: "Feature Injection",
     description:
-      "Our security team conducts threat assessments, implements zero-trust architectures, and ensures your infrastructure meets SOC 2, GDPR, and industry-specific compliance standards.",
+      "Add AI chatbots, payment systems, real-time dashboards to existing codebases.",
+    sector: "Feature Injection",
+    icon: Puzzle,
+    accent: "var(--sector-tech)",
+  },
+  {
+    headline: "Express Build",
+    description:
+      "Landing pages in 72 hours. MVPs in a week. Built for speed.",
+    sector: "Express Build",
+    icon: Zap,
+    accent: "var(--sector-it)",
+  },
+  {
+    headline: "Custom AI Models",
+    description:
+      "Fine-tune models on your data. RAG pipelines, prompt engineering, agent architectures.",
+    sector: "AI Model Training",
+    icon: Brain,
+    accent: "var(--sector-tech)",
+  },
+  {
+    headline: "Security & Compliance",
+    description:
+      "OWASP-hardened codebases, SOC 2 preparation, zero-trust architecture.",
     sector: "Security",
     icon: Shield,
-    accent: "var(--sector-tech)",
-  },
-  {
-    headline: "Systems Integration",
-    description:
-      "We connect disparate platforms, APIs, and data sources into unified workflows — eliminating silos and enabling real-time data flow across your entire technology ecosystem.",
-    sector: "Integration & Architecture",
-    icon: Workflow,
     accent: "var(--sector-it)",
   },
 ];

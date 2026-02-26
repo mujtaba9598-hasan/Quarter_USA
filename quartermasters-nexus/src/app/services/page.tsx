@@ -10,19 +10,40 @@ import { motion } from "framer-motion";
 
 const services = [
     {
-        title: "Technology & R&D",
-        tagline: "Innovation Infrastructure",
-        visual: "tech" as const,
-        href: "/tech-rnd",
-        accent: "var(--sector-tech)"
+        title: "Web Development",
+        tagline: "Full-Stack Applications Built to Scale",
+        visual: "it" as const,
+        href: "/web-development",
+        accent: "var(--sector-it)"
     },
     {
-        title: "IT Services",
-        tagline: "Custom Software Engineering",
+        title: "Website Redesign",
+        tagline: "Transform Legacy Sites into Modern Experiences",
         visual: "it" as const,
-        href: "/it-services",
+        href: "/website-redesign",
         accent: "var(--sector-it)"
-    }
+    },
+    {
+        title: "Feature Injection",
+        tagline: "Add Capabilities Without Rebuilding",
+        visual: "it" as const,
+        href: "/feature-injection",
+        accent: "var(--sector-it)"
+    },
+    {
+        title: "Express Build",
+        tagline: "Ship in Days, Not Months",
+        visual: "it" as const,
+        href: "/express-build",
+        accent: "var(--sector-it)"
+    },
+    {
+        title: "Custom AI Models",
+        tagline: "Your Data. Your Model. Your Advantage.",
+        visual: "tech" as const,
+        href: "/ai-model-training",
+        accent: "var(--sector-tech)"
+    },
 ];
 
 export default function ServicesPage() {
@@ -51,7 +72,7 @@ export default function ServicesPage() {
                 </div>
 
                 <div className="mx-auto max-w-5xl px-6 relative z-20">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
                         {services.map((service) => (
                             <ClickSpark key={service.title} sparkColor={service.accent} sparkSize={6} sparkRadius={15} sparkCount={8} duration={400}>
                                 <GlassSurface width="100%" height={280} borderRadius={16} backgroundOpacity={0.15}>

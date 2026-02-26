@@ -5,8 +5,11 @@ import { CookiePreferencesButton } from "@/components/layout/CookiePreferencesBu
 
 const footerLinks = {
   services: [
-    { label: "Technology & Innovation", href: "/tech-rnd" },
-    { label: "IT Services", href: "/it-services" },
+    { label: "Web Development", href: "/web-development" },
+    { label: "Website Redesign", href: "/website-redesign" },
+    { label: "Feature Injection", href: "/feature-injection" },
+    { label: "Express Build", href: "/express-build" },
+    { label: "Custom AI Models", href: "/ai-model-training" },
   ],
   company: [
     { label: "About Us", href: "/about" },
@@ -62,13 +65,14 @@ export function Footer() {
                 className="mt-4 max-w-sm text-sm leading-relaxed"
                 style={{ color: "rgba(255,255,255,0.6)" }}
               >
-                Premium technology consulting and IT services —
-                driving innovation, digital transformation, and scalable
-                solutions for modern enterprises.
+                Web development, AI integration, and custom digital
+                infrastructure — built by senior engineers for businesses
+                that demand an unfair advantage.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
-                <span className="pill-tag pill-tag--tech">#TechInnovation</span>
-                <span className="pill-tag pill-tag--it">#ITServices</span>
+                <span className="pill-tag pill-tag--tech">#WebDev</span>
+                <span className="pill-tag pill-tag--it">#AIIntegration</span>
+                <span className="pill-tag pill-tag--tech">#ExpressBuild</span>
               </div>
             </div>
 

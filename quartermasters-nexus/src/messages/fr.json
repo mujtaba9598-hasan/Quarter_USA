@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Quartermasters — Conseil Stratégique et Accompagnement",
-    "description": "Conseil technologique premium sur deux verticales spécialisées : Technologie et Innovation et Services IT."
+    "title": "Quartermasters — Développement Web & Solutions IA",
+    "description": "Développement web premium, intégration IA, refonte de sites web, constructions express et entraînement de modèles IA personnalisés."
   },
   "nav": {
     "home": "Accueil",
@@ -13,24 +13,39 @@
     "login": "Connexion"
   },
   "hero": {
-    "tagline": "Conseil Stratégique et Accompagnement",
-    "headline": "Votre Avantage Stratégique Commence Ici",
-    "subheadline": "Deux verticales. Une mission. Accélérer votre croissance avec un conseil technologique de précision, de la Californie au monde entier.",
+    "tagline": "Développement Web & Solutions IA",
+    "headline": "Nous Créons des Sites Web. Nous Entraînons des Modèles IA.",
+    "subheadline": "Développement web full-stack, intégration IA et infrastructure numérique personnalisée. Basé en Californie.",
     "cta_primary": "Démarrer une Conversation",
     "cta_secondary": "Explorer les Services"
   },
   "services": {
-    "title": "Nos Verticales de Service",
-    "subtitle": "Deux pratiques spécialisées. Une stratégie unifiée.",
-    "tech_rnd": {
-      "name": "Technologie et R&D",
-      "tagline": "Innover avec sens",
-      "description": "Conseil et R&D en éducation technologique, transformation numérique, stratégie des technologies émergentes et programmes d'innovation."
+    "title": "Nos Services",
+    "subtitle": "Cinq modules spécialisés. Une équipe d'ingénierie.",
+    "web_development": {
+      "name": "Développement Web",
+      "tagline": "Full-stack. Grade entreprise.",
+      "description": "Applications Next.js/React/TypeScript avec server components, temps de réponse inférieurs à 200ms et architecture de grade entreprise."
     },
-    "it_services": {
-      "name": "Services IT",
-      "tagline": "Construire. Livrer. Évoluer.",
-      "description": "Développement logiciel, applications web, plateformes SaaS, architecture cloud et services d'implémentation technique."
+    "website_redesign": {
+      "name": "Refonte de Sites Web",
+      "tagline": "Stack moderne. Zéro interruption.",
+      "description": "Migration depuis WordPress, Wix ou plateformes legacy vers une architecture Next.js moderne avec préservation SEO et zéro interruption."
+    },
+    "feature_injection": {
+      "name": "Injection de Fonctionnalités",
+      "tagline": "Améliorez votre code.",
+      "description": "Ajoutez des chatbots IA, des systèmes de paiement, l'authentification, des tableaux de bord temps réel et plus à vos applications existantes."
+    },
+    "express_build": {
+      "name": "Construction Express",
+      "tagline": "72 heures. Terminé.",
+      "description": "Pages d'atterrissage en 72 heures, MVPs en une semaine, sites de campagne à la demande. Conçu pour la vitesse sans sacrifier la qualité."
+    },
+    "ai_model_training": {
+      "name": "Entraînement de Modèles IA",
+      "tagline": "Vos données. Votre modèle.",
+      "description": "Fine-tuning, pipelines RAG, ingénierie de prompts et architectures d'agents IA adaptés aux besoins de votre entreprise."
     },
     "learn_more": "En Savoir Plus",
     "get_started": "Commencer"
@@ -51,15 +66,15 @@
   },
   "chat": {
     "title": "Q",
-    "subtitle": "Consultant Senior en Stratégie",
+    "subtitle": "Architecte Senior",
     "placeholder": "Posez vos questions sur nos services, tarifs ou méthodologie...",
-    "empty_state": "Activez l'intelligence Quartermasters. Interrogez nos services technologiques, nos tarifs ou notre méthodologie.",
+    "empty_state": "Activez l'intelligence Quartermasters. Interrogez nos services de développement web, entraînement de modèles IA, tarifs ou méthodologie.",
     "send": "Envoyer",
     "typing": "Q réfléchit..."
   },
   "booking": {
     "title": "Prendre Rendez-vous",
-    "subtitle": "Planifiez un appel avec notre équipe stratégie",
+    "subtitle": "Planifiez un appel avec notre équipe d'ingénierie",
     "discovery": "Appel Découverte",
     "discovery_desc": "Appel introductif de 15 minutes pour comprendre vos besoins",
     "express_consult": "Consultation Express",
@@ -67,11 +82,11 @@
     "strategy_session": "Session Stratégie",
     "strategy_desc": "Analyse approfondie de 30 minutes de vos enjeux",
     "executive_briefing": "Briefing Exécutif",
-    "executive_desc": "Revue stratégique complète de 60 minutes"
+    "executive_desc": "Revue technique complète de 60 minutes"
   },
   "contact": {
     "title": "Nous Contacter",
-    "subtitle": "Commençons une conversation sur vos besoins stratégiques",
+    "subtitle": "Commençons une conversation sur votre projet",
     "name": "Nom Complet",
     "email": "Adresse Email",
     "company": "Entreprise",
@@ -81,7 +96,7 @@
     "error": "Échec de l'envoi du message. Veuillez réessayer."
   },
   "footer": {
-    "tagline": "Conseil stratégique de la Californie au monde entier.",
+    "tagline": "Développement web & solutions IA depuis la Californie.",
     "services": "Services",
     "company": "Entreprise",
     "legal": "Mentions Légales",

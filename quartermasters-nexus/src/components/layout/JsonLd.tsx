@@ -6,7 +6,7 @@ export function JsonLd() {
     url: "https://quartermasters.me", // TODO: Replace with final domain
     logo: "/og-image.jpg",
     description:
-      "Premium strategic consulting across two verticals: Technology & Innovation and IT Services.",
+      "Premium web development, AI integration, and custom digital solutions. California-based, globally connected.",
     address: {
       "@type": "PostalAddress",
       addressRegion: "California",
@@ -30,20 +30,35 @@ export function JsonLd() {
       addressCountry: "US",
     },
     description:
-      "Premium consulting firm operating across two integrated verticals: Technology & Innovation and IT Services.",
+      "Web development, AI integration, website redesign, feature injection, express builds, and custom AI model training.",
     priceRange: "$$$$",
   };
 
   const services = [
     {
-      name: "Technology & Innovation Consulting",
+      name: "Web Development",
       description:
-        "Digital transformation, technology strategy, R&D advisory, and emerging technology assessment.",
+        "Full-stack Next.js/React/TypeScript applications with enterprise-grade architecture.",
     },
     {
-      name: "IT Services",
+      name: "Website Redesign",
       description:
-        "Custom software development, web application engineering, SaaS platform architecture, and digital product strategy.",
+        "Migration from legacy platforms to modern Next.js architecture with SEO preservation.",
+    },
+    {
+      name: "Feature Injection",
+      description:
+        "Add AI, payments, auth, and real-time capabilities to existing codebases.",
+    },
+    {
+      name: "Express Build",
+      description:
+        "Landing pages in 72 hours, MVPs in a week, campaign sites on demand.",
+    },
+    {
+      name: "Custom AI Model Training",
+      description:
+        "Fine-tuning, RAG pipelines, prompt engineering, and AI agent architectures.",
     },
   ];
 
@@ -71,7 +86,7 @@ export function JsonLd() {
         name: "What services does Quartermasters offer?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Quartermasters provides two integrated consulting services: Technology & Innovation and IT Services.",
+          text: "Quartermasters offers five core services: Web Development, Website Redesign, Feature Injection, Express Build, and Custom AI Model Training.",
         },
       },
       {
@@ -87,7 +102,7 @@ export function JsonLd() {
         name: "What industries does Quartermasters serve?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Quartermasters serves a wide range of industries including finance, technology, healthcare, events, and enterprise organizations seeking strategic consulting and advisory services.",
+          text: "Quartermasters serves startups, scale-ups, and enterprises across all industries seeking premium web development, AI integration, and custom digital infrastructure.",
         },
       },
     ],

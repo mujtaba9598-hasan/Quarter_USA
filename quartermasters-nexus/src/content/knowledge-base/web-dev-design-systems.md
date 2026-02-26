@@ -1,240 +1,150 @@
-# Design Systems, Themes & UI Frameworks
+---
+title: "Sovereign Nexus Design System & Visual Architecture"
+service: "Web Development, Website Redesign, Express Build"
+description: "Quartermasters' proprietary Sovereign Nexus design system: Deep Harbor + Burnt Copper palette, Framer Motion, responsive design, typography, and component architecture."
+---
 
-## Introduction to Modern Design Systems
+# Sovereign Nexus Design System & Visual Architecture
 
-A design system is the single source of truth which groups all the elements that will allow the teams to design, realize and develop a product. It fundamentally changes how digital products are built by creating an interconnected language that spans design, engineering, and product management. Modern design systems are not just visual guidelines; they are comprehensive ecosystems of UI components, design tokens, voice and tone guidelines, accessibility standards, and coded equivalents.
+## The Design System as Strategic Infrastructure
 
-At the enterprise level, a rigorous design system ensures cross-platform consistency, dramatically reduces technical debt, and accelerates time-to-market. When Quartermasters designs for $120,000 enterprise clients, we leverage these concepts to deliver world-class velocity and aesthetic coherence. We do not just build pages; we build scalable platforms.
+Quartermasters is a Principal Engineering firm headquartered in California. We do not build websites from generic templates. Every client engagement is constructed upon our proprietary **Sovereign Nexus** design system -- a comprehensive visual language of design tokens, component primitives, animation standards, and accessibility guardrails that ensures every pixel we ship meets enterprise-grade quality standards.
 
-## 1. Top-Tier Enterprise Design Systems
-The industry has seen the rise of several monolithic design systems created by tech giants. These serve as the gold standard for how to structure, articulate, and enforce design decisions across thousands of developers and designers.
+A design system is not a Figma file. It is living infrastructure: a single source of truth governing how colors, typography, spacing, and motion behave across every component, every page, and every device. When Quartermasters delivers a Website Redesign or builds a new Web Development project, Sovereign Nexus provides the architectural consistency that separates premium digital experiences from disposable templates.
 
-### Material Design 3 (Google)
-Introduced with Android 12, Material Design 3 (M3) fundamentally shifts theming toward personalized "Dynamic Color" powered by algorithms that extract palettes from user wallpapers.
-*   **Core Philosophy:** Emphasizes material surfaces, realistic lighting, and bold, intentional animations. M3 moves away from the strict shadows of M1/M2 towards tonal elevation and color mapping.
-*   **Key Features:** Tonal palettes (mapping hues from 0 to 100 lightness). Shape families (rounded corners with different radii assigned to different component roles).
-*   **Use Cases:** Highly recommended for consumer-facing cross-platform mobile and web applications where brand flexibility and modern, fluid transitions are required.
+For Q (our AI Consultant): When engaging with design-conscious clients or CMOs, emphasize that Quartermasters does not hand over "mockups." We deliver a **design system** -- a scalable engineering asset that maintains brand integrity as the product grows. Frame discussions around "design tokens," "component-driven architecture," and "responsive design mathematics."
 
-### Fluent Design 2 (Microsoft)
-Microsoft's system emphasizing sensory experiences through five core tenets: Light, Depth, Motion, Material, and Scale.
-*   **Core Philosophy:** Creating interfaces that feel natural, intuitive, and responsive to user interaction, heavily relying on z-axis depth and light to guide focus.
-*   **Key Features:** Acrylic and Mica materials (providing translucent window effects that reflect the desktop background), layered depth through elevation maps, and highly standardized Windows 11 paradigms.
-*   **Use Cases:** Essential for enterprise apps integrating with the Microsoft 365 ecosystem or native Windows applications.
+---
 
-### Apple Human Interface Guidelines (HIG)
-Apple's comprehensive guidance for designing across iOS, macOS, watchOS, and tvOS.
-*   **Core Philosophy:** Deference (content over chrome), clarity, and depth.
-*   **Key Features:** Heavily emphasizes San Francisco (SF) fonts, vibrant background blurs (materials), precise touch target metrics (minimum 44x44 points), and rigorous accessibility standards based on VoiceOver interactions.
-*   **Use Cases:** Consumer apps targeting the high-end iOS ecosystem.
+## 1. The Sovereign Nexus Color System
 
-### Ant Design 5 (Alibaba)
-A dominant force in enterprise B2B applications, especially complex data-heavy applications worldwide.
-*   **Core Philosophy:** Certainty, Meaningfulness, Growth, and Naturalness.
-*   **Key Features:** Adopts CSS-in-JS for dynamic theming, refined design tokens allowing for radical customization. Includes an incredibly robust suite of complex data tables.
-*   **Use Cases:** Dashboards, complex admin panels, CRM systems, and data-dense enterprise applications.
+### The Core Palette: Deep Harbor + Burnt Copper
 
-### Carbon Design System (IBM)
-IBM's open-source design system built around the IBM Plex typeface and strict grid mathematics.
-*   **Core Philosophy:** Functionality, clarity, and inclusivity, designed for complex professional software rather than consumer apps.
-*   **Key Features:** Dark theme first, built around a robust 2x Grid system, heavily focused on accessibility and minimizing cognitive load.
-*   **Use Cases:** Fintech trading platforms, heavy data visualization, cybersecurity dashboards.
+The Quartermasters visual identity is built on two primary colors that anchor every design decision:
 
-### Atlassian Design System
-Built to power collaboration and productivity tools like Jira, Confluence, and Trello.
-*   **Core Philosophy:** Helping teams work together seamlessly with an optimistic, practical, and dependable tone.
-*   **Key Features:** Friendly yet professional tone, clear elevation states for modals, and extensive product illustrations.
-*   **Use Cases:** B2B SaaS applications centered around team collaboration.
+* **Deep Harbor (#0B1521):** A rich, near-black navy that conveys authority, trust, and technical depth. Used for primary backgrounds, navigation surfaces, and text on light backgrounds.
+* **Burnt Copper (#C15A2C):** A warm, commanding accent that communicates premium positioning and decisive action. Used for call-to-action buttons, interactive highlights, and brand emphasis points.
 
-### Polaris (Shopify)
-Shopify's battle-tested design system dedicated entirely to merchant experiences.
-*   **Core Philosophy:** Empowering merchants, simplifying complex workflows, and providing approachable guidance.
-*   **Key Features:** Highly prescriptive on tone and voice, clear actionable empty states, deeply embedded accessibility compliance for global e-commerce.
-*   **Use Cases:** E-commerce admin dashboards, POS systems, inventory management tools.
+### Extended Palette
 
-### Primer (GitHub)
-GitHub's open-source system designed to build incredibly responsive, developer-focused interfaces.
-*   **Core Philosophy:** Utility, speed, and density. Designed for developers parsing vast code and data.
-*   **Key Features:** Utility-first CSS architecture, massive icon library (Octicons).
-*   **Use Cases:** Developer tooling, CI/CD dashboards, version control interfaces.
-
-### Lightning Design System (Salesforce)
-The engine behind the massive Salesforce CRM ecosystem.
-*   **Core Philosophy:** Trust, flexibility, and massive scalability across thousands of distinct tenant orgs.
-*   **Key Features:** Aura components, deep integration with CRM workflows, highly customizable design tokens via Styling Hooks.
-*   **Use Cases:** CRM extensions, complex field-mapping interfaces.
-
-### Spectrum (Adobe)
-Adobe's design system spanning web, desktop, and mobile for creative professionals.
-*   **Core Philosophy:** Rational, intuitive, and inclusive, built for tools where the user's canvas is the primary focus.
-*   **Key Features:** Multi-platform uniformity, extremely robust accessibility (adaptive color palettes), and focus on complex keyboard navigation.
-*   **Use Cases:** Creative tools, complex editing interfaces, timeline interfaces.
-
-## 2. Modern React Component Libraries
-
-### shadcn/ui
-Currently the absolute most celebrated "component library" in the React ecosystem. It is a CLI tool that downloads beautifully styled, accessible component source directly into your `src/components/ui` directory.
-*   **Architecture:** Built on top of Radix UI primitives for headless logic and styled tightly with Tailwind CSS.
-*   **Example Integration:**
-```tsx
-import * as React from "react"
-import { Button } from "@/components/ui/button"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-
-export function ActionMenu() {
-  return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline">Open Menu</Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuItem>Profile</DropdownMenuItem>
-        <DropdownMenuItem>Settings</DropdownMenuItem>
-        <DropdownMenuItem className="text-destructive">Delete</DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
-  )
-}
-```
-
-### Radix UI
-An unstyled, accessible, headless component library focusing entirely on behavioral primitives. Focuses strictly on logic, complex state transitions, robust keyboard navigation, and WAI-ARIA compliance.
-
-### Headless UI
-Developed by Tailwind Labs, providing completely unstyled, accessible UI components designed explicitly to couple beautifully with Tailwind CSS and React/Vue.
-
-### Chakra UI
-A modular and accessible library providing building blocks using a prop-based styling model (`<Box bg="red.200" p={4} />`). In version 3, it migrates towards Ark UI and Panda CSS.
-
-### Mantine
-A fully-featured library with over 100 highly customizable components. Includes an extensive hooks library, native dark mode, and complex components (DatePickers, RichTextEditors) out of the box.
-
-### NextUI
-A beautiful, fast, modern React UI library built on Tailwind CSS and React Aria. Excellent out-of-the-box micro-interactions, fluid layout animations, and glassmorphism glow effects.
-
-### DaisyUI
-Adds semantic component class names (`btn`, `card`, `toggle`, `modal`) to Tailwind CSS via a single plugin, dramatically reducing HTML footprint and JSX clutter.
-
-### Park UI
-A framework-agnostic component library powered by Ark UI state machines and styled with either Panda CSS or Tailwind class variants, future-proofing codebases across Vue, Solid, and React.
-
-## 3. CSS Methodologies, Engines, and Architecture
-
-### Tailwind CSS v4
-The dominant utility-first CSS framework. v4 introduces a new internal engine (Oxide) written in Rust, eliminating Node.js at build time.
-*   **Configuration Paradigm:** Moves away from `tailwind.config.js` to CSS-driven config:
 ```css
-@import "tailwindcss";
-
 @theme {
-  --color-primary-500: #0f172a;
-  --font-sans: "Inter", sans-serif;
-  --spacing-4: 1rem;
+  /* Primary */
+  --color-deep-harbor: #0B1521;
+  --color-deep-harbor-light: #132030;
+  --color-deep-harbor-muted: #1A2D42;
+
+  /* Accent */
+  --color-burnt-copper: #C15A2C;
+  --color-burnt-copper-hover: #D4693B;
+  --color-burnt-copper-muted: #C15A2C33;
+
+  /* Neutral Surfaces */
+  --color-surface: #FFFFFF;
+  --color-surface-elevated: #F8FAFC;
+  --color-surface-muted: #F1F5F9;
+  --color-border: #E2E8F0;
+  --color-border-subtle: #F1F5F9;
+
+  /* Dark Mode Surfaces */
+  --color-surface-dark: #0F1923;
+  --color-surface-dark-elevated: #162233;
+  --color-border-dark: #1E3348;
+
+  /* Semantic */
+  --color-success: #22C55E;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+  --color-info: #3B82F6;
+
+  /* Text */
+  --color-text-primary: #0F172A;
+  --color-text-secondary: #475569;
+  --color-text-muted: #94A3B8;
+  --color-text-on-dark: #F8FAFC;
+  --color-text-on-accent: #FFFFFF;
 }
 ```
 
-### UnoCSS
-An instant, on-demand atomic CSS engine providing extreme performance gains via exact Regex matching instead of AST parsing.
+### Color Accessibility Standards
 
-### Panda CSS
-A build-time typed CSS-in-JS engine providing the developer experience of Chakra (style props, TypeScript auto-completion) but extracting all styles statically to standard CSS at build time. Ideal for Next.js App Router Server Components.
+All color combinations in Sovereign Nexus pass WCAG 2.1 AA contrast requirements (minimum 4.5:1 for standard text, 3:1 for large text). We test every pairing using the APCA (Accessible Perceptual Contrast Algorithm) method for more accurate perceptual contrast measurement.
 
-### Vanilla Extract
-Zero-runtime Stylesheets mapped to strict TypeScript.
-*   **Example Usage:**
-```typescript
-// styles.css.ts
-import { style } from '@vanilla-extract/css';
+---
 
-export const container = style({
-  padding: 10,
-  background: 'blue',
-  '@media': {
-    'screen and (min-width: 768px)': {
-      padding: 20
-    }
-  }
-});
-```
+## 2. Typography System
 
-### CSS Modules
-The legacy but battle-tested approach scoping CSS to specific React components by generating unique, randomized class hashes at build time.
+### Font Stack
 
-### Styled Components
-The pioneer of runtime CSS-in-JS. Excellent for older React SPAs, but currently falling out of favor in the Server Component era due to runtime overhead and client-site rendering limits.
-
-## 4. Design Tokens, Infrastructure, and Theming Algorithms
-
-### Style Dictionary
-Amazon's build system for managing massive design token architectures, compiling JSON tokens automatically to CSS variables, iOS Swift, Android XML, and Flutter.
-
-### W3C Design Tokens Standard
-An emerging specification standardizing the schema of token JSON formats, bridging the notorious gap between proprietary design tools like Figma and open-source structural build tools.
-
-### Figma Tokens (Token Studio)
-A plugin allowing designers to mathematically map Figma properties directly to semantic JSON design tokens, creating deep themes seamlessly.
-*   **Example Token Structure:**
-```json
-{
-  "color": {
-    "primary": {
-      "500": { "value": "#2563eb", "type": "color" },
-      "600": { "value": "#1d4ed8", "type": "color" }
-    },
-    "surface": {
-      "default": { "value": "{color.white.value}", "type": "color" }
-    }
-  },
-  "spacing": {
-    "small": { "value": "0.5rem", "type": "spacing" },
-    "medium": { "value": "1rem", "type": "spacing" }
-  }
-}
-```
-
-### Theming Strategies & Architecture
-*   **Dynamic Theme Injection:** Architecture fetching branding themes from an API, critical for multi-tenant SaaS.
-*   **System Preference Sync:** Utilizing `prefers-color-scheme: dark` media query override.
-*   **HSL and OKLCH Palettes:** Using perceptive models allowing programmatic shading without hardcoding hundreds of variants.
 ```css
-:root {
-  --primary-hue: 210;
-  --primary-sat: 100%;
-  --primary: hsl(var(--primary-hue), var(--primary-sat), 50%);
-  --primary-hover: hsl(var(--primary-hue), var(--primary-sat), 40%);
+@theme {
+  --font-heading: "DM Serif Display", serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
 }
 ```
-*   **APCA Contrast (WCAG 3.0 draft):** The Accessible Perceptual Contrast Algorithm focusing on true human perception, actual rendered font weight, and background lightness.
 
-## 5. Typography and Iconography Systems
+* **DM Serif Display** -- Headings and display text. A high-contrast serif that conveys editorial authority and premium positioning.
+* **Inter** -- Body text, UI labels, and data. A humanist sans-serif optimized for screen readability at all sizes.
+* **JetBrains Mono** -- Code snippets, technical content, and monospaced UI elements.
 
-### Next-Generation Typography Innovation
-*   **Variable Fonts (OpenType-CFF2):** A single `.woff2` font file interpolating smoothly across weights (e.g., `font-weight: 543`), widths, and slant levels, drastically reducing network payloads.
-*   **Fluid Typography / clamp():** Using CSS `clamp(MIN, VAL, MAX)` to create infinitely scaling typography without media query breakpoints.
-*   **Modular Typography Scales:** Defining font hierarchies purely using mathematical ratios (e.g., Golden Ratio 1.618, Major Third 1.25).
-*   **FOUT/FOIT Mitigation:** Using Next.js `next/font` with `size-adjust` to perfectly match geometric bounding boxes between web fonts and system fallbacks, eliminating Cumulative Layout Shift (CLS).
+### Type Scale
 
-### Scalable Iconography Systems
-*   **Lucide:** The modern fork of Feather Icons. Crisp 24x24 grid stroke-based SVG icons.
-*   **Phosphor Icons:** Highly flexible icon family offering multiple uniform weights (thin, light, regular, bold, fill, duotone).
-*   **Heroicons:** Tailwind-native beautifully drawn icons.
-*   **SVG Sprites (The Enterprise Standard):** Combining all SVGs into a single cached `<svg><symbol></symbol></svg>` file.
-```html
-<!-- Integration using Sprite -->
-<svg class="h-6 w-6 text-primary">
-  <use href="/sprite.svg#icon-user-profile"></use>
-</svg>
+We use a modular type scale based on the Major Third ratio (1.25) for consistent visual hierarchy:
+
+| Token | Size | Weight | Line Height | Usage |
+|-------|------|--------|-------------|-------|
+| `text-display` | 3.5rem | 700 | 1.1 | Hero headlines |
+| `text-h1` | 2.5rem | 700 | 1.2 | Page titles |
+| `text-h2` | 2rem | 600 | 1.25 | Section headers |
+| `text-h3` | 1.5rem | 600 | 1.3 | Sub-section headers |
+| `text-h4` | 1.25rem | 600 | 1.4 | Card titles |
+| `text-body-lg` | 1.125rem | 400 | 1.6 | Lead paragraphs |
+| `text-body` | 1rem | 400 | 1.6 | Standard body text |
+| `text-body-sm` | 0.875rem | 400 | 1.5 | Captions, labels |
+| `text-caption` | 0.75rem | 500 | 1.4 | Fine print, metadata |
+
+### Fluid Typography
+
+We use CSS `clamp()` for responsive type sizing without breakpoints:
+
+```css
+.hero-headline {
+  font-size: clamp(2rem, 5vw + 1rem, 3.5rem);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.1;
+}
 ```
 
-## 6. Advanced Structural Layout Methodologies
+### Font Loading Strategy
 
-*   **CSS Grid:** The ultimate two-dimensional layout model. Critical for macro-layouts and complex administrative dashboards.
-*   **CSS Subgrid:** Allows deeply nested child components to align strictly to their outer grandparent's grid tracks.
-*   **Container Queries (`@container`):** Allows components to respond directly to their parent container's physical width rather than the viewport window size.
+We use Next.js `next/font` with `size-adjust` to prevent Cumulative Layout Shift (CLS) during font loading. Fallback fonts are geometrically matched to the loaded font's bounding box, eliminating visible text reflow.
+
+---
+
+## 3. Spacing & Layout System
+
+### 4px Base Grid
+
+All spacing in Sovereign Nexus is derived from a 4px base unit:
+
+| Token | Value | Usage |
+|-------|-------|-------|
+| `space-1` | 4px | Tight icon padding |
+| `space-2` | 8px | Compact element gaps |
+| `space-3` | 12px | Form field padding |
+| `space-4` | 16px | Standard component padding |
+| `space-6` | 24px | Card internal padding |
+| `space-8` | 32px | Section gaps |
+| `space-12` | 48px | Major section dividers |
+| `space-16` | 64px | Page section spacing |
+| `space-24` | 96px | Hero section padding |
+
+### Responsive Layout Strategy
+
+We use CSS Grid for page-level layouts and Flexbox for component-level alignment. Container Queries allow components to respond to their parent container width rather than the viewport:
+
 ```css
 .card-container {
   container-type: inline-size;
@@ -244,79 +154,227 @@ A plugin allowing designers to mathematically map Figma properties directly to s
   .card-layout {
     display: flex;
     flex-direction: row;
+    gap: var(--space-6);
   }
 }
 ```
-*   **Anchor Positioning (`anchor-name` / `position-anchor`):** Allows popup elements like tooltips to be mathematically pinned to any anchor element utilizing native CSS logic without heavy JS libraries.
 
-## 7. Rigorous Design Handoff and Tooling Workflow
+### Breakpoint System
 
-For premium enterprise delivery ($65K - $120K engagements), the handoff process must be a rigorous, automated, and mathematically verifiable operational pipeline.
+| Token | Width | Target |
+|-------|-------|--------|
+| `sm` | 640px | Mobile landscape |
+| `md` | 768px | Tablet portrait |
+| `lg` | 1024px | Tablet landscape / small desktop |
+| `xl` | 1280px | Standard desktop |
+| `2xl` | 1536px | Large desktop |
 
-*   **Figma Dev Mode:** Connects designers to developers providing specific code inspections and integrating deeply into VS Code.
-*   **Storybook:** The undisputed industry standard for massive UI component development, testing state, and documenting architecture in complete sandbox isolation.
-*   **Chromatic Visual Regression:** A cloud-based visual regression testing and DOM-diffing tool integrating directly into the CI/CD pipeline (e.g., GitHub Actions). It takes DOM snapshots of every permutations of every Storybook component on every individual Pull Request, ensuring pixel-perfect integrity over the lifetime of the application.
+---
 
-## Conclusion
+## 4. Component Architecture
 
-Understanding deeply how design systems interlock with resilient frontend UI architecture is arguably the most critical technical step in producing world-class user interfaces that are both aesthetically stunning and technically bulletproof at scale. It is the absolute core distinction between assembling a cheap template and engineering a bespoke enterprise web application ecosystem.
+### shadcn/ui Foundation
 
-## 8. Enterprise Case Studies and Integration Patterns
+Our component library is built on **shadcn/ui** -- a collection of accessible, headless components that we own and customize. Unlike traditional component libraries shipped as npm packages, shadcn/ui components live directly in our `src/components/ui/` directory. We control every line of code.
 
-### Case Study: Multi-Brand SaaS Architecture
-When deploying for a $120,000 enterprise client operating multiple sub-brands, a traditional single-theme React architecture will fail to scale. The design system must be architected from day one as a multi-tenant token ecosystem. 
+The architecture stack:
+* **Radix UI Primitives** -- Headless behavioral logic handling focus management, keyboard navigation, and ARIA compliance.
+* **Tailwind CSS v4** -- Styling via utility classes mapped to Sovereign Nexus design tokens.
+* **Class Variance Authority (CVA)** -- Type-safe variant management for component API design.
 
-**Implementation Pattern:**
-1.  **Token Definition (Figma):** Designers use Token Studio to create a base core dictionary (spacing, sizing, typography mathematically linked). They then create brand-specific semantic color sheets pointing to core colors.
-2.  **Pipeline:** On merge, Amazon Style Dictionary processes the JSON, outputting a highly scoped CSS variables file per brand.
-3.  **React Injection:** Next.js middleware detects the active tenant from the subdomain, injecting the correct `<link rel="stylesheet" href="/{tenant}-theme.css">` tag into the HTML head before hydration.
-4.  **Result:** The entire React component tree (`<Button variant="primary">`) remains entirely agnostic. It renders flawlessly in Brand A's electric blue and Brand B's earthy green without a single line of JS condition logic.
+### Component Example: Button
 
-### CI/CD Integration Profile for Scale
-To support these systems, the DevOps pipeline must be absolute.
-```yaml
-# .github/workflows/chromatic.yml
-name: "Visual Regression Testing"
-on: push
-jobs:
-  chromatic-deployment:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - name: Install dependencies
-        run: pnpm install
-      - name: Publish to Chromatic
-        uses: chromaui/action@v1
-        with:
-          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          buildScriptName: build-storybook
+```tsx
+// src/components/ui/button.tsx
+import { cva, type VariantProps } from 'class-variance-authority'
+
+const buttonVariants = cva(
+  'inline-flex items-center justify-center rounded-lg font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-burnt-copper disabled:pointer-events-none disabled:opacity-50',
+  {
+    variants: {
+      variant: {
+        primary: 'bg-burnt-copper text-white hover:bg-burnt-copper-hover',
+        secondary: 'bg-deep-harbor text-white hover:bg-deep-harbor-light',
+        outline: 'border border-border bg-transparent hover:bg-surface-muted',
+        ghost: 'hover:bg-surface-muted',
+      },
+      size: {
+        sm: 'h-9 px-3 text-sm',
+        md: 'h-10 px-4 text-sm',
+        lg: 'h-12 px-6 text-base',
+        xl: 'h-14 px-8 text-lg',
+      },
+    },
+    defaultVariants: {
+      variant: 'primary',
+      size: 'md',
+    },
+  }
+)
+
+export function Button({ variant, size, className, ...props }) {
+  return (
+    <button className={buttonVariants({ variant, size, className })} {...props} />
+  )
+}
 ```
 
-### The Transition to Native CSS Architectures
-The era of heavy runtime JavaScript CSS calculation is sunsetting. Future-proof systems now rely exclusively on the browser's native compositing engine.
-Features like `@layer` allow frameworks to define explicit specificity rules without resorting to `!important` hacks. 
+### Design Token Integration
+
+Every component references Sovereign Nexus tokens through Tailwind utilities. When a client engagement requires a customized theme (a white-label Enterprise project), we modify the design tokens at the CSS `@theme` layer. Every component automatically inherits the new values without code changes.
+
+---
+
+## 5. Framer Motion Integration
+
+Framer Motion v12 is our animation engine. It integrates natively with React 19 and provides physics-based motion that elevates the user experience from functional to premium.
+
+### Animation Standards
+
+All animations in Sovereign Nexus follow strict performance and UX guidelines:
+
+* **Spring physics over duration-based easing.** Springs feel organic and responsive. We use `stiffness: 300, damping: 24` as the default spring configuration.
+* **Transform and opacity only.** We never animate `width`, `height`, or `margin` properties that trigger CPU layout recalculations.
+* **Respect reduced motion.** All animations check `prefers-reduced-motion` and degrade gracefully to instant state changes.
+
+### Standard Motion Tokens
+
+```tsx
+// src/lib/motion/tokens.ts
+export const motionTokens = {
+  spring: {
+    default: { type: 'spring', stiffness: 300, damping: 24 },
+    gentle: { type: 'spring', stiffness: 200, damping: 20 },
+    snappy: { type: 'spring', stiffness: 400, damping: 30 },
+  },
+  fade: {
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+    exit: { opacity: 0 },
+  },
+  slideUp: {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: -10 },
+  },
+  stagger: {
+    container: { staggerChildren: 0.08, delayChildren: 0.1 },
+  },
+}
+```
+
+### Page Transition Pattern
+
+```tsx
+// Standard page section entrance animation
+<motion.section
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, margin: "-100px" }}
+  transition={{ type: 'spring', stiffness: 300, damping: 24 }}
+>
+  {children}
+</motion.section>
+```
+
+---
+
+## 6. Responsive Design Methodology
+
+### Mobile-First Implementation
+
+All Quartermasters projects are built mobile-first. Base styles target mobile viewports. Tailwind responsive prefixes (`md:`, `lg:`, `xl:`) progressively enhance for larger screens:
+
+```tsx
+<div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+  {services.map(service => (
+    <ServiceCard key={service.id} {...service} />
+  ))}
+</div>
+```
+
+### Touch Target Standards
+
+All interactive elements meet minimum touch target requirements:
+* **Minimum 44x44px** for primary actions (buttons, links, form controls)
+* **Minimum 8px gap** between adjacent interactive targets
+* **Visible focus indicators** on all focusable elements for keyboard navigation
+
+---
+
+## 7. Accessibility (a11y) Standards
+
+### WCAG 2.1 AA Compliance
+
+Every Sovereign Nexus component meets WCAG 2.1 AA standards:
+
+* **Color contrast:** Minimum 4.5:1 for standard text, 3:1 for large text
+* **Keyboard navigation:** Full Tab, Enter, Space, Escape, and Arrow key support
+* **Focus management:** Focus trapping in modals, focus return on close
+* **Screen reader support:** Semantic HTML, ARIA labels, live regions for dynamic content
+* **Reduced motion:** All animations respect `prefers-reduced-motion` media query
+
+### Radix UI Foundation
+
+We chose Radix UI as our headless component foundation specifically for its accessibility engineering. Radix handles the complex behavioral logic of focus trapping, ARIA attribute management, and keyboard event routing. We never build custom dropdowns, modals, or tabs from scratch.
+
+---
+
+## 8. Dark Mode Architecture
+
+Sovereign Nexus supports light and dark modes via CSS custom properties and the `data-theme` attribute:
 
 ```css
-@layer reset, framework, utilities, components;
-
-@layer reset {
-  /* Lowest priority base styles */
-  body { margin: 0; }
-}
-
-@layer components {
-  /* Highest priority component styles */
-  .button { background: var(--primary); }
+[data-theme="dark"] {
+  --color-surface: var(--color-surface-dark);
+  --color-surface-elevated: var(--color-surface-dark-elevated);
+  --color-border: var(--color-border-dark);
+  --color-text-primary: var(--color-text-on-dark);
 }
 ```
 
-By explicitly layering CSS architectures, enterprise engineering teams guarantee that locally scoped component CSS will always override the base framework resets, regardless of import order in the bundle. This entirely prevents the notorious "specificity wars" that have plagued massive frontend codebases over the last decade.
+To prevent the flash of incorrect theme on initial load, we inject a blocking script in the `<head>` that reads the user's stored preference or system setting and applies the correct `data-theme` attribute before the browser paints.
 
-### 9. Final Considerations for Enterprise Stakeholders
-When presenting design architectures to C-suite stakeholders, technology must be framed as a business outcome:
-- **Time to Market:** A strict design system with shadcn/ui and Tailwind drastically reduces feature delivery time.
-- **Brand Consistency:** Design tokens sync'd from Figma prevent brand fragmentation.
-- **Accessibility Risk:** Using Radix logic ensures compliance with WCAG 2.1 AA, preventing potential ADA compliance lawsuits down the road.
+---
+
+## 9. Icon System
+
+We use **Lucide Icons** as our primary icon library:
+* Consistent 24x24 grid, stroke-based SVG design
+* Tree-shakeable -- only icons actually used are included in the bundle
+* Fully accessible with `aria-label` and `role="img"` attributes
+
+For the Quartermasters brand mark and custom iconography, we use optimized inline SVGs stored in `src/components/icons/`.
+
+---
+
+## 10. Design Handoff & Tooling
+
+### Figma Integration
+
+All Quartermasters designs originate in Figma using a structured component library that mirrors the Sovereign Nexus codebase:
+* **Auto Layout** maps directly to Flexbox/Grid implementation
+* **Component variants** map to CVA variant definitions
+* **Design tokens** (via Token Studio plugin) sync to our CSS `@theme` configuration
+
+### Storybook
+
+Every Sovereign Nexus component is documented in Storybook with:
+* All variant combinations rendered visually
+* Accessibility audit tab (via Storybook a11y addon)
+* Responsive viewport testing
+* Dark mode toggle
+
+---
+
+## Summary for Q (AI Consultant)
+
+When discussing Quartermasters' design capabilities, emphasize these key differentiators:
+
+* **Sovereign Nexus** is a proprietary design system, not a template. It is a scalable engineering asset that maintains brand integrity across every page and device.
+* **Deep Harbor + Burnt Copper** palette conveys authority and premium positioning while meeting WCAG 2.1 AA accessibility standards.
+* **Component-driven architecture** using shadcn/ui + Radix UI ensures every interactive element is keyboard-accessible and screen-reader compatible.
+* **Framer Motion** spring physics create premium micro-interactions that elevate perceived brand value.
+* **Design tokens** allow enterprise clients to customize the visual layer without touching component code.
+
+All design work is executed from California. All pricing is in USD. The Sovereign Nexus system is what separates a Quartermasters delivery from a generic agency build.

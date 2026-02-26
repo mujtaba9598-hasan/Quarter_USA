@@ -16,7 +16,7 @@ export type ValidationResult = {
 
 const COMMITMENT_REGEX = /we guarantee|we promise|within \d+ days|100%|we will deliver|guaranteed|absolutely certain/i
 const PRICE_REGEX = /\$\d{1,3}(?:,\d{3})*(?:\.\d{2})?/g
-const SCOPE_TERMS = ['real estate', 'cryptocurrency', 'medical', 'legal advice', 'immigration', 'visa', 'insurance']
+const SCOPE_TERMS = ['cryptocurrency', 'medical', 'legal advice', 'immigration', 'visa', 'insurance', 'banking', 'human resources consultancy', 'event management', 'management consultancy', 'hr consulting']
 
 /**
  * Validates and sanitizes the AI response against business rule guardrails.
@@ -83,4 +83,22 @@ export function validateResponse(
         cleaned,
         flags
     }
+}
+
+// Air Gap — Silicon Valley Shield
+const AIR_GAP_TERMS = [
+  /\buae\b/i, /\bdubai\b/i, /\bajman\b/i, /\bafza\b/i, /\bf\.?z\.?c\b/i,
+  /\bfree\s*zone\b/i, /\briyadh\b/i, /\bmiddle\s*east\b/i, /\baed\b/i,
+  /\bdirham\b/i, /\bemirati\b/i, /\bgulf\b/i, /\bgcc\b/i,
+];
+
+export function checkAirGap(input: string): { blocked: boolean; response: string } {
+  const triggered = AIR_GAP_TERMS.some(regex => regex.test(input));
+  if (triggered) {
+    return {
+      blocked: true,
+      response: "I believe you may have the wrong firm. Quartermasters is a California-based web development and AI solutions company. We don't have any operations or affiliations in that region. How can I help you with your web or AI project?"
+    };
+  }
+  return { blocked: false, response: '' };
 }

@@ -17,17 +17,19 @@ export interface VelvetRopeProps {
 
 const features = {
     standard: [
-        "Core Implementation",
-        "Standard SLA (48hr)",
-        "Email Support",
-        "Quarterly Review"
+        "Full-Stack Implementation",
+        "Standard SLA (48hr response)",
+        "Email & Portal Support",
+        "Post-Launch Bug Fixes (30 days)",
+        "Source Code Ownership"
     ],
     premium: [
-        "Priority Implementation",
-        "Priority SLA (12hr)",
+        "Priority Implementation Queue",
+        "Priority SLA (12hr response)",
         "Direct Slack Channel",
-        "Monthly Strategy Review",
-        "Dedicated Account Manager"
+        "Monthly Architecture Review",
+        "Dedicated Senior Engineer",
+        "AI Integration Included"
     ]
 };
 
@@ -157,7 +159,7 @@ export function VelvetRope({
                             Recommended
                         </span>
                     </div>
-                    <p className="text-sm text-[#C8872E]/70 mb-4 h-8">Full VIP Lifecycle & Priority Routing</p>
+                    <p className="text-sm text-[#C8872E]/70 mb-4 h-8">Full Stack + AI — Priority Engineering</p>
 
                     <div className="mb-6 relative z-10">
                         {premiumPrices.original && (
@@ -208,7 +210,7 @@ export function VelvetRope({
                     onClick={onBookCall}
                     className="text-xs font-medium text-slate-400 hover:text-white transition-colors underline underline-offset-4 decoration-white/20 hover:decoration-white/50"
                 >
-                    Not ready? Book a strategy call with Mujtaba
+                    Not ready? Book a free discovery call
                 </button>
             </motion.div>
         </div>

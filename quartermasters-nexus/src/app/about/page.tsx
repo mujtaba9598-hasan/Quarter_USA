@@ -13,9 +13,9 @@ import ClickSpark from "@/components/ui/ClickSpark";
 
 const milestones = [
   {
-    label: "Licensed Activities",
-    value: "6",
-    detail: "Banking, HR, Management, Events, Tech Education",
+    label: "Core Services",
+    value: "5",
+    detail: "Web Development, AI Integration, Custom Solutions",
   },
   {
     label: "Location",
@@ -53,11 +53,10 @@ export default function AboutPage() {
                 className="max-w-2xl text-lg leading-relaxed"
                 style={{ color: "var(--text-muted)" }}
               >
-                operating across six integrated verticals: Banking Services
-                Consultancy, Human Resources Consultancy, Management Consultancies,
-                Organization & Event Management, and Consulting & R&D in
-                Technology Education. We deliver integrated advisory that connects
-                capital, talent, and logistics into one coherent operating model.
+                specializing in high-end web development, AI integration, and
+                custom digital infrastructure. From full-stack builds to bespoke
+                AI model training, we deliver technology solutions that give
+                businesses an unfair advantage.
               </motion.p>
             </motion.div>
           </div>
@@ -119,7 +118,7 @@ export default function AboutPage() {
               className="text-center text-lg italic"
               style={{ color: "var(--text-muted)" }}
             >
-              Led by experienced professionals across six licensed verticals.
+              Led by senior engineers and architects building the next generation of web infrastructure.
             </motion.p>
           </div>
         </section>

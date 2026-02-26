@@ -240,7 +240,7 @@ export default function PrivacyPolicyPage() {
                     >
                       Quartermasters
                     </p>
-                    <p>Strategic Consulting Firm</p>
+                    <p>Web Development &amp; AI Solutions</p>
                     <p>California, United States</p>
                     <p>
                       Email:{" "}
@@ -396,7 +396,7 @@ export default function PrivacyPolicyPage() {
                   </h3>
                   <p>
                     Payment processing will be handled by PCI-DSS compliant
-                    third-party providers (Stripe and/or PayTabs).{" "}
+                    third-party providers (Stripe).{" "}
                     <strong style={{ color: "var(--text-primary)" }}>
                       We do not store credit card numbers, CVV codes, or full
                       payment card details on our servers.
@@ -566,12 +566,12 @@ export default function PrivacyPolicyPage() {
                       <strong style={{ color: "var(--text-primary)" }}>
                         Service delivery:
                       </strong>{" "}
-                      Responding to inquiries, providing consultancy services
-                      across our six service verticals (Human Resources
-                      Consultancy, Management Consultancies, Consulting &amp;
-                      R&amp;D in Technology Education, Organization &amp; Event
-                      Management, Banking Services Consultancy, and IT Services), and
-                      managing client relationships.
+                      Responding to inquiries, delivering technology services
+                      across our two core service areas (Technology Research &amp;
+                      Development and IT Services — including web development,
+                      AI integration, website redesign, feature injection, express
+                      builds, and custom AI model training), and managing client
+                      relationships.
                     </li>
                     <li>
                       <strong style={{ color: "var(--text-primary)" }}>
@@ -742,7 +742,7 @@ export default function PrivacyPolicyPage() {
                           "Sends service-related emails on our behalf. Receives recipient email addresses and email content. Does not use data for independent marketing.",
                       },
                       {
-                        name: "Stripe / PayTabs",
+                        name: "Stripe",
                         purpose: "Payment Processing (Future)",
                         detail:
                           "Processes payment transactions. These providers are PCI-DSS Level 1 compliant. We do not have access to full card details.",

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Quartermasters — 战略咨询与顾问",
-    "description": "两大专业垂直领域的优质技术咨询：科技与创新和IT服务。"
+    "title": "Quartermasters — Web开发 & AI解决方案",
+    "description": "高端Web开发、AI集成、网站重新设计、快速构建和定制AI模型训练。"
   },
   "nav": {
     "home": "首页",
@@ -13,24 +13,39 @@
     "login": "登录"
   },
   "hero": {
-    "tagline": "战略咨询与顾问",
-    "headline": "您的战略优势从这里开始",
-    "subheadline": "两大垂直领域。一个使命。以精准技术咨询加速您的增长，从加利福尼亚走向世界。",
+    "tagline": "Web开发 & AI解决方案",
+    "headline": "我们构建网站。我们训练AI模型。",
+    "subheadline": "全栈Web开发、AI集成和定制数字基础设施。总部位于加利福尼亚。",
     "cta_primary": "开始对话",
     "cta_secondary": "探索服务"
   },
   "services": {
-    "title": "我们的服务领域",
-    "subtitle": "两大专业实践。一个统一战略。",
-    "tech_rnd": {
-      "name": "科技与研发",
-      "tagline": "有目标的创新",
-      "description": "技术教育咨询与研发、数字化转型、新兴技术战略和创新项目。"
+    "title": "我们的服务",
+    "subtitle": "五个专业模块。一个工程团队。",
+    "web_development": {
+      "name": "Web开发",
+      "tagline": "全栈。企业级。",
+      "description": "具有服务器组件、低于200ms响应时间和企业级架构的Next.js/React/TypeScript应用程序。"
     },
-    "it_services": {
-      "name": "IT服务",
-      "tagline": "构建。交付。扩展。",
-      "description": "软件开发、Web应用、SaaS平台、云架构和技术实施服务。"
+    "website_redesign": {
+      "name": "网站重新设计",
+      "tagline": "现代技术栈。零停机时间。",
+      "description": "从WordPress、Wix或旧平台迁移到现代Next.js架构，保留SEO，零停机时间。"
+    },
+    "feature_injection": {
+      "name": "功能注入",
+      "tagline": "升级您的代码库。",
+      "description": "为您现有的应用程序添加AI聊天机器人、支付系统、身份验证、实时仪表板等。"
+    },
+    "express_build": {
+      "name": "快速构建",
+      "tagline": "72小时。完成。",
+      "description": "72小时内完成落地页，一周内完成MVP，按需构建活动网站。为速度而生，不牺牲质量。"
+    },
+    "ai_model_training": {
+      "name": "定制AI模型训练",
+      "tagline": "您的数据。您的模型。",
+      "description": "微调、RAG管道、提示工程和AI代理架构，根据您的业务需求量身定制。"
     },
     "learn_more": "了解更多",
     "get_started": "立即开始"
@@ -51,15 +66,15 @@
   },
   "chat": {
     "title": "Q",
-    "subtitle": "高级战略顾问",
+    "subtitle": "高级架构师",
     "placeholder": "询问我们的服务、定价或方法论...",
-    "empty_state": "启动Quartermasters智能。询问我们的技术服务、定价或方法论。",
+    "empty_state": "启动Quartermasters智能。询问我们的Web开发服务、AI模型训练、定价或方法论。",
     "send": "发送",
     "typing": "Q正在思考..."
   },
   "booking": {
     "title": "预约咨询",
-    "subtitle": "与我们的战略团队安排通话",
+    "subtitle": "与我们的工程团队安排通话",
     "discovery": "探索通话",
     "discovery_desc": "15分钟介绍性通话，了解您的需求",
     "express_consult": "快速咨询",
@@ -67,11 +82,11 @@
     "strategy_session": "战略会议",
     "strategy_desc": "30分钟深入探讨您的挑战",
     "executive_briefing": "高管简报",
-    "executive_desc": "60分钟全面战略评估"
+    "executive_desc": "60分钟全面技术评估"
   },
   "contact": {
     "title": "联系我们",
-    "subtitle": "让我们就您的战略需求开始对话",
+    "subtitle": "让我们就您的项目开始对话",
     "name": "姓名",
     "email": "电子邮箱",
     "company": "公司",
@@ -81,7 +96,7 @@
     "error": "消息发送失败。请重试。"
   },
   "footer": {
-    "tagline": "从加利福尼亚到世界的战略咨询。",
+    "tagline": "来自加利福尼亚的Web开发 & AI解决方案。",
     "services": "服务",
     "company": "公司",
     "legal": "法律",

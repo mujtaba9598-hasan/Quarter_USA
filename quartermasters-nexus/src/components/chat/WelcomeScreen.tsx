@@ -5,16 +5,16 @@ import { motion } from 'framer-motion';
 import { QAvatar3D } from '../avatar/QAvatar3D';
 import ClickSpark from '../ui/ClickSpark';
 
-const GREETING = "Welcome to Quartermasters. I'm Q, your senior strategy consultant. How can I help you today?";
+const GREETING = "Welcome to Quartermasters. I'm Q, Senior Architect. What are we building today?";
 const CHAR_DELAY = 25; // ms per character
 const TYPING_START = 400; // ms after mount
 const CHIP_STAGGER = 120; // ms between each chip
 
 const CHIPS = [
-    { label: 'I need a new website', variant: 'it', sparkColor: '#6366F1' },
-    { label: 'Website redesign', variant: 'it', sparkColor: '#6366F1' },
-    { label: 'Explore pricing', variant: 'copper', sparkColor: '#C15A2C' },
-    { label: 'Book a call', variant: 'copper', sparkColor: '#C15A2C' },
+    { label: 'I need a website built', variant: 'it', sparkColor: '#10B981' },
+    { label: 'Redesign my site', variant: 'it', sparkColor: '#F59E0B' },
+    { label: 'Add AI to my app', variant: 'tech', sparkColor: '#3B82C4' },
+    { label: "What's Express Build?", variant: 'copper', sparkColor: '#C15A2C' },
 ] as const;
 
 interface WelcomeScreenProps {

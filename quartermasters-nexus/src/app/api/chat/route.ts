@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 import { supabase } from '@/lib/supabase'
 import { retrieveContext } from '@/lib/rag/retrieve'
 import { streamQ } from '@/lib/ai/claude'
-import { validateResponse } from '@/lib/ai/guardrails'
+import { validateResponse, checkAirGap } from '@/lib/ai/guardrails'
 import { rateLimit } from '@/lib/redis'
 
 export async function POST(req: Request) {
@@ -12,6 +12,15 @@ export async function POST(req: Request) {
 
         if (!message || !visitorId) {
             return NextResponse.json({ error: 'Missing message or visitorId' }, { status: 400 })
+        }
+
+        // Air Gap — block UAE/Middle East probes before any processing
+        const airGapResult = checkAirGap(message)
+        if (airGapResult.blocked) {
+            return NextResponse.json({
+                response: airGapResult.response,
+                conversationId: conversationId || null
+            })
         }
 
         const rateLimitResult = await rateLimit(visitorId, 10, 60_000)

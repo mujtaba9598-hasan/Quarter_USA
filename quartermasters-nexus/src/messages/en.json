@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Quartermasters — Strategic Consulting & Advisory",
-    "description": "Premium technology consulting across two specialized verticals: Technology & Innovation and IT Services."
+    "title": "Quartermasters — Web Development & AI Solutions",
+    "description": "Premium web development, AI integration, website redesign, express builds, and custom AI model training."
   },
   "nav": {
     "home": "Home",
@@ -13,24 +13,39 @@
     "login": "Sign In"
   },
   "hero": {
-    "tagline": "Strategic Consulting & Advisory",
-    "headline": "Your Strategic Advantage Starts Here",
-    "subheadline": "Two verticals. One mission. Accelerating your growth with precision technology consulting from California to the world.",
+    "tagline": "Web Development & AI Solutions",
+    "headline": "We Build Websites. We Train AI Models.",
+    "subheadline": "Full-stack web development, AI integration, and custom digital infrastructure. California-based.",
     "cta_primary": "Start a Conversation",
     "cta_secondary": "Explore Services"
   },
   "services": {
-    "title": "Our Service Verticals",
-    "subtitle": "Two specialized practices. One unified strategy.",
-    "tech_rnd": {
-      "name": "Technology & R&D",
-      "tagline": "Innovate with purpose",
-      "description": "Consulting and R&D in technology education, digital transformation, emerging tech strategy, and innovation programs."
+    "title": "Our Services",
+    "subtitle": "Five specialized modules. One engineering team.",
+    "web_development": {
+      "name": "Web Development",
+      "tagline": "Full-stack. Enterprise-grade.",
+      "description": "Next.js/React/TypeScript applications with server components, sub-200ms response times, and enterprise-grade architecture."
     },
-    "it_services": {
-      "name": "IT Services",
-      "tagline": "Build. Ship. Scale.",
-      "description": "Software development, web applications, SaaS platforms, cloud architecture, and technical implementation services."
+    "website_redesign": {
+      "name": "Website Redesign",
+      "tagline": "Modern stack. Zero downtime.",
+      "description": "Migration from WordPress, Wix, or legacy platforms to modern Next.js architecture with SEO preservation and zero downtime."
+    },
+    "feature_injection": {
+      "name": "Feature Injection",
+      "tagline": "Upgrade your codebase.",
+      "description": "Add AI chatbots, payment systems, authentication, real-time dashboards, and more to your existing applications."
+    },
+    "express_build": {
+      "name": "Express Build",
+      "tagline": "72 hours. Done.",
+      "description": "Landing pages in 72 hours, MVPs in a week, campaign sites on demand. Built for speed without sacrificing quality."
+    },
+    "ai_model_training": {
+      "name": "Custom AI Model Training",
+      "tagline": "Your data. Your model.",
+      "description": "Fine-tuning, RAG pipelines, prompt engineering, and AI agent architectures tailored to your business needs."
     },
     "learn_more": "Learn More",
     "get_started": "Get Started"
@@ -51,15 +66,15 @@
   },
   "chat": {
     "title": "Q",
-    "subtitle": "Senior Strategy Consultant",
+    "subtitle": "Senior Architect",
     "placeholder": "Ask about our services, pricing, or methodology...",
-    "empty_state": "Engage Quartermasters intelligence. Ask about our technology services, pricing, or methodology.",
+    "empty_state": "Engage Quartermasters intelligence. Ask about our web development services, AI model training, pricing, or methodology.",
     "send": "Send",
     "typing": "Q is thinking..."
   },
   "booking": {
     "title": "Book a Consultation",
-    "subtitle": "Schedule a call with our strategy team",
+    "subtitle": "Schedule a call with our engineering team",
     "discovery": "Discovery Call",
     "discovery_desc": "15-minute introductory call to understand your needs",
     "express_consult": "Express Consultation",
@@ -67,11 +82,11 @@
     "strategy_session": "Strategy Session",
     "strategy_desc": "30-minute deep dive into your challenges",
     "executive_briefing": "Executive Briefing",
-    "executive_desc": "60-minute comprehensive strategic review"
+    "executive_desc": "60-minute comprehensive technical review"
   },
   "contact": {
     "title": "Get in Touch",
-    "subtitle": "Let's start a conversation about your strategic needs",
+    "subtitle": "Let's start a conversation about your project",
     "name": "Full Name",
     "email": "Email Address",
     "company": "Company",
@@ -81,7 +96,7 @@
     "error": "Failed to send message. Please try again."
   },
   "footer": {
-    "tagline": "Strategic consulting from California to the world.",
+    "tagline": "Web development & AI solutions from California.",
     "services": "Services",
     "company": "Company",
     "legal": "Legal",

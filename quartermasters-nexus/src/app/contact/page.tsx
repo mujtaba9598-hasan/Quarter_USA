@@ -29,14 +29,13 @@ export default function ContactPage() {
       name: formData.get("name") as string,
       email: formData.get("email") as string,
       organization: formData.get("organization") as string,
-      whatsapp: formData.get("whatsapp") as string,
       service: formData.get("service") as string,
       message: formData.get("message") as string,
       _honeypot: formData.get("_honeypot") as string,
     };
 
     try {
-      const res = await fetch("/contact.php", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -93,8 +92,8 @@ export default function ContactPage() {
                 className="max-w-2xl text-lg leading-relaxed"
                 style={{ color: "var(--text-muted)" }}
               >
-                Whether you need advisory on banking services, human resources,
-                management consulting, event management, or technology education — our team is ready to
+                Whether you need web development, AI integration, website redesign,
+                express builds, or custom AI model training — our team is ready to
                 discuss your requirements.
               </motion.p>
             </motion.div>
@@ -244,41 +243,6 @@ export default function ContactPage() {
                         />
                       </div>
 
-                      {/* WhatsApp */}
-                      <div>
-                        <label
-                          htmlFor="whatsapp"
-                          className="mb-2 block text-xs font-medium uppercase tracking-widest"
-                          style={{
-                            fontFamily: "var(--font-heading)",
-                            color: "var(--text-light)",
-                          }}
-                        >
-                          WhatsApp (Optional)
-                        </label>
-                        <input
-                          id="whatsapp"
-                          name="whatsapp"
-                          type="tel"
-                          maxLength={20}
-                          disabled={submitting}
-                          className="w-full rounded-lg border bg-transparent px-4 py-3 text-sm outline-none transition-colors"
-                          style={{
-                            borderColor: "var(--glass-border)",
-                            color: "var(--text-primary)",
-                          }}
-                          onFocus={(e) =>
-                          (e.target.style.borderColor =
-                            "var(--color-gold)")
-                          }
-                          onBlur={(e) =>
-                          (e.target.style.borderColor =
-                            "var(--glass-border)")
-                          }
-                          placeholder="+971 50 123 4567"
-                        />
-                      </div>
-
                       {/* Organization */}
                       <div>
                         <label
@@ -346,24 +310,11 @@ export default function ContactPage() {
                           }
                         >
                           <option value="">Select a service</option>
-                          <option value="banking">
-                            Banking Services Consultancy
-                          </option>
-                          <option value="hr">
-                            Human Resources Consultancy
-                          </option>
-                          <option value="management">
-                            Management Consultancies
-                          </option>
-                          <option value="events">
-                            Organization & Event Management
-                          </option>
-                          <option value="tech">
-                            Technology Education R&D
-                          </option>
-                          <option value="it">
-                            IT Services
-                          </option>
+                          <option value="web-dev">Web Development</option>
+                          <option value="redesign">Website Redesign</option>
+                          <option value="feature-injection">Feature Injection</option>
+                          <option value="express-build">Express Build</option>
+                          <option value="ai-training">Custom AI Model Training</option>
                           <option value="general">General Inquiry</option>
                         </select>
                       </div>

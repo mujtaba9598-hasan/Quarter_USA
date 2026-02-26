@@ -12,25 +12,25 @@ import { HomePageClient } from "@/components/home/HomePageClient";
 
 export const metadata: Metadata = {
   title:
-    "Quartermasters — Technology Consulting & IT Services",
+    "Quartermasters — Web Development & AI Solutions",
   description:
-    "Premium technology consulting and IT services. Digital transformation, software development, cloud infrastructure, and AI integration. California-based, globally connected.",
+    "Premium web development, AI integration, website redesign, express builds, and custom AI model training. California-based tech firm.",
   keywords: [
-    "technology consulting",
-    "IT services",
-    "software development",
-    "digital transformation",
-    "cloud infrastructure",
+    "web development",
     "AI integration",
-    "web application development",
-    "California tech consulting",
-    "enterprise technology",
+    "website redesign",
+    "feature injection",
+    "express build",
+    "custom AI models",
+    "Next.js agency",
+    "California web development",
+    "AI model training",
   ],
   authors: [{ name: "Quartermasters" }],
   openGraph: {
-    title: "Quartermasters — Technology Consulting & IT Services",
+    title: "Quartermasters — Web Development & AI Solutions",
     description:
-      "Premium technology consulting and IT services. California-based, globally connected.",
+      "Premium web development, AI integration, website redesign, express builds, and custom AI model training. California-based tech firm.",
     type: "website",
     locale: "en_US",
   },
@@ -50,22 +50,34 @@ export default function HomePage() {
         {/* SEO-critical static content — sr-only for crawlers */}
         <section className="sr-only" aria-label="Company overview">
           <h1>
-            Quartermasters — Technology Consulting & IT Services
+            Quartermasters — Web Development & AI Solutions
           </h1>
           <p>
-            Premium technology consulting firm delivering digital
-            transformation, software development, cloud infrastructure,
-            and AI-driven innovation.
+            Premium web development, AI integration, website redesign,
+            express builds, and custom AI model training. California-based
+            tech firm.
           </p>
-          <h2>Our Service Verticals</h2>
+          <h2>Our Services</h2>
           <ul>
             <li>
-              Technology & Innovation — Digital transformation, technology
-              strategy, and R&D advisory.
+              Web Development — Full-stack Next.js/React/TypeScript
+              applications with enterprise-grade architecture.
             </li>
             <li>
-              IT Services — Software development, web applications,
-              and technology infrastructure solutions.
+              Website Redesign — Migration from legacy platforms to modern
+              Next.js architecture with SEO preservation.
+            </li>
+            <li>
+              Feature Injection — Add AI, payments, auth, and real-time
+              capabilities to existing codebases.
+            </li>
+            <li>
+              Express Build — Landing pages in 72 hours, MVPs in a week,
+              campaign sites on demand.
+            </li>
+            <li>
+              Custom AI Model Training — Fine-tuning, RAG pipelines, prompt
+              engineering, and AI agent architectures.
             </li>
           </ul>
           <h2>Our Approach</h2>

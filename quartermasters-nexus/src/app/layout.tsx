@@ -30,24 +30,24 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL('https://quartermasters.me'), // TODO: Replace with final domain
   title: {
-    default: "Quartermasters — Strategic Consulting & Advisory",
+    default: "Quartermasters — Web Development & AI Solutions",
     template: "%s | Quartermasters"
   },
   description:
-    "Premium consulting across six verticals: Financial Advisory, Human Capital, Technology & Innovation, Events & Experiences, and Strategic Management. California-based, globally connected.",
+    "Premium web development, website redesign, feature injection, express builds, and custom AI model training. California-based tech firm delivering high-end digital infrastructure.",
   applicationName: 'Quartermasters',
   authors: [{ name: 'Quartermasters' }],
   generator: 'Next.js 16',
   keywords: [
-    "strategic consulting",
-    "financial advisory",
-    "human capital consulting",
-    "technology consulting",
-    "event management",
-    "management consulting",
-    "IT services consulting",
-    "business advisory",
-    "international consulting firm",
+    "web development",
+    "AI integration",
+    "website redesign",
+    "custom AI models",
+    "feature injection",
+    "express build",
+    "tech consulting",
+    "California web agency",
+    "AI model training",
   ],
   referrer: 'origin-when-cross-origin',
   creator: 'Quartermasters',
@@ -58,9 +58,9 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: "Quartermasters — Strategic Consulting & Advisory",
+    title: "Quartermasters — Web Development & AI Solutions",
     description:
-      "Premium consulting across Financial Advisory, Human Capital, Technology & Innovation, Events & Experiences, and Strategic Management.",
+      "Premium web development, AI integration, and custom digital solutions. California-based, globally connected.",
     url: 'https://quartermasters.me', // TODO: Replace with final domain
     siteName: 'Quartermasters',
     images: [
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Quartermasters',
-    description: 'Premium strategic consulting across six verticals.',
+    description: 'Premium web development & AI solutions.',
     images: ['/quartermasters-logo-monogram.png'],
   },
   alternates: {

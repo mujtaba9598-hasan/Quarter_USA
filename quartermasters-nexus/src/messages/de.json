@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Quartermasters — Strategische Beratung & Consulting",
-    "description": "Premium-Technologieberatung in zwei spezialisierten Bereichen: Technologie & Innovation und IT-Services."
+    "title": "Quartermasters — Webentwicklung & KI-Lösungen",
+    "description": "Premium-Webentwicklung, KI-Integration, Website-Redesign, Express-Builds und individuelles KI-Modell-Training."
   },
   "nav": {
     "home": "Startseite",
@@ -13,24 +13,39 @@
     "login": "Anmelden"
   },
   "hero": {
-    "tagline": "Strategische Beratung & Consulting",
-    "headline": "Ihr Strategischer Vorteil Beginnt Hier",
-    "subheadline": "Zwei Bereiche. Eine Mission. Ihr Wachstum beschleunigen mit präziser Technologieberatung von Kalifornien in die Welt.",
+    "tagline": "Webentwicklung & KI-Lösungen",
+    "headline": "Wir bauen Websites. Wir trainieren KI-Modelle.",
+    "subheadline": "Full-Stack-Webentwicklung, KI-Integration und individuelle digitale Infrastruktur. Mit Sitz in Kalifornien.",
     "cta_primary": "Gespräch Starten",
     "cta_secondary": "Leistungen Entdecken"
   },
   "services": {
-    "title": "Unsere Leistungsbereiche",
-    "subtitle": "Zwei spezialisierte Bereiche. Eine einheitliche Strategie.",
-    "tech_rnd": {
-      "name": "Technologie & F&E",
-      "tagline": "Zielgerichtet innovieren",
-      "description": "Beratung und F&E in technologischer Bildung, digitaler Transformation, Strategie für aufkommende Technologien und Innovationsprogramme."
+    "title": "Unsere Leistungen",
+    "subtitle": "Fünf spezialisierte Module. Ein Engineering-Team.",
+    "web_development": {
+      "name": "Webentwicklung",
+      "tagline": "Full-Stack. Enterprise-Niveau.",
+      "description": "Next.js/React/TypeScript-Anwendungen mit Server Components, Antwortzeiten unter 200ms und Enterprise-Architektur."
     },
-    "it_services": {
-      "name": "IT-Services",
-      "tagline": "Entwickeln. Ausliefern. Skalieren.",
-      "description": "Softwareentwicklung, Webanwendungen, SaaS-Plattformen, Cloud-Architektur und technische Implementierungsservices."
+    "website_redesign": {
+      "name": "Website-Redesign",
+      "tagline": "Moderner Stack. Null Ausfallzeit.",
+      "description": "Migration von WordPress, Wix oder Legacy-Plattformen zu moderner Next.js-Architektur mit SEO-Erhalt und null Ausfallzeit."
+    },
+    "feature_injection": {
+      "name": "Feature-Injection",
+      "tagline": "Erweitern Sie Ihren Code.",
+      "description": "Fügen Sie KI-Chatbots, Zahlungssysteme, Authentifizierung, Echtzeit-Dashboards und mehr zu Ihren bestehenden Anwendungen hinzu."
+    },
+    "express_build": {
+      "name": "Express-Build",
+      "tagline": "72 Stunden. Fertig.",
+      "description": "Landing Pages in 72 Stunden, MVPs in einer Woche, Kampagnen-Websites auf Abruf. Gebaut für Geschwindigkeit ohne Qualitätseinbußen."
+    },
+    "ai_model_training": {
+      "name": "Individuelles KI-Modell-Training",
+      "tagline": "Ihre Daten. Ihr Modell.",
+      "description": "Fine-Tuning, RAG-Pipelines, Prompt-Engineering und KI-Agenten-Architekturen, zugeschnitten auf Ihre Geschäftsanforderungen."
     },
     "learn_more": "Mehr Erfahren",
     "get_started": "Jetzt Starten"
@@ -51,15 +66,15 @@
   },
   "chat": {
     "title": "Q",
-    "subtitle": "Senior Strategieberater",
+    "subtitle": "Senior-Architekt",
     "placeholder": "Fragen Sie nach unseren Leistungen, Preisen oder Methodik...",
-    "empty_state": "Aktivieren Sie die Quartermasters-Intelligenz. Fragen Sie nach unseren Technologieleistungen, Preisen oder Methodik.",
+    "empty_state": "Aktivieren Sie die Quartermasters-Intelligenz. Fragen Sie nach unseren Webentwicklungs-Services, KI-Modell-Training, Preisen oder Methodik.",
     "send": "Senden",
     "typing": "Q denkt nach..."
   },
   "booking": {
     "title": "Beratung Buchen",
-    "subtitle": "Vereinbaren Sie einen Termin mit unserem Strategieteam",
+    "subtitle": "Vereinbaren Sie einen Termin mit unserem Engineering-Team",
     "discovery": "Kennenlerngespräch",
     "discovery_desc": "15-minütiges Einführungsgespräch zum Verständnis Ihrer Anforderungen",
     "express_consult": "Express-Beratung",
@@ -67,11 +82,11 @@
     "strategy_session": "Strategiesitzung",
     "strategy_desc": "30-minütiger Deep-Dive in Ihre Herausforderungen",
     "executive_briefing": "Executive-Briefing",
-    "executive_desc": "60-minütige umfassende strategische Überprüfung"
+    "executive_desc": "60-minütige umfassende technische Überprüfung"
   },
   "contact": {
     "title": "Kontakt",
-    "subtitle": "Lassen Sie uns über Ihre strategischen Anforderungen sprechen",
+    "subtitle": "Lassen Sie uns über Ihr Projekt sprechen",
     "name": "Vollständiger Name",
     "email": "E-Mail-Adresse",
     "company": "Unternehmen",
@@ -81,7 +96,7 @@
     "error": "Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut."
   },
   "footer": {
-    "tagline": "Strategische Beratung von Kalifornien in die Welt.",
+    "tagline": "Webentwicklung & KI-Lösungen aus Kalifornien.",
     "services": "Leistungen",
     "company": "Unternehmen",
     "legal": "Rechtliches",

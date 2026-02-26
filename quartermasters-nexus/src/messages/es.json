@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Quartermasters — Consultoría Estratégica y Asesoría",
-    "description": "Consultoría tecnológica premium en dos verticales especializadas: Tecnología e Innovación y Servicios de TI."
+    "title": "Quartermasters — Desarrollo Web y Soluciones de IA",
+    "description": "Desarrollo web premium, integración de IA, rediseño de sitios web, construcciones express y entrenamiento de modelos de IA personalizados."
   },
   "nav": {
     "home": "Inicio",
@@ -13,24 +13,39 @@
     "login": "Iniciar Sesión"
   },
   "hero": {
-    "tagline": "Consultoría Estratégica y Asesoría",
-    "headline": "Su Ventaja Estratégica Comienza Aquí",
-    "subheadline": "Dos verticales. Una misión. Acelerando su crecimiento con consultoría tecnológica de precisión desde California al mundo.",
+    "tagline": "Desarrollo Web y Soluciones de IA",
+    "headline": "Construimos Sitios Web. Entrenamos Modelos de IA.",
+    "subheadline": "Desarrollo web full-stack, integración de IA e infraestructura digital personalizada. Con sede en California.",
     "cta_primary": "Iniciar una Conversación",
     "cta_secondary": "Explorar Servicios"
   },
   "services": {
-    "title": "Nuestras Verticales de Servicio",
-    "subtitle": "Dos prácticas especializadas. Una estrategia unificada.",
-    "tech_rnd": {
-      "name": "Tecnología e I+D",
-      "tagline": "Innovar con propósito",
-      "description": "Consultoría e I+D en educación tecnológica, transformación digital, estrategia de tecnologías emergentes y programas de innovación."
+    "title": "Nuestros Servicios",
+    "subtitle": "Cinco módulos especializados. Un equipo de ingeniería.",
+    "web_development": {
+      "name": "Desarrollo Web",
+      "tagline": "Full-stack. Nivel empresarial.",
+      "description": "Aplicaciones Next.js/React/TypeScript con server components, tiempos de respuesta menores a 200ms y arquitectura de nivel empresarial."
     },
-    "it_services": {
-      "name": "Servicios de TI",
-      "tagline": "Construir. Enviar. Escalar.",
-      "description": "Desarrollo de software, aplicaciones web, plataformas SaaS, arquitectura en la nube y servicios de implementación técnica."
+    "website_redesign": {
+      "name": "Rediseño de Sitios Web",
+      "tagline": "Stack moderno. Cero tiempo de inactividad.",
+      "description": "Migración desde WordPress, Wix o plataformas legacy a arquitectura moderna Next.js con preservación de SEO y cero tiempo de inactividad."
+    },
+    "feature_injection": {
+      "name": "Inyección de Funcionalidades",
+      "tagline": "Mejora tu código.",
+      "description": "Agrega chatbots de IA, sistemas de pago, autenticación, dashboards en tiempo real y más a tus aplicaciones existentes."
+    },
+    "express_build": {
+      "name": "Construcción Express",
+      "tagline": "72 horas. Listo.",
+      "description": "Landing pages en 72 horas, MVPs en una semana, sitios de campaña bajo demanda. Construido para velocidad sin sacrificar calidad."
+    },
+    "ai_model_training": {
+      "name": "Entrenamiento de Modelos de IA",
+      "tagline": "Tus datos. Tu modelo.",
+      "description": "Fine-tuning, pipelines RAG, ingeniería de prompts y arquitecturas de agentes de IA adaptadas a las necesidades de tu negocio."
     },
     "learn_more": "Más Información",
     "get_started": "Comenzar"
@@ -51,15 +66,15 @@
   },
   "chat": {
     "title": "Q",
-    "subtitle": "Consultor Senior de Estrategia",
+    "subtitle": "Arquitecto Senior",
     "placeholder": "Pregunte sobre nuestros servicios, precios o metodología...",
-    "empty_state": "Active la inteligencia de Quartermasters. Pregunte sobre nuestros servicios tecnológicos, precios o metodología.",
+    "empty_state": "Active la inteligencia de Quartermasters. Pregunte sobre nuestros servicios de desarrollo web, entrenamiento de modelos de IA, precios o metodología.",
     "send": "Enviar",
     "typing": "Q está pensando..."
   },
   "booking": {
     "title": "Agendar una Consulta",
-    "subtitle": "Programe una llamada con nuestro equipo de estrategia",
+    "subtitle": "Programe una llamada con nuestro equipo de ingeniería",
     "discovery": "Llamada de Descubrimiento",
     "discovery_desc": "Llamada introductoria de 15 minutos para entender sus necesidades",
     "express_consult": "Consulta Express",
@@ -67,11 +82,11 @@
     "strategy_session": "Sesión de Estrategia",
     "strategy_desc": "Inmersión de 30 minutos en sus desafíos",
     "executive_briefing": "Briefing Ejecutivo",
-    "executive_desc": "Revisión estratégica integral de 60 minutos"
+    "executive_desc": "Revisión técnica integral de 60 minutos"
   },
   "contact": {
     "title": "Contáctenos",
-    "subtitle": "Iniciemos una conversación sobre sus necesidades estratégicas",
+    "subtitle": "Iniciemos una conversación sobre su proyecto",
     "name": "Nombre Completo",
     "email": "Correo Electrónico",
     "company": "Empresa",
@@ -81,7 +96,7 @@
     "error": "Error al enviar el mensaje. Por favor intente nuevamente."
   },
   "footer": {
-    "tagline": "Consultoría estratégica desde California al mundo.",
+    "tagline": "Desarrollo web y soluciones de IA desde California.",
     "services": "Servicios",
     "company": "Empresa",
     "legal": "Legal",

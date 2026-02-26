@@ -21,7 +21,6 @@ export function SearchBar() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    whatsapp: "",
     message: "",
   });
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
@@ -45,13 +44,12 @@ export function SearchBar() {
     setErrorMessage("");
 
     try {
-      const res = await fetch("/contact.php", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
-          whatsapp: formData.whatsapp,
           message: formData.message,
           service: "general",
         }),
@@ -73,7 +71,7 @@ export function SearchBar() {
         setIsModalOpen(false);
         setStatus("idle");
         setQuery("");
-        setFormData({ name: "", email: "", whatsapp: "", message: "" });
+        setFormData({ name: "", email: "", message: "" });
       }, 3000);
     } catch (err: any) {
       setStatus("error");
@@ -254,20 +252,6 @@ export function SearchBar() {
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       className="w-full rounded-lg bg-white/5 px-4 py-3 text-sm text-white outline-none focus:ring-1 focus:ring-[var(--color-gold)]"
                       placeholder="email@company.com"
-                    />
-                  </div>
-
-                  {/* WhatsApp */}
-                  <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-[var(--text-light)] mb-1">
-                      WhatsApp (Optional)
-                    </label>
-                    <input
-                      type="tel"
-                      value={formData.whatsapp}
-                      onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
-                      className="w-full rounded-lg bg-white/5 px-4 py-3 text-sm text-white outline-none focus:ring-1 focus:ring-[var(--color-gold)]"
-                      placeholder="+1 (555) 123-4567"
                     />
                   </div>
 

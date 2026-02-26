@@ -38,7 +38,7 @@ export function HeroSection() {
             <motion.div variants={staggerItem} className="mb-6">
               <span className="inline-flex items-center gap-2 rounded-full border border-[#C15A2C]/30 bg-[#C15A2C]/10 px-4 py-1.5 text-sm font-medium text-[#C15A2C] backdrop-blur-sm">
                 <span className="h-2 w-2 rounded-full bg-[#C15A2C] animate-pulse" />
-                Premium Strategic Consulting
+                Web Development & AI Solutions
               </span>
             </motion.div>
 
@@ -48,8 +48,8 @@ export function HeroSection() {
               className="mb-6 text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]"
               style={{ fontFamily: "var(--font-heading)" }}
             >
-              Strategic Consulting.<br className="hidden md:block" />
-              <span style={{ color: "var(--color-gold)" }}>Global Execution.</span>
+              We Build Websites.<br className="hidden md:block" />
+              <span style={{ color: "var(--color-gold)" }}>We Train AI Models.</span>
             </motion.h1>
 
             {/* Subheading */}
@@ -58,7 +58,7 @@ export function HeroSection() {
               className="mb-10 max-w-lg text-lg sm:text-xl text-white/60 leading-relaxed"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              California-based technology consulting and IT services. Digital transformation, software development, cloud infrastructure, and AI-driven innovation.
+              Full-stack web development, AI integration, and custom digital infrastructure. From 72-hour landing pages to enterprise platforms. California-based.
             </motion.p>
 
             {/* CTAs */}
@@ -69,7 +69,7 @@ export function HeroSection() {
                   className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-[#C15A2C] px-8 py-3.5 text-sm font-semibold text-white shadow-[0_0_30px_rgba(193,90,44,0.4)] transition-all hover:bg-[#A04A24] hover:shadow-[0_0_40px_rgba(193,90,44,0.6)]"
                 >
                   <span className="relative z-10 flex items-center gap-2">
-                    Explore Our Verticals <span className="group-hover:translate-x-1 transition-transform">→</span>
+                    Explore Services <span className="group-hover:translate-x-1 transition-transform">→</span>
                   </span>
                 </Link>
               </ClickSpark>
@@ -87,11 +87,11 @@ export function HeroSection() {
                 Core Capabilities
               </p>
               <div className="flex flex-wrap items-center gap-3">
-                <span className="pill-tag pill-tag--tech">#Technology</span>
-                <span className="pill-tag pill-tag--it">#ITServices</span>
-                <span className="pill-tag pill-tag--tech">#DigitalTransformation</span>
-                <span className="pill-tag pill-tag--it">#CloudInfrastructure</span>
-                <span className="pill-tag pill-tag--tech">#AI_Innovation</span>
+                <span className="pill-tag pill-tag--tech">#WebDev</span>
+                <span className="pill-tag pill-tag--it">#AIModels</span>
+                <span className="pill-tag pill-tag--tech">#ExpressBuild</span>
+                <span className="pill-tag pill-tag--it">#Redesign</span>
+                <span className="pill-tag pill-tag--tech">#FeatureInjection</span>
               </div>
             </motion.div>
           </motion.div>
@@ -268,8 +268,8 @@ export function HeroSection() {
                 className="absolute top-[10%] left-[-10%] z-30 hidden sm:flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur-md shadow-xl"
               >
                 <div className="flex flex-col">
-                  <span className="text-xs text-[#C15A2C] font-semibold tracking-wide uppercase">Advisory</span>
-                  <span className="text-sm text-white font-medium">Tech & IT</span>
+                  <span className="text-xs text-[#C15A2C] font-semibold tracking-wide uppercase">Engineering</span>
+                  <span className="text-sm text-white font-medium">Web & AI</span>
                 </div>
               </motion.div>
 
@@ -284,8 +284,8 @@ export function HeroSection() {
                   </svg>
                 </span>
                 <div className="flex flex-col">
-                  <span className="text-xs text-white/50 font-medium">Execution</span>
-                  <span className="text-sm text-white font-semibold">Global Reach</span>
+                  <span className="text-xs text-white/50 font-medium">Speed</span>
+                  <span className="text-sm text-white font-semibold">72hr Express</span>
                 </div>
               </motion.div>
 

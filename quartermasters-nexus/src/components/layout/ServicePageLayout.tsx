@@ -35,7 +35,7 @@ interface ServicePageProps {
   CardWrapper?: React.ComponentType<{ children: React.ReactNode }>;
   backgroundPattern?: React.ReactNode;
   sectorKey?: SectorKey;
-  visualType?: 'financial' | 'management' | 'tech' | 'hr' | 'events' | 'it';
+  visualType?: 'tech' | 'it';
 }
 
 export function ServicePageLayout({
