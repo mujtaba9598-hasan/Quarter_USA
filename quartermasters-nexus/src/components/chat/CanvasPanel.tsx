@@ -6,6 +6,13 @@ import { ServiceComparison } from './mirror/ServiceComparison';
 import { PricingGrid } from './mirror/PricingGrid';
 import { ProcessTimeline } from './mirror/ProcessTimeline';
 import { MetricCard } from './mirror/MetricCard';
+import { WireframePreview } from './mirror/WireframePreview';
+import { ArchitectureDiagram } from './mirror/ArchitectureDiagram';
+import { SiteAuditScanner } from './mirror/SiteAuditScanner';
+import { AuditReport } from './mirror/AuditReport';
+import { RebuildDiagnostic } from './mirror/RebuildDiagnostic';
+import { SubdomainPitch } from './mirror/SubdomainPitch';
+import { ExpansionEstimate } from './mirror/ExpansionEstimate';
 
 interface CanvasPanelProps {
     blocks: MirrorBlock[];
@@ -30,6 +37,13 @@ export function CanvasPanel({ blocks }: CanvasPanelProps) {
         case "process-timeline": componentName = "Process Timeline Explorer"; break;
         case "metric-card": componentName = "Metric Snapshot"; break;
         case "feature-showcase": componentName = "Feature Showcase Overview"; break;
+        case "wireframe-preview": componentName = "Live Wireframe Draft"; break;
+        case "architecture-diagram": componentName = "Architecture Diagram"; break;
+        case "site-audit-scanner": componentName = "Site Performance Audit"; break;
+        case "audit-report": componentName = "Audit Diagnostic Report"; break;
+        case "rebuild-diagnostic": componentName = "Rebuild Diagnostic Suite"; break;
+        case "subdomain-pitch": componentName = "Subdomain Strategy"; break;
+        case "expansion-estimate": componentName = "Feature Injection Estimate"; break;
     }
 
     return (
@@ -62,6 +76,37 @@ export function CanvasPanel({ blocks }: CanvasPanelProps) {
 
                 {activeBlock.type === "metric-card" && (
                     <MetricCard metrics={activeBlock.params.metrics as any} />
+                )}
+
+                {activeBlock.type === "wireframe-preview" && (
+                    <WireframePreview service={activeBlock.params.service as string} />
+                )}
+
+                {activeBlock.type === "architecture-diagram" && (
+                    <ArchitectureDiagram variant={activeBlock.params.variant as any} />
+                )}
+
+                {activeBlock.type === "site-audit-scanner" && (
+                    <SiteAuditScanner url={activeBlock.params.url as string} />
+                )}
+
+                {activeBlock.type === "audit-report" && (
+                    <AuditReport data={activeBlock.params.data as any} />
+                )}
+
+                {activeBlock.type === "rebuild-diagnostic" && (
+                    <RebuildDiagnostic url={activeBlock.params.url as string} />
+                )}
+
+                {activeBlock.type === "subdomain-pitch" && (
+                    <SubdomainPitch domain={activeBlock.params.domain as string | undefined} />
+                )}
+
+                {activeBlock.type === "expansion-estimate" && (
+                    <ExpansionEstimate
+                        featureCount={activeBlock.params.featureCount as number | undefined}
+                        complexity={activeBlock.params.complexity as any}
+                    />
                 )}
             </div>
         </div>

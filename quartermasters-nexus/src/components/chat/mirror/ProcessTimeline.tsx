@@ -3,17 +3,35 @@
 import { motion } from "framer-motion";
 
 const SERVICE_PROCESSES: Record<string, { step: string; desc: string }[]> = {
-    "tech-rnd": [
-        { step: "Research", desc: "Technology landscape analysis & innovation scouting" },
-        { step: "Prototype", desc: "Proof of concept, feasibility study & architecture design" },
-        { step: "Develop", desc: "Full implementation with agile methodology" },
-        { step: "Scale", desc: "Deployment, optimization & knowledge transfer" },
+    "web-development": [
+        { step: "Discovery", desc: "Requirements deep-dive, stack assessment, architecture planning" },
+        { step: "Build", desc: "Full-stack development with CI/CD pipeline on Next.js/React" },
+        { step: "QA Gate", desc: "Automated testing, security audit, performance benchmarking" },
+        { step: "Deploy", desc: "Production launch on Vercel edge network, monitoring setup" },
     ],
-    "it-services": [
-        { step: "Assess", desc: "Technical requirements, stack evaluation & security audit" },
-        { step: "Architect", desc: "System design, technology selection & infrastructure planning" },
-        { step: "Build", desc: "Agile development, CI/CD pipeline & quality assurance" },
-        { step: "Deploy", desc: "Launch, monitoring setup & maintenance handover" },
+    "website-redesign": [
+        { step: "Diagnostic", desc: "2-minute site audit: load speed, performance, SEO, accessibility" },
+        { step: "Architect", desc: "New design system, modern stack migration plan, URL mapping" },
+        { step: "Build", desc: "Ground-up rebuild on Next.js — zero legacy code touched" },
+        { step: "Launch", desc: "Zero-downtime cutover, SEO preservation, analytics transfer" },
+    ],
+    "feature-injection": [
+        { step: "Stack Check", desc: "Assess existing platform, identify integration points" },
+        { step: "Subdomain Setup", desc: "Independent Next.js app on app.yoursite.com" },
+        { step: "Build & Brand", desc: "Feature development matching your existing brand identity" },
+        { step: "Connect", desc: "DNS configuration, menu link, seamless user experience" },
+    ],
+    "express-build": [
+        { step: "Brief", desc: "Requirements capture, brand assets, content collection" },
+        { step: "Draft", desc: "High-fidelity React build — not a template, custom code" },
+        { step: "Review", desc: "Human QA team performs final quality check" },
+        { step: "Deploy", desc: "Live on your domain within 24 hours (excluding Sundays)" },
+    ],
+    "ai-model-training": [
+        { step: "Data Audit", desc: "Assess proprietary data volume, format, sovereignty requirements" },
+        { step: "Architecture", desc: "Design Zero-Knowledge pipeline: RAG or fine-tuning tier" },
+        { step: "Train", desc: "Private model training on isolated VPC infrastructure" },
+        { step: "Deploy", desc: "Production API endpoint, monitoring, evaluation framework" },
     ],
 };
 

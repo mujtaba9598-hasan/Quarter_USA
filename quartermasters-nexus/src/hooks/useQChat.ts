@@ -1,5 +1,12 @@
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { useChat } from '@ai-sdk/react';
+import {
+    type DiscoveryState,
+    type DiscoveryStage,
+    type PersonaType,
+    createInitialState,
+} from '@/lib/ai/discovery-flow';
+import { PROACTIVE_GREETING } from '@/lib/ai/discovery-prompts';
 
 export type ChatState = 'idle' | 'thinking' | 'speaking';
 
@@ -14,6 +21,8 @@ export type UseQChatReturn = {
     conversationId: string | null;
     chatState: ChatState;
     hesitating: boolean;
+    discoveryStage: DiscoveryStage;
+    persona: PersonaType;
 };
 
 export function useQChat(): UseQChatReturn {
@@ -32,7 +41,11 @@ export function useQChat(): UseQChatReturn {
     // 2. Conversation State
     const [conversationId, setConversationId] = useState<string | null>(null);
 
-    // 3. Hesitation Tracking
+    // 3. Discovery Flow State
+    const [discoveryState, setDiscoveryState] = useState<DiscoveryState>(createInitialState);
+    const greetingInjected = useRef(false);
+
+    // 4. Hesitation Tracking
     const [lastInteractionTime, setLastInteractionTime] = useState<number>(Date.now());
     const [hesitating, setHesitating] = useState<boolean>(false);
 
@@ -41,10 +54,10 @@ export function useQChat(): UseQChatReturn {
         setLastInteractionTime(Date.now());
     }, []);
 
-    // 4. Custom Input State Management
+    // 5. Custom Input State Management
     const [input, setInput] = useState<string>('');
 
-    // 5. useChat Configuration
+    // 6. useChat Configuration
     const chatConfig: any = {
         chatId: conversationId || undefined,
         fetch: async (url: any, options: any) => {
@@ -57,8 +70,25 @@ export function useQChat(): UseQChatReturn {
             const response = await fetch('/api/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ message, visitorId, conversationId })
+                body: JSON.stringify({
+                    message,
+                    visitorId,
+                    conversationId,
+                    discoveryState,
+                })
             });
+
+            // Read discovery state from response headers
+            const discoveryStateHeader = response.headers.get('X-Discovery-State');
+            if (discoveryStateHeader) {
+                try {
+                    const newState = JSON.parse(discoveryStateHeader) as DiscoveryState;
+                    setDiscoveryState(newState);
+                } catch {
+                    // Ignore parse errors
+                }
+            }
+
             const returnedConvId = response.headers.get('X-Conversation-Id');
             if (returnedConvId && !conversationId) {
                 setConversationId(returnedConvId);
@@ -76,12 +106,27 @@ export function useQChat(): UseQChatReturn {
         setInput: setChatInput,
         status,
         error,
-        handleSubmit: originalHandleSubmit
+        handleSubmit: originalHandleSubmit,
+        setMessages,
     } = useChat(chatConfig) as any;
 
     const isLoading = status === 'submitted' || status === 'streaming';
 
-    // 5. Derived Chat State
+    // 7. Proactive Greeting — Q sends first message automatically
+    useEffect(() => {
+        if (!greetingInjected.current && visitorId && typeof setMessages === 'function') {
+            greetingInjected.current = true;
+            setMessages([
+                {
+                    id: 'q-greeting',
+                    role: 'assistant',
+                    content: PROACTIVE_GREETING,
+                }
+            ]);
+        }
+    }, [visitorId, setMessages]);
+
+    // 8. Derived Chat State
     const chatState = useMemo<ChatState>(() => {
         if (messages.length === 0 && !isLoading) return 'idle';
         if (isLoading) {
@@ -92,7 +137,7 @@ export function useQChat(): UseQChatReturn {
         return 'idle';
     }, [messages, isLoading]);
 
-    // 7. Hook into input changes and form submission to reset hesitation
+    // 9. Hook into input changes and form submission to reset hesitation
     const handleSetInput: React.Dispatch<React.SetStateAction<string>> = useCallback((value) => {
         setLastInteractionTime(Date.now());
         setHesitating(false);
@@ -123,7 +168,7 @@ export function useQChat(): UseQChatReturn {
         });
     }, [setChatInput, originalHandleSubmit]);
 
-    // 7. Hesitation Timer
+    // 10. Hesitation Timer
     useEffect(() => {
         const interval = setInterval(() => {
             if (chatState === 'idle') {
@@ -159,8 +204,8 @@ export function useQChat(): UseQChatReturn {
         error,
         conversationId,
         chatState,
-        hesitating
+        hesitating,
+        discoveryStage: discoveryState.stage,
+        persona: discoveryState.persona,
     };
 }
-
-

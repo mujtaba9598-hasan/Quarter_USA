@@ -16,6 +16,8 @@ import { parseMirrorBlocks, MirrorBlock } from './mirror/MirrorRegistry';
 import { MirrorRenderer } from './mirror/MirrorRenderer';
 import { SplitScreenLayout } from './SplitScreenLayout';
 import { CanvasPanel } from './CanvasPanel';
+import { MobileBottomSheet } from './MobileBottomSheet';
+import { BookCallButton } from './BookCallButton';
 import { useConversationContext } from '@/hooks/useConversationContext';
 import { useMorphingBackground } from '@/lib/contexts/MorphingBackgroundContext';
 
@@ -26,7 +28,8 @@ export function ChatPanel() {
     const [splitScreen, setSplitScreen] = useState(false);
     const [latestBlocks, setLatestBlocks] = useState<MirrorBlock[]>([]);
     const [isMobile, setIsMobile] = useState(false);
-    const { messages, input, setInput, handleSubmit, sendMessage, isLoading, chatState } = useQChat();
+    const [mobileSheetOpen, setMobileSheetOpen] = useState(false);
+    const { messages, input, setInput, handleSubmit, sendMessage, isLoading, chatState, discoveryStage, persona } = useQChat();
     const messagesEndRef = useRef<HTMLDivElement>(null);
     const scrollContainerRef = useRef<HTMLDivElement>(null);
 
@@ -88,7 +91,9 @@ export function ChatPanel() {
                     setLatestBlocks(blocks);
                     if (window.innerWidth >= 1024) {
                         setSplitScreen(true);
-                        setPanelState('expanded'); // Ensure chat is open
+                        setPanelState('expanded');
+                    } else if (window.innerWidth < 768) {
+                        setMobileSheetOpen(true);
                     }
                 }
             }
@@ -183,7 +188,7 @@ export function ChatPanel() {
                             style={{ background: 'transparent' }}
                             aria-label="Open Quartermasters Chat"
                         >
-                            <QAvatar2D chatState={chatState} className="w-full h-full" />
+                            <QAvatar2D chatState={chatState} persona={persona} className="w-full h-full" />
                         </motion.button>
                     </>
                 )}
@@ -222,10 +227,19 @@ export function ChatPanel() {
                             {/* Header */}
                             <div className="flex items-center justify-between px-5 py-4 border-b border-white/10 shrink-0 bg-white/5">
                                 <div className="flex items-center gap-3">
-                                    <QAvatar3D chatState={chatState} className="w-12 h-12" />
+                                    <QAvatar3D chatState={chatState} persona={persona} className="w-12 h-12" />
                                     <div className="flex flex-col">
                                         <h2 className="text-slate-100 font-semibold text-base leading-tight">Q</h2>
-                                        <span className="text-[#C15A2C] text-xs font-medium tracking-wide">Senior Strategy Consultant</span>
+                                        {persona ? (
+                                            <span
+                                                className="text-xs font-medium tracking-wide"
+                                                style={{ color: persona === 'strategist' ? '#D4A017' : persona === 'architect' ? '#1E90FF' : '#2ECC71' }}
+                                            >
+                                                {persona === 'strategist' ? 'Strategist Mode' : persona === 'architect' ? 'Architect Mode' : 'Operator Mode'}
+                                            </span>
+                                        ) : (
+                                            <span className="text-[#C15A2C] text-xs font-medium tracking-wide">Senior Architect</span>
+                                        )}
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-1">
@@ -263,7 +277,8 @@ export function ChatPanel() {
 
                                     // Parse VelvetRope trigger
                                     const hasPricingTrigger = rawContent.includes('[RENDER_VELVET_ROPE]');
-                                    const afterVelvet = rawContent.replace('[RENDER_VELVET_ROPE]', '');
+                                    const hasBookCall = rawContent.includes('[BOOK_CALL]');
+                                    const afterVelvet = rawContent.replace('[RENDER_VELVET_ROPE]', '').replace('[BOOK_CALL]', '');
 
                                     // Parse Magic Mirror blocks
                                     const { cleanedText: displayContent, blocks: mirrorBlocks } =
@@ -284,6 +299,11 @@ export function ChatPanel() {
                                                 <div className={splitScreen && isLastMessage ? "lg:hidden" : "block"}>
                                                     <MirrorRenderer blocks={mirrorBlocks} />
                                                 </div>
+                                            )}
+
+                                            {/* Book Call — Cal.com embed */}
+                                            {hasBookCall && m.role === 'assistant' && (
+                                                <BookCallButton />
                                             )}
 
                                             {/* VelvetRope — pricing UI */}
@@ -326,6 +346,13 @@ export function ChatPanel() {
                     </SplitScreenLayout>
                 )}
             </AnimatePresence>
+
+            {/* Mobile Bottom Sheet for Mirror content */}
+            <MobileBottomSheet
+                blocks={latestBlocks}
+                isOpen={mobileSheetOpen}
+                onClose={() => setMobileSheetOpen(false)}
+            />
         </>
     );
 }

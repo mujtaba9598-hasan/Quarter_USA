@@ -1,6 +1,8 @@
 import Anthropic from '@anthropic-ai/sdk'
 import { anthropic as aiAnthropic } from '@ai-sdk/anthropic'
 import { streamText, type StreamTextResult } from 'ai'
+import type { DiscoveryStage, PersonaType, DiscoveryData } from './discovery-flow'
+import { getDiscoveryPromptOverlay } from './discovery-prompts'
 
 export type RetrievedChunk = {
     chunkText: string
@@ -24,6 +26,9 @@ export interface AskQParams {
     conversationHistory: Array<{ role: string; content: string }>
     context: RetrievedChunk[]
     pricingState?: PricingState
+    discoveryStage?: DiscoveryStage
+    persona?: PersonaType
+    discoveryData?: DiscoveryData
 }
 
 function buildSystemPrompt(params: AskQParams): string {
@@ -74,8 +79,23 @@ Available types:
 - [MIRROR:pricing-grid:{"service":"web-development"}]
 - [MIRROR:process-timeline:{"service":"express-build"}]
 - [MIRROR:metric-card:{"metrics":[{"label":"Response Time","value":"<200ms"},{"label":"Lighthouse","value":"90+"}]}]
+- [MIRROR:wireframe-preview:{"service":"express-build"}] — Use for Express Build and Website Redesign demos. Shows a live wireframe draft.
+- [MIRROR:architecture-diagram:{"variant":"subdomain"}] — Use for Feature Injection demos. Shows subdomain integration architecture.
+- [MIRROR:architecture-diagram:{"variant":"zero-knowledge"}] — Use for AI Model Training demos. Shows Zero-Knowledge data pipeline.
+- [MIRROR:architecture-diagram:{"variant":"system"}] — Use for Web App demos. Shows system architecture overview.
+- [MIRROR:rebuild-diagnostic:{"url":"https://example.com"}] — Use when a Website Redesign visitor provides their current site URL. Triggers a full diagnostic suite: 2-minute performance audit (timer + server logs + real Google PageSpeed data), then displays scores + metrics + No-Legacy Pledge checkbox + estimate disclaimer. ONLY use during the demo stage for the Rebuild (Website Redesign) module. Replace "example.com" with the visitor's actual URL.
+- [MIRROR:subdomain-pitch:{"domain":"clientdomain.com"}] — Use for Feature Injection (Expansion) demos. Interactive 3-phase flow: (1) Stack check — visitor selects their current platform, (2) Feature selection — visitor picks needed capabilities, (3) Live architecture diagram showing their site → subdomain → QM infrastructure with selected features. The "domain" param is optional (defaults to "yoursite.com"). ONLY use during demo stage for Feature Injection module.
+- [MIRROR:expansion-estimate:{"featureCount":3,"complexity":"multi"}] — Use during estimate stage for Feature Injection. Shows all 4 pricing tiers (Express $3K, Standard $8K, Premium $20K, Enterprise $40K) with auto-recommended tier based on featureCount and complexity. complexity values: "single", "multi", "complex", "enterprise". Enterprise tier triggers Executive Review handoff.
+- [MIRROR:site-audit-scanner:{"url":"..."}] — Standalone scanner (used internally by rebuild-diagnostic). Do not emit directly.
+- [MIRROR:audit-report:{"data":{...}}] — (System-generated only. Do NOT emit this yourself.)
 Valid service slugs: web-development, website-redesign, feature-injection, express-build, ai-model-training.
-Use sparingly — only when visual adds clarity. Place after text, not before.`
+Valid architecture variants: subdomain, zero-knowledge, system.
+Use during demo stage of discovery. Place after text, not before.
+
+Booking — Calendar Embed:
+When you want the visitor to book a call, emit [BOOK_CALL] in your message.
+This renders a Cal.com booking button inline in the chat.
+Use when: closing the deal, visitor rejects pricing but shows interest, or you want to escalate to an Executive Review.`
 
     if (params.context.length > 0) {
         const contextStr = params.context
@@ -94,6 +114,22 @@ Base Price: ${ps.base_price}
 Current Price: ${ps.current_price}
 Discount Applied: ${ps.discount_applied}
 Nudge Triggered: ${ps.nudge_triggered}`
+    }
+
+    // Inject discovery flow stage-specific prompt overlay
+    if (params.discoveryStage) {
+        const discoveryData: DiscoveryData = params.discoveryData || {
+            budget: null,
+            location: null,
+            businessType: null,
+            scope: null,
+            serviceModule: null,
+        }
+        systemPrompt += getDiscoveryPromptOverlay(
+            params.discoveryStage,
+            params.persona || null,
+            discoveryData
+        )
     }
 
     return systemPrompt

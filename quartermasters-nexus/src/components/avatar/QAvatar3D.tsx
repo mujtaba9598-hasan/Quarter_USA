@@ -2,25 +2,36 @@
 
 import React, { useRef, Component } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Mesh, MeshPhysicalMaterial } from 'three';
+import { Mesh, MeshPhysicalMaterial, Color } from 'three';
+import type { PersonaType } from '@/lib/ai/discovery-flow';
+
+// Persona color palettes
+const PERSONA_COLORS: Record<string, { emissive: string; point: string }> = {
+    default:    { emissive: '#C15A2C', point: '#C15A2C' },   // Burnt Copper
+    strategist: { emissive: '#D4A017', point: '#F5C542' },   // Gold / Amber
+    architect:  { emissive: '#1E90FF', point: '#00BFFF' },   // Blue / Cyan
+    operator:   { emissive: '#2ECC71', point: '#27AE60' },   // Green / Emerald
+};
 
 interface QAvatar3DProps {
     chatState: 'idle' | 'thinking' | 'speaking' | 'presenting';
+    persona?: PersonaType;
     className?: string;
 }
 
-function CopperQFallback({ className = '' }: { className?: string }) {
+function CopperQFallback({ className = '', persona }: { className?: string; persona?: PersonaType }) {
+    const colors = PERSONA_COLORS[persona || 'default'];
     return (
         <div
             className={`flex items-center justify-center rounded-full ${className}`}
             style={{
-                background: 'linear-gradient(135deg, rgba(193, 90, 44, 0.2), rgba(193, 90, 44, 0.05))',
-                border: '1.5px solid rgba(193, 90, 44, 0.4)',
+                background: `linear-gradient(135deg, ${colors.emissive}33, ${colors.emissive}0D)`,
+                border: `1.5px solid ${colors.emissive}66`,
             }}
         >
             <span
                 style={{
-                    color: '#C15A2C',
+                    color: colors.emissive,
                     fontFamily: 'var(--font-heading)',
                     fontWeight: 700,
                     fontSize: '50%',
@@ -49,9 +60,16 @@ class WebGLErrorBoundary extends Component<
     }
 }
 
-function Polyhedron({ chatState }: { chatState: 'idle' | 'thinking' | 'speaking' | 'presenting' }) {
+function Polyhedron({
+    chatState,
+    persona,
+}: {
+    chatState: 'idle' | 'thinking' | 'speaking' | 'presenting';
+    persona?: PersonaType;
+}) {
     const meshRef = useRef<Mesh>(null);
     const materialRef = useRef<MeshPhysicalMaterial>(null);
+    const targetColor = useRef(new Color(PERSONA_COLORS.default.emissive));
 
     useFrame((state, rawDelta) => {
         const delta = Math.min(rawDelta, 0.1);
@@ -59,6 +77,11 @@ function Polyhedron({ chatState }: { chatState: 'idle' | 'thinking' | 'speaking'
         if (!meshRef.current || !materialRef.current) return;
 
         const time = state.clock.getElapsedTime();
+
+        // Smooth color transition toward target persona color
+        const colors = PERSONA_COLORS[persona || 'default'];
+        targetColor.current.set(colors.emissive);
+        materialRef.current.emissive.lerp(targetColor.current, 3 * delta);
 
         let rotSpeed = 0.3;
         let emissiveIntensity = 1.0;
@@ -114,15 +137,32 @@ function Polyhedron({ chatState }: { chatState: 'idle' | 'thinking' | 'speaking'
     );
 }
 
-export function QAvatar3D({ chatState, className = '' }: QAvatar3DProps) {
+function PersonaPointLight({ persona }: { persona?: PersonaType }) {
+    const lightRef = useRef<any>(null);
+    const targetColor = useRef(new Color(PERSONA_COLORS.default.point));
+
+    useFrame((_state, rawDelta) => {
+        const delta = Math.min(rawDelta, 0.1);
+        if (!lightRef.current) return;
+        const colors = PERSONA_COLORS[persona || 'default'];
+        targetColor.current.set(colors.point);
+        lightRef.current.color.lerp(targetColor.current, 3 * delta);
+    });
+
+    return (
+        <pointLight ref={lightRef} position={[5, 5, 5]} color="#C15A2C" intensity={0.8} />
+    );
+}
+
+export function QAvatar3D({ chatState, persona, className = '' }: QAvatar3DProps) {
     return (
         <div className={className}>
-            <WebGLErrorBoundary fallback={<CopperQFallback className={className} />}>
-                <React.Suspense fallback={<CopperQFallback className={className} />}>
+            <WebGLErrorBoundary fallback={<CopperQFallback className={className} persona={persona} />}>
+                <React.Suspense fallback={<CopperQFallback className={className} persona={persona} />}>
                     <Canvas camera={{ position: [0, 0, 4], fov: 50 }} gl={{ antialias: true, alpha: true }}>
                         <ambientLight intensity={0.4} />
-                        <pointLight position={[5, 5, 5]} color="#C15A2C" intensity={0.8} />
-                        <Polyhedron chatState={chatState} />
+                        <PersonaPointLight persona={persona} />
+                        <Polyhedron chatState={chatState} persona={persona} />
                     </Canvas>
                 </React.Suspense>
             </WebGLErrorBoundary>

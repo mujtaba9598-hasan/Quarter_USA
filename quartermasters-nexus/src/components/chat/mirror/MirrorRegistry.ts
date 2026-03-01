@@ -10,7 +10,14 @@ export type MirrorType =
     | "pricing-grid"
     | "process-timeline"
     | "feature-showcase"
-    | "metric-card";
+    | "metric-card"
+    | "wireframe-preview"
+    | "architecture-diagram"
+    | "site-audit-scanner"
+    | "audit-report"
+    | "rebuild-diagnostic"
+    | "subdomain-pitch"
+    | "expansion-estimate";
 
 export type MirrorBlock = {
     type: MirrorType;
@@ -63,4 +70,11 @@ export const MIRROR_TYPES: Record<MirrorType, string[]> = {
     "process-timeline": ["service"],    // service: string
     "feature-showcase": ["service", "tier"], // service + tier
     "metric-card": ["metrics"],         // metrics: { label, value, suffix? }[]
+    "wireframe-preview": ["service"],   // service: string (express-build, website-redesign)
+    "architecture-diagram": ["variant"], // variant: "subdomain" | "zero-knowledge" | "system"
+    "site-audit-scanner": ["url"],      // url: string (site to audit)
+    "audit-report": ["data"],           // data: AuditResult object
+    "rebuild-diagnostic": ["url"],      // url: string (visitor's current site)
+    "subdomain-pitch": [],              // optional: domain (visitor's domain)
+    "expansion-estimate": [],           // optional: featureCount, complexity
 };

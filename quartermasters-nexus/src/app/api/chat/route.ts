@@ -4,11 +4,19 @@ import { retrieveContext } from '@/lib/rag/retrieve'
 import { streamQ } from '@/lib/ai/claude'
 import { validateResponse, checkAirGap } from '@/lib/ai/guardrails'
 import { rateLimit } from '@/lib/redis'
+import {
+    type DiscoveryState,
+    processDiscoveryMessage,
+    createInitialState,
+} from '@/lib/ai/discovery-flow'
+import { getAbuseResponse } from '@/lib/ai/discovery-prompts'
+import { extractLeadFromDiscovery, isHighValueLead } from '@/lib/crm/lead-extraction'
+import { sendLeadAlert } from '@/lib/email/lead-alerts'
 
 export async function POST(req: Request) {
     try {
         const body = await req.json()
-        const { message, visitorId, conversationId } = body
+        const { message, visitorId, conversationId, discoveryState: clientDiscoveryState } = body
 
         if (!message || !visitorId) {
             return NextResponse.json({ error: 'Missing message or visitorId' }, { status: 400 })
@@ -83,7 +91,34 @@ export async function POST(req: Request) {
             console.error('Error fetching pricing state:', pricingError)
         }
 
-        // e. Store user message BEFORE streaming starts
+        // e. Discovery Flow Processing
+        const discoveryState: DiscoveryState = clientDiscoveryState || createInitialState()
+        const { nextState, action } = processDiscoveryMessage(discoveryState, message)
+
+        // Handle abuse/irrelevant actions — return canned response, no LLM call
+        if (action.type === 'reject_irrelevant' || action.type === 'redirect_to_email') {
+            const abuseType = action.type === 'reject_irrelevant' ? action.abuseType : 'abuse'
+            const abuseResponse = getAbuseResponse(abuseType, nextState.abuseCount)
+
+            // Store both messages
+            await supabase.from('messages').insert([
+                { conversation_id: currentConversationId, role: 'user', content: message },
+                { conversation_id: currentConversationId, role: 'assistant', content: abuseResponse }
+            ])
+
+            return NextResponse.json({
+                response: abuseResponse,
+                discoveryState: nextState,
+            }, {
+                headers: {
+                    'X-Conversation-Id': currentConversationId,
+                    'X-RateLimit-Remaining': rateLimitResult.remaining.toString(),
+                    'X-Discovery-State': JSON.stringify(nextState),
+                }
+            })
+        }
+
+        // f. Store user message BEFORE streaming starts
         const { error: insertUserError } = await supabase.from('messages').insert([
             { conversation_id: currentConversationId, role: 'user', content: message }
         ])
@@ -93,13 +128,16 @@ export async function POST(req: Request) {
             return NextResponse.json({ error: 'Failed to save message' }, { status: 500 })
         }
 
-        // f. Stream Q response — onFinish stores assistant message + runs guardrails
+        // g. Stream Q response — with discovery stage injected into system prompt
         const result = streamQ(
             {
                 userMessage: message,
                 conversationHistory,
                 context,
-                pricingState: pricingData || undefined
+                pricingState: pricingData || undefined,
+                discoveryStage: nextState.stage,
+                persona: nextState.persona,
+                discoveryData: nextState.data,
             },
             async ({ text }) => {
                 const validationResult = validateResponse(text, pricingData || undefined)
@@ -115,14 +153,31 @@ export async function POST(req: Request) {
                 if (insertError) {
                     console.error('Error inserting assistant message:', insertError)
                 }
+
+                // Lead extraction — trigger when reaching estimate or close stage
+                if (nextState.stage === 'estimate' || nextState.stage === 'close') {
+                    extractLeadFromDiscovery(currentConversationId, visitorId, nextState)
+                        .catch(err => console.error('Lead extraction failed:', err))
+                }
+
+                // High-value lead alerts
+                if (nextState.stage === 'close') {
+                    sendLeadAlert(currentConversationId, nextState, 'discovery_complete')
+                        .catch(err => console.error('Lead alert failed:', err))
+                } else if (isHighValueLead(nextState.data.budget, nextState.data.serviceModule)) {
+                    const reason = nextState.data.serviceModule === 'ai-training' ? 'ai_training' : 'high_budget'
+                    sendLeadAlert(currentConversationId, nextState, reason)
+                        .catch(err => console.error('Lead alert failed:', err))
+                }
             }
         )
 
-        // g. Return streaming response with conversation ID header
+        // h. Return streaming response with conversation ID + discovery state headers
         return result.toTextStreamResponse({
             headers: {
                 'X-Conversation-Id': currentConversationId,
-                'X-RateLimit-Remaining': rateLimitResult.remaining.toString()
+                'X-RateLimit-Remaining': rateLimitResult.remaining.toString(),
+                'X-Discovery-State': JSON.stringify(nextState),
             }
         })
 

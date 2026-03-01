@@ -256,9 +256,65 @@
 
 ---
 
+## Phase 1 — Tech/AI Pivot (COMPLETE — 2026-02-26)
+
+| Sprint | Status | Summary |
+|--------|--------|---------|
+| S0 — Archive & Fork | DONE | Legacy 6-vertical product archived |
+| S1 — Content Pivot | DONE | 5 old service pages deleted, 5 new tech/AI pages created, nav/footer/ticker updated |
+| S2 — Q Brain Rewrite | DONE | Senior Architect identity, 3 Chameleon personas, Air Gap, fallback script, Silicon Valley Shield, 7 KB docs, 5-module pricing |
+| S3 — SEO + i18n + Contact | DONE | JSON-LD/sitemap/OG updated, homepage hero rewritten, i18n (7 languages), testimonials, `/api/contact` route |
+
+**Commit**: `bd8dd47` on `main` | **TypeScript**: 0 errors | **Stale refs**: 0
+
+---
+
+## Execution Roadmap V3 (Active Plan — 2026-02-28)
+
+**Status**: PLANNING COMPLETE. Awaiting founder approval to begin Phase 2 execution.
+
+| Phase | Name | Sprints | Status |
+|-------|------|---------|--------|
+| Phase 2 | Q: The Live Host | S4-S7 | **NEXT** — Discovery flow, Chameleon, Generative UI, Lead capture |
+| Phase 3 | Service Modules | S8-S12.5 | QUEUED |
+| Phase 4 | The Verdict (SEO) | S13-S14 | QUEUED |
+| Phase 5 | Sovereign Brain (LLM) | S15-S17 | POST-LAUNCH |
+
+**Full plan**: `EXECUTION_ROADMAP_V3.md`
+
+---
+
+## Phase 2 Scaffolding (Uncommitted — Pre-Sprint 4)
+
+> Files created/modified in previous sessions as early Phase 2 groundwork. Not yet part of any sprint deliverable.
+
+**Modified files** (12):
+- `AdminDashboard.tsx` — Admin dashboard enhancements
+- `chat/route.ts` — Chat API updates (discovery flow prep)
+- `QAvatar2D.tsx`, `QAvatar3D.tsx` — Avatar persona visual states
+- `CanvasPanel.tsx` — Canvas/split-screen layout
+- `ChatPanel.tsx` — Chat panel discovery integration
+- `MirrorRegistry.ts`, `MirrorRenderer.tsx` — Mirror component registry
+- `ProcessTimeline.tsx`, `ServiceComparison.tsx` — Mirror UI components
+- `useQChat.ts` — Discovery stage tracking
+- `claude.ts` — System prompt updates
+
+**New files** (20+):
+- `discovery-flow.ts`, `discovery-prompts.ts` — Discovery call state machine + stage prompts
+- `BookCallButton.tsx`, `MobileBottomSheet.tsx` — Call booking + mobile fallback
+- Mirror components: `ArchitectureDiagram`, `AuditReport`, `ExpansionEstimate`, `RebuildDiagnostic`, `SiteAuditScanner`, `SubdomainPitch`, `WireframePreview`
+- Admin APIs: `/api/admin/`, `/api/approvals/`, `/api/audit/`
+- Admin components: `src/components/admin/`
+- CRM: `lead-extraction.ts`
+- Email: `approval-gate.ts`, `lead-alerts.ts`
+- Migration: `010_pending_approvals.sql`
+
+---
+
 ## Founder Pending Actions
 1. Confirm which env vars are set in Vercel production
 2. Provide Module 4 directive (Web App / SaaS) — slot reserved
-3. Approve research & planning phase to begin
+3. Approve Phase 2 for execution (Sprint 4 can start now)
 4. Set up complaints@quartermasters.me in Hostinger
-5. Confirm archive repo name for current 6-vertical product
+5. Decision D1: Persona visuals (A: 3D variants / B: AI illustrations / C: Lottie)
+6. Decision D3: RESEND_API_KEY set up?

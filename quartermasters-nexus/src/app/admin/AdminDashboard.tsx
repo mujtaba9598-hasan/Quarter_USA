@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import { scoreAllContacts } from "@/lib/crm/lead-scoring";
+import { QActivityDashboard } from "@/components/admin/QActivityDashboard";
 
-type Tab = "bookings" | "leads" | "contacts";
+type Tab = "bookings" | "leads" | "contacts" | "q-activity";
 
 // Component props interfaces based on Supabase schema
 export function AdminDashboard({
@@ -99,23 +100,33 @@ export function AdminDashboard({
 
             {/* Tabs */}
             <div className="flex space-x-8 border-b border-white/10 mb-6 overflow-x-auto pb-px">
-                {(["bookings", "leads", "contacts"] as Tab[]).map((tab) => (
-                    <button
-                        key={tab}
-                        onClick={() => setActiveTab(tab)}
-                        className={`whitespace-nowrap pb-4 text-sm font-medium transition-colors ${activeTab === tab
-                            ? "text-white border-b-2"
-                            : "text-white/50 hover:text-white/80 border-b-2 border-transparent"
-                            }`}
-                        style={activeTab === tab ? { borderColor: "#C15A2C" } : {}}
-                    >
-                        {tab.charAt(0).toUpperCase() + tab.slice(1)}
-                    </button>
-                ))}
+                {(["q-activity", "bookings", "leads", "contacts"] as Tab[]).map((tab) => {
+                    const label = tab === "q-activity" ? "Q Activity" : tab.charAt(0).toUpperCase() + tab.slice(1);
+                    return (
+                        <button
+                            key={tab}
+                            onClick={() => setActiveTab(tab)}
+                            className={`whitespace-nowrap pb-4 text-sm font-medium transition-colors ${activeTab === tab
+                                ? "text-white border-b-2"
+                                : "text-white/50 hover:text-white/80 border-b-2 border-transparent"
+                                }`}
+                            style={activeTab === tab ? { borderColor: "#C15A2C" } : {}}
+                        >
+                            {label}
+                        </button>
+                    );
+                })}
             </div>
 
             {/* Tab Content */}
             <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
+
+                {/* Q ACTIVITY TAB */}
+                {activeTab === "q-activity" && (
+                    <div className="p-6">
+                        <QActivityDashboard />
+                    </div>
+                )}
 
                 {/* BOOKINGS TAB */}
                 {activeTab === "bookings" && (

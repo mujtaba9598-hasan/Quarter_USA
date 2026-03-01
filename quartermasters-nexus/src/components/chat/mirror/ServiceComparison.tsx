@@ -4,13 +4,19 @@ import { motion } from "framer-motion";
 import { PRICING_TABLE, type PackageDetails } from "@/lib/pricing/packages";
 
 const SERVICE_LABELS: Record<string, string> = {
-    "tech-rnd": "Technology R&D",
-    "it-services": "IT Services",
+    "web-development": "Web Development",
+    "website-redesign": "Website Redesign",
+    "feature-injection": "Feature Injection",
+    "express-build": "Express Build",
+    "ai-model-training": "AI Model Training",
 };
 
 const SERVICE_COLORS: Record<string, string> = {
-    "tech-rnd": "#3B82C4",
-    "it-services": "#6366F1",
+    "web-development": "#3B82C4",
+    "website-redesign": "#6366F1",
+    "feature-injection": "#10B981",
+    "express-build": "#F59E0B",
+    "ai-model-training": "#C15A2C",
 };
 
 interface ServiceComparisonProps {
@@ -72,7 +78,7 @@ export function ServiceComparison({ services }: ServiceComparisonProps) {
                                                     ${pkg.basePrice.toLocaleString()}
                                                 </span>
                                             ) : (
-                                                <span className="text-white/20">—</span>
+                                                <span className="text-white/20">&mdash;</span>
                                             )}
                                         </td>
                                     );
