@@ -173,7 +173,7 @@ export async function POST(req: Request) {
         )
 
         // h. Return streaming response with conversation ID + discovery state headers
-        return result.toTextStreamResponse({
+        return result.toUIMessageStreamResponse({
             headers: {
                 'X-Conversation-Id': currentConversationId,
                 'X-RateLimit-Remaining': rateLimitResult.remaining.toString(),

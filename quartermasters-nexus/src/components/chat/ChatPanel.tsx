@@ -35,7 +35,7 @@ export function ChatPanel() {
 
     // Track active theme
     const latestAsstMsg = messages.length > 0 && messages[messages.length - 1].role === 'assistant'
-        ? messages[messages.length - 1].parts?.[0]?.text || ''
+        ? messages[messages.length - 1].parts?.[0]?.text || (messages[messages.length - 1] as any).content || ''
         : '';
 
     const { activeService, confidence } = useConversationContext(latestAsstMsg);
@@ -83,7 +83,7 @@ export function ChatPanel() {
         if (messages.length > 0) {
             const lastMsg = messages[messages.length - 1];
             if (lastMsg.role === 'assistant') {
-                const rawContent = lastMsg.parts?.[0]?.text || '';
+                const rawContent = lastMsg.parts?.[0]?.text || (lastMsg as any).content || '';
                 const afterVelvet = rawContent.replace('[RENDER_VELVET_ROPE]', '');
                 const { blocks } = parseMirrorBlocks(afterVelvet);
 
@@ -273,7 +273,7 @@ export function ChatPanel() {
                                     const isLastMessage = index === messages.length - 1;
                                     const isStreaming = isLoading && m.role === 'assistant' && isLastMessage;
 
-                                    const rawContent = m.parts?.[0]?.text || '';
+                                    const rawContent = m.parts?.[0]?.text || (m as any).content || '';
 
                                     // Parse VelvetRope trigger
                                     const hasPricingTrigger = rawContent.includes('[RENDER_VELVET_ROPE]');
