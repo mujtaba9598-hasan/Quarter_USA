@@ -184,8 +184,10 @@ function getDemoInstruction(module: ServiceModule): string {
       return `They need a simple site fast. This is the Express Build. ` +
         `Start drafting a live preview: "I am drafting a high-fidelity sample page for you right now based on your requirements. ` +
         `This is built on React, not a standard template." ` +
-        `Show a wireframe using [MIRROR:process-timeline:{"service":"express-build"}]. ` +
-        `Mention 24-hour delivery (excluding Sundays).`
+        `Show their wireframe using [MIRROR:wireframe-preview:{"service":"express-build"}]. ` +
+        `Then show the delivery timeline using [MIRROR:process-timeline:{"service":"express-build"}]. ` +
+        `Mention 24-hour delivery (excluding Sundays). ` +
+        `Close with: "Since this falls within our Express Architecture parameters, we can deploy this to a live domain within 24 hours."`
 
     case 'webapp':
       return `They need a complex web application. Shift to clinical, technical tone. ` +
@@ -193,7 +195,8 @@ function getDemoInstruction(module: ServiceModule): string {
         `What third-party APIs need to be integrated?" ` +
         `State: "We build enterprise-grade infrastructure. We use Next.js, React, and strict PostgreSQL databases. ` +
         `We do not use no-code builders for software logic." ` +
-        `Show a system architecture diagram if possible.`
+        `Show the system architecture using [MIRROR:architecture-diagram:{"variant":"system"}]. ` +
+        `For $15K+ scopes, transition to Executive Review: "Let me connect you with our Lead Architect to finalize the database scope and sprint timeline." and emit [BOOK_CALL].`
 
     case 'ai-training':
       return `They're interested in AI/automation. This is the Crown Jewel. ` +
@@ -201,6 +204,7 @@ function getDemoInstruction(module: ServiceModule): string {
         `Pitch: "Off-the-shelf AI is a toy. We train private, secure models on your proprietary company data ` +
         `so it operates exactly like your best employee or your digital twin." ` +
         `Explain Tier 1 (RAG, $25K+) vs Tier 2 (Fine-Tuning, $50K+). ` +
-        `Show Zero-Knowledge Architecture diagram if possible.`
+        `Show the Zero-Knowledge Architecture using [MIRROR:architecture-diagram:{"variant":"zero-knowledge"}]. ` +
+        `This is an executive-level sale. After showing the diagram, transition to calendar: "Custom model training requires a strict data-auditing phase. Please select a time below for an Executive AI Review." and emit [BOOK_CALL].`
   }
 }

@@ -83,6 +83,19 @@ export function WireframePreview({ service }: WireframePreviewProps) {
                                 </div>
                             </WireframeBlock>
 
+                            {/* Contact Form Block */}
+                            <WireframeBlock label="Contact Form" height="h-24">
+                                <div className="flex flex-col gap-1.5 h-full p-2">
+                                    <div className="flex gap-2">
+                                        <div className="flex-1 h-4 rounded bg-white/8 border border-white/10" />
+                                        <div className="flex-1 h-4 rounded bg-white/8 border border-white/10" />
+                                    </div>
+                                    <div className="w-full h-4 rounded bg-white/8 border border-white/10" />
+                                    <div className="w-full h-8 rounded bg-white/5 border border-white/10" />
+                                    <div className="w-20 h-4 rounded bg-[#C15A2C]/40 self-end" />
+                                </div>
+                            </WireframeBlock>
+
                             {/* CTA Block */}
                             <WireframeBlock label="Call to Action" height="h-16">
                                 <div className="flex flex-col items-center justify-center h-full gap-1.5">
@@ -100,6 +113,24 @@ export function WireframePreview({ service }: WireframePreviewProps) {
                                         <div key={i} className="rounded bg-white/5 p-2 flex flex-col gap-1">
                                             <div className="w-full h-2 rounded bg-white/10" />
                                             <div className="w-3/4 h-1.5 rounded bg-white/5" />
+                                        </div>
+                                    ))}
+                                </div>
+                            </WireframeBlock>
+
+                            {/* Pricing Table */}
+                            <WireframeBlock label="Pricing Table" height="h-24">
+                                <div className="grid grid-cols-3 gap-2 h-full p-2">
+                                    {['Starter', 'Growth', 'Enterprise'].map(tier => (
+                                        <div key={tier} className="rounded bg-white/5 p-1.5 flex flex-col items-center gap-1 border border-white/5">
+                                            <div className="w-12 h-1.5 rounded bg-white/15" />
+                                            <div className="w-8 h-3 rounded bg-[#C15A2C]/30" />
+                                            <div className="w-full space-y-0.5 mt-0.5">
+                                                <div className="w-full h-1 rounded bg-white/8" />
+                                                <div className="w-full h-1 rounded bg-white/5" />
+                                                <div className="w-full h-1 rounded bg-white/8" />
+                                            </div>
+                                            <div className="w-10 h-3 rounded bg-white/10 mt-auto" />
                                         </div>
                                     ))}
                                 </div>
