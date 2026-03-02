@@ -40,12 +40,64 @@ export function RebuildDiagnostic({ url }: RebuildDiagnosticProps) {
                         className="space-y-4"
                     >
                         <AuditReport data={auditData} />
+                        <DesignDirection />
                         <NoLegacyPledge />
                         <EstimateDisclaimer />
                     </motion.div>
                 )}
             </AnimatePresence>
         </div>
+    );
+}
+
+const DESIGN_TRENDS = [
+    { label: 'Glassmorphism', desc: 'Frosted glass cards with backdrop blur and translucent borders', color: '#60A5FA' },
+    { label: 'Dark Mode First', desc: 'Deep navy/slate palettes with high-contrast typography', color: '#A78BFA' },
+    { label: 'Micro-interactions', desc: 'Hover effects, scroll-triggered animations, smooth transitions', color: '#34D399' },
+    { label: 'Variable Fonts', desc: 'Modern typography with weight/width axes for dynamic hierarchy', color: '#FBBF24' },
+    { label: 'Edge-first SSR', desc: 'Server components with sub-200ms TTFB, zero layout shift', color: '#F87171' },
+    { label: 'Accessible by Default', desc: 'WCAG 2.1 AA, semantic HTML, keyboard navigation, screen reader optimized', color: '#2DD4BF' },
+];
+
+/**
+ * DesignDirection — Shows modern design trends that will be applied to the rebuild.
+ * Appears after the audit report to set expectations for the new build quality.
+ */
+function DesignDirection() {
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="rounded-xl bg-[#0a0f1a] border border-white/10 p-5"
+        >
+            <div className="flex items-center gap-2 mb-4">
+                <div className="w-2 h-2 rounded-full bg-[#C15A2C] animate-pulse" />
+                <h3 className="text-xs uppercase tracking-wider text-white/50 font-semibold">
+                    Your Rebuild Design Direction
+                </h3>
+            </div>
+            <p className="text-xs text-white/40 mb-4 leading-relaxed">
+                Your new site will be built with current design standards. Here is the architectural direction:
+            </p>
+            <div className="grid grid-cols-2 gap-2">
+                {DESIGN_TRENDS.map((trend, i) => (
+                    <motion.div
+                        key={trend.label}
+                        initial={{ opacity: 0, y: 6 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.3 + i * 0.08 }}
+                        className="rounded-lg bg-white/[0.03] border border-white/5 p-3"
+                    >
+                        <div className="flex items-center gap-2 mb-1">
+                            <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: trend.color }} />
+                            <span className="text-[11px] font-medium text-white/80">{trend.label}</span>
+                        </div>
+                        <p className="text-[10px] text-white/30 leading-relaxed">{trend.desc}</p>
+                    </motion.div>
+                ))}
+            </div>
+        </motion.div>
     );
 }
 

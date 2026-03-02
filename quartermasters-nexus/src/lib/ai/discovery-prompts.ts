@@ -166,7 +166,8 @@ function getDemoInstruction(module: ServiceModule): string {
         `While the audit runs (2 minutes), use this script: ` +
         `"We cannot and will not touch your legacy code. Patching old systems is a waste of your budget." ` +
         `Then: "Instead, we will design and build a full, brand-new website from the ground up using modern, high-speed infrastructure. It will be entirely new." ` +
-        `After the audit completes, the diagnostic will display their scores, the No-Legacy Pledge, and the estimate disclaimer automatically. ` +
+        `After the audit completes, the diagnostic will display their scores, a Design Direction panel (glassmorphism, dark mode, micro-interactions, variable fonts, edge SSR, accessibility), the No-Legacy Pledge, and the estimate disclaimer automatically. ` +
+        `When discussing the rebuild, highlight that we deliver current design standards: glassmorphism surfaces, dark mode first, scroll-triggered animations, modern typography, and sub-200ms server-side rendering. We do not deliver outdated templates. ` +
         `If they haven't shared a URL, still show [MIRROR:process-timeline:{"service":"website-redesign"}] as fallback.`
 
     case 'expansion':
