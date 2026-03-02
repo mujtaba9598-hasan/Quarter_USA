@@ -9,6 +9,7 @@ import { Testimonials } from "@/components/home/Testimonials";
 import { CTABanner } from "@/components/home/CTABanner";
 import { FlowConnector } from "@/components/home/FlowConnector";
 import { CrownJewel } from "@/components/home/CrownJewel";
+import { LatestVerdict } from "@/components/home/LatestVerdict";
 import { HomePageClient } from "@/components/home/HomePageClient";
 
 export const metadata: Metadata = {
@@ -103,6 +104,8 @@ export default function HomePage() {
         <CrownJewel />
         <FlowConnector />
         <PhaseGate />
+        <FlowConnector />
+        <LatestVerdict />
         <FlowConnector />
         <SearchBar />
         <CTABanner />

@@ -20,7 +20,7 @@ const navLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Services", href: "/services", dropdown: serviceLinks },
-  { label: "The Verdict", href: "/booking" },
+  { label: "The Verdict", href: "/verdict" },
   { label: "Contact", href: "/contact" },
 ];
 

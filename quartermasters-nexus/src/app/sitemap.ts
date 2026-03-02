@@ -73,6 +73,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.6,
         },
         {
+            url: `${baseUrl}/verdict`,
+            lastModified: new Date(),
+            changeFrequency: 'daily',
+            priority: 0.9,
+        },
+        {
             url: `${baseUrl}/knowledge-base`,
             lastModified: new Date(),
             changeFrequency: 'weekly',
