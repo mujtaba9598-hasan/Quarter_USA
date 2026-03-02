@@ -18,6 +18,7 @@ import { SplitScreenLayout } from './SplitScreenLayout';
 import { CanvasPanel } from './CanvasPanel';
 import { MobileBottomSheet } from './MobileBottomSheet';
 import { BookCallButton } from './BookCallButton';
+import { ExpressCheckoutButton } from './ExpressCheckoutButton';
 import { useConversationContext } from '@/hooks/useConversationContext';
 import { useMorphingBackground } from '@/lib/contexts/MorphingBackgroundContext';
 
@@ -278,7 +279,11 @@ export function ChatPanel() {
                                     // Parse VelvetRope trigger
                                     const hasPricingTrigger = rawContent.includes('[RENDER_VELVET_ROPE]');
                                     const hasBookCall = rawContent.includes('[BOOK_CALL]');
-                                    const afterVelvet = rawContent.replace('[RENDER_VELVET_ROPE]', '').replace('[BOOK_CALL]', '');
+                                    const hasExpressCheckout = rawContent.includes('[EXPRESS_CHECKOUT]');
+                                    const afterVelvet = rawContent
+                                        .replace('[RENDER_VELVET_ROPE]', '')
+                                        .replace('[BOOK_CALL]', '')
+                                        .replace('[EXPRESS_CHECKOUT]', '');
 
                                     // Parse Magic Mirror blocks
                                     const { cleanedText: displayContent, blocks: mirrorBlocks } =
@@ -304,6 +309,11 @@ export function ChatPanel() {
                                             {/* Book Call — Cal.com embed (pass service module for correct event type) */}
                                             {hasBookCall && m.role === 'assistant' && (
                                                 <BookCallButton service={serviceModule || undefined} />
+                                            )}
+
+                                            {/* Express Checkout — Stripe checkout redirect */}
+                                            {hasExpressCheckout && m.role === 'assistant' && (
+                                                <ExpressCheckoutButton service={serviceModule || 'express'} />
                                             )}
 
                                             {/* VelvetRope — pricing UI */}

@@ -3,8 +3,9 @@
 import { useState } from "react";
 import { scoreAllContacts } from "@/lib/crm/lead-scoring";
 import { QActivityDashboard } from "@/components/admin/QActivityDashboard";
+import { RevisionManager } from "@/components/admin/RevisionManager";
 
-type Tab = "bookings" | "leads" | "contacts" | "q-activity";
+type Tab = "bookings" | "leads" | "contacts" | "q-activity" | "revisions";
 
 // Component props interfaces based on Supabase schema
 export function AdminDashboard({
@@ -100,7 +101,7 @@ export function AdminDashboard({
 
             {/* Tabs */}
             <div className="flex space-x-8 border-b border-white/10 mb-6 overflow-x-auto pb-px">
-                {(["q-activity", "bookings", "leads", "contacts"] as Tab[]).map((tab) => {
+                {(["q-activity", "bookings", "leads", "contacts", "revisions"] as Tab[]).map((tab) => {
                     const label = tab === "q-activity" ? "Q Activity" : tab.charAt(0).toUpperCase() + tab.slice(1);
                     return (
                         <button
@@ -251,6 +252,13 @@ export function AdminDashboard({
                                 </tbody>
                             </table>
                         </div>
+                    </div>
+                )}
+
+                {/* REVISIONS TAB */}
+                {activeTab === "revisions" && (
+                    <div className="p-6">
+                        <RevisionManager />
                     </div>
                 )}
 

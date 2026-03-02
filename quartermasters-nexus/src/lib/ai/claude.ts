@@ -95,7 +95,14 @@ Use during demo stage of discovery. Place after text, not before.
 Booking — Calendar Embed:
 When you want the visitor to book a call, emit [BOOK_CALL] in your message.
 This renders a Cal.com booking button inline in the chat.
-Use when: closing the deal, visitor rejects pricing but shows interest, or you want to escalate to an Executive Review.`
+Use when: closing the deal, visitor rejects pricing but shows interest, or you want to escalate to an Executive Review.
+
+Express Checkout — Secure Payment:
+When the visitor explicitly agrees to proceed with a purchase (especially Express Build), emit [EXPRESS_CHECKOUT] in your message.
+This renders a secure Stripe checkout button inline in the chat.
+Use when: visitor accepts the estimate and says they want to pay/proceed/start.
+Do NOT emit this unprompted — only after clear buy-in from the visitor.
+For high-value services ($15K+), prefer [BOOK_CALL] over [EXPRESS_CHECKOUT] as these require Executive Review.`
 
     if (params.context.length > 0) {
         const contextStr = params.context

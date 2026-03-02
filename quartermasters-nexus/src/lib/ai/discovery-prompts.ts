@@ -110,6 +110,8 @@ const STAGE_PROMPTS: Record<DiscoveryStage, (persona: PersonaType, data: Discove
     `Use "starting from" pricing — NEVER give exact fixed prices. ` +
     `Always include the disclaimer: "This is a preliminary estimate based on our conversation. A firm quote requires a formal scope assessment with our team." ` +
     `After the estimate, soft-close: "If this aligns with your expectations, I can set up a focused 15-minute call with our team to finalize the details." ` +
+    `For Express Build or sub-$10K services where the visitor says "yes" or "let's do it," emit [EXPRESS_CHECKOUT] to offer immediate secure checkout. ` +
+    `For $15K+ services, always use [BOOK_CALL] instead — these require Executive Review. ` +
     `${persona ? `Frame everything through the ${PERSONA_LABELS[persona]} lens.` : ''}`,
 
   close: (_persona) =>

@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
 import { stripe } from '@/lib/payments/stripe-service';
 import { supabase } from '@/lib/supabase';
-import { headers } from 'next/headers';
 import Stripe from 'stripe';
+import { Resend } from 'resend';
 
 const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET;
 
@@ -99,7 +99,7 @@ async function handleSuccessfulCheckout(session: Stripe.Checkout.Session) {
 
     // 2. Also log as a CRM Interaction
     await supabase.from('interactions').insert({
-        contact_id: clientId, // By convention contact mapping
+        contact_id: clientId,
         type: 'payment',
         summary: `Completed payment of ${amountTotal} ${currency} for ${service} (${tier}) package via portal.`,
         metadata: {
@@ -110,6 +110,79 @@ async function handleSuccessfulCheckout(session: Stripe.Checkout.Session) {
             tier
         }
     });
+
+    // 3. Email founder on successful payment
+    await notifyFounderPayment({
+        amount: amountTotal,
+        currency,
+        service: service || 'Unknown',
+        tier: tier || 'Unknown',
+        customerEmail: session.customer_details?.email || 'Not provided',
+        customerName: session.customer_details?.name || 'Not provided',
+        stripeSessionId: session.id,
+    });
+}
+
+/**
+ * Send founder a payment notification email via Resend.
+ */
+async function notifyFounderPayment(details: {
+    amount: number;
+    currency: string;
+    service: string;
+    tier: string;
+    customerEmail: string;
+    customerName: string;
+    stripeSessionId: string;
+}) {
+    if (!process.env.RESEND_API_KEY) {
+        console.warn('RESEND_API_KEY not set — skipping founder payment notification');
+        return;
+    }
+
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    const { amount, currency, service, tier, customerEmail, customerName, stripeSessionId } = details;
+
+    const html = `<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width"></head>
+<body style="margin:0;padding:0;background:#0a0f1a;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background:#0a0f1a;padding:40px 20px;">
+    <tr><td align="center">
+      <table width="600" cellpadding="0" cellspacing="0" style="background:#111827;border-radius:12px;overflow:hidden;">
+        <tr><td style="height:4px;background:#10B981;"></td></tr>
+        <tr><td style="padding:32px 40px 8px;">
+          <h2 style="margin:0;color:#10B981;font-size:14px;text-transform:uppercase;letter-spacing:2px;">Payment Received</h2>
+        </td></tr>
+        <tr><td style="padding:8px 40px 32px;">
+          <h1 style="margin:0 0 24px;color:#f0f0f0;font-size:28px;">$${amount.toLocaleString()} ${currency}</h1>
+          <table style="width:100%;margin:12px 0;" cellpadding="8" cellspacing="0">
+            <tr><td style="color:#9ca3af;width:140px;">Service</td><td style="color:#f0f0f0;font-weight:600;">${service}</td></tr>
+            <tr><td style="color:#9ca3af;">Tier</td><td style="color:#f0f0f0;">${tier}</td></tr>
+            <tr><td style="color:#9ca3af;">Customer</td><td style="color:#f0f0f0;">${customerName}</td></tr>
+            <tr><td style="color:#9ca3af;">Email</td><td style="color:#f0f0f0;">${customerEmail}</td></tr>
+            <tr><td style="color:#9ca3af;">Stripe Session</td><td style="color:#f0f0f0;font-size:12px;">${stripeSessionId}</td></tr>
+          </table>
+        </td></tr>
+        <tr><td style="padding:24px 40px;border-top:1px solid #1f2937;">
+          <p style="margin:0;color:#6b7280;font-size:12px;">Quartermasters Payment Notification</p>
+        </td></tr>
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>`;
+
+    try {
+        await resend.emails.send({
+            from: 'Quartermasters <hello@quartermasters.me>',
+            to: 'ceocli@quartermasters.me',
+            subject: `[Payment] $${amount.toLocaleString()} ${currency} — ${service} (${tier})`,
+            html,
+        });
+    } catch (err) {
+        console.error('Failed to send founder payment notification:', err);
+    }
 }
 
 async function handlePaymentIntentSuccess(intent: Stripe.PaymentIntent) {
