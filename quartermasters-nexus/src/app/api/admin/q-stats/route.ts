@@ -16,13 +16,20 @@ export async function GET() {
         .from('conversations')
         .select('*', { count: 'exact', head: true })
 
-    // Active conversations (last 30 min)
+    // Active conversations (updated in last 30 min)
     const thirtyMinAgo = new Date(now.getTime() - 30 * 60 * 1000).toISOString()
-    const { count: activeSessions } = await supabase
-        .from('conversations')
-        .select('*', { count: 'exact', head: true })
-        .eq('status', 'active')
-        .gte('updated_at', thirtyMinAgo)
+    let activeSessions = 0
+    try {
+        const { count } = await supabase
+            .from('conversations')
+            .select('*', { count: 'exact', head: true })
+            .eq('status', 'active')
+            .gte('updated_at', thirtyMinAgo)
+        activeSessions = count || 0
+    } catch {
+        // updated_at column may not exist yet (pre-migration 011)
+        activeSessions = 0
+    }
 
     // Total leads
     const { count: totalLeads } = await supabase
@@ -47,50 +54,57 @@ export async function GET() {
         .select('*', { count: 'exact', head: true })
         .gte('created_at', monthStart)
 
-    // High-value leads
-    const { count: highValueLeads } = await supabase
-        .from('leads')
-        .select('*', { count: 'exact', head: true })
-        .eq('is_high_value', true)
+    // High-value leads (graceful if is_high_value column missing pre-migration)
+    let highValueLeads = 0
+    try {
+        const { count } = await supabase
+            .from('leads')
+            .select('*', { count: 'exact', head: true })
+            .eq('is_high_value', true)
+        highValueLeads = count || 0
+    } catch { highValueLeads = 0 }
 
     // Service module distribution
-    const { data: moduleData } = await supabase
-        .from('leads')
-        .select('service_module')
-
     const moduleDistribution: Record<string, number> = {}
-    if (moduleData) {
-        for (const row of moduleData) {
-            const mod = row.service_module || 'unidentified'
-            moduleDistribution[mod] = (moduleDistribution[mod] || 0) + 1
+    try {
+        const { data: moduleData } = await supabase
+            .from('leads')
+            .select('service_module')
+        if (moduleData) {
+            for (const row of moduleData) {
+                const mod = (row as any).service_module || 'unidentified'
+                moduleDistribution[mod] = (moduleDistribution[mod] || 0) + 1
+            }
         }
-    }
+    } catch { /* columns may not exist pre-migration */ }
 
     // Persona distribution
-    const { data: personaData } = await supabase
-        .from('leads')
-        .select('persona')
-
     const personaDistribution: Record<string, number> = {}
-    if (personaData) {
-        for (const row of personaData) {
-            const p = row.persona || 'unlocked'
-            personaDistribution[p] = (personaDistribution[p] || 0) + 1
+    try {
+        const { data: personaData } = await supabase
+            .from('leads')
+            .select('persona')
+        if (personaData) {
+            for (const row of personaData) {
+                const p = (row as any).persona || 'unlocked'
+                personaDistribution[p] = (personaDistribution[p] || 0) + 1
+            }
         }
-    }
+    } catch { /* columns may not exist pre-migration */ }
 
     // Stage distribution (how far visitors get)
-    const { data: stageData } = await supabase
-        .from('leads')
-        .select('stage_reached')
-
     const stageDistribution: Record<string, number> = {}
-    if (stageData) {
-        for (const row of stageData) {
-            const s = row.stage_reached || 'unknown'
-            stageDistribution[s] = (stageDistribution[s] || 0) + 1
+    try {
+        const { data: stageData } = await supabase
+            .from('leads')
+            .select('stage_reached')
+        if (stageData) {
+            for (const row of stageData) {
+                const s = (row as any).stage_reached || 'unknown'
+                stageDistribution[s] = (stageDistribution[s] || 0) + 1
+            }
         }
-    }
+    } catch { /* columns may not exist pre-migration */ }
 
     // Total messages (to calculate avg per conversation)
     const { count: totalMessages } = await supabase

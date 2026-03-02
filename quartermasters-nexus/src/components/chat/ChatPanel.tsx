@@ -29,7 +29,7 @@ export function ChatPanel() {
     const [latestBlocks, setLatestBlocks] = useState<MirrorBlock[]>([]);
     const [isMobile, setIsMobile] = useState(false);
     const [mobileSheetOpen, setMobileSheetOpen] = useState(false);
-    const { messages, input, setInput, handleSubmit, sendMessage, isLoading, chatState, discoveryStage, persona } = useQChat();
+    const { messages, input, setInput, handleSubmit, sendMessage, isLoading, chatState, discoveryStage, persona, serviceModule } = useQChat();
     const messagesEndRef = useRef<HTMLDivElement>(null);
     const scrollContainerRef = useRef<HTMLDivElement>(null);
 
@@ -301,9 +301,9 @@ export function ChatPanel() {
                                                 </div>
                                             )}
 
-                                            {/* Book Call — Cal.com embed */}
+                                            {/* Book Call — Cal.com embed (pass service module for correct event type) */}
                                             {hasBookCall && m.role === 'assistant' && (
-                                                <BookCallButton />
+                                                <BookCallButton service={serviceModule || undefined} />
                                             )}
 
                                             {/* VelvetRope — pricing UI */}
@@ -319,7 +319,8 @@ export function ChatPanel() {
                                                         handleSubmit(new Event('submit') as any);
                                                     }}
                                                     onBookCall={() => {
-                                                        window.location.href = '/contact';
+                                                        const eventType = serviceModule === 'ai-training' || serviceModule === 'webapp' ? 'executive' : 'discovery';
+                                                        window.open(`https://cal.com/quartermasters/${eventType}`, '_blank');
                                                     }}
                                                 />
                                             )}

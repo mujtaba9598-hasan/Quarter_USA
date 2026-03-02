@@ -4,6 +4,7 @@ import {
     type DiscoveryState,
     type DiscoveryStage,
     type PersonaType,
+    type ServiceModule,
     createInitialState,
 } from '@/lib/ai/discovery-flow';
 import { PROACTIVE_GREETING } from '@/lib/ai/discovery-prompts';
@@ -23,6 +24,7 @@ export type UseQChatReturn = {
     hesitating: boolean;
     discoveryStage: DiscoveryStage;
     persona: PersonaType;
+    serviceModule: ServiceModule | null;
 };
 
 export function useQChat(): UseQChatReturn {
@@ -207,5 +209,6 @@ export function useQChat(): UseQChatReturn {
         hesitating,
         discoveryStage: discoveryState.stage,
         persona: discoveryState.persona,
+        serviceModule: discoveryState.data.serviceModule,
     };
 }

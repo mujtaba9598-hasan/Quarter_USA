@@ -118,17 +118,26 @@ export async function POST(req: Request) {
             })
         }
 
-        // f. Store user message BEFORE streaming starts
+        // f. Store user message + touch updated_at for active session tracking
         const { error: insertUserError } = await supabase.from('messages').insert([
             { conversation_id: currentConversationId, role: 'user', content: message }
         ])
+
+        // Touch conversation updated_at for active session count
+        await supabase
+            .from('conversations')
+            .update({ updated_at: new Date().toISOString() })
+            .eq('id', currentConversationId)
 
         if (insertUserError) {
             console.error('Error inserting user message:', insertUserError)
             return NextResponse.json({ error: 'Failed to save message' }, { status: 500 })
         }
 
-        // g. Stream Q response — with discovery stage injected into system prompt
+        // g. Check if pricing state is terminated — inject [BOOK_CALL] deterministically
+        const pricingTerminated = pricingData?.current_state === 'terminated'
+
+        // g2. Stream Q response — with discovery stage injected into system prompt
         const result = streamQ(
             {
                 userMessage: message,
@@ -146,8 +155,14 @@ export async function POST(req: Request) {
                     console.warn(`Guardrail flags in conv ${currentConversationId}:`, validationResult.flags)
                 }
 
+                // If pricing terminated and Q didn't emit [BOOK_CALL], append it
+                let finalText = validationResult.cleaned
+                if (pricingTerminated && !finalText.includes('[BOOK_CALL]')) {
+                    finalText += '\n\n[BOOK_CALL]'
+                }
+
                 const { error: insertError } = await supabase.from('messages').insert([
-                    { conversation_id: currentConversationId, role: 'assistant', content: validationResult.cleaned }
+                    { conversation_id: currentConversationId, role: 'assistant', content: finalText }
                 ])
 
                 if (insertError) {
@@ -160,14 +175,21 @@ export async function POST(req: Request) {
                         .catch(err => console.error('Lead extraction failed:', err))
                 }
 
-                // High-value lead alerts
-                if (nextState.stage === 'close') {
-                    sendLeadAlert(currentConversationId, nextState, 'discovery_complete')
-                        .catch(err => console.error('Lead alert failed:', err))
-                } else if (isHighValueLead(nextState.data.budget, nextState.data.serviceModule)) {
-                    const reason = nextState.data.serviceModule === 'ai-training' ? 'ai_training' : 'high_budget'
-                    sendLeadAlert(currentConversationId, nextState, reason)
-                        .catch(err => console.error('Lead alert failed:', err))
+                // High-value lead alerts (deduplicated — only fire once per conversation per reason)
+                const alertKey = `alert_${currentConversationId}`
+                const alertSent = conversationHistory.some(m =>
+                    m.role === 'system' && m.content?.includes(alertKey)
+                )
+
+                if (!alertSent) {
+                    if (nextState.stage === 'close') {
+                        sendLeadAlert(currentConversationId, nextState, 'discovery_complete')
+                            .catch(err => console.error('Lead alert failed:', err))
+                    } else if (isHighValueLead(nextState.data.budget, nextState.data.serviceModule)) {
+                        const reason = nextState.data.serviceModule === 'ai-training' ? 'ai_training' : 'high_budget'
+                        sendLeadAlert(currentConversationId, nextState, reason)
+                            .catch(err => console.error('Lead alert failed:', err))
+                    }
                 }
             }
         )
