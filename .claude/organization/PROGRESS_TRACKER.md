@@ -311,10 +311,62 @@
 
 ---
 
+## Phase 2 — Q: The Live Host (COMPLETE — 2026-03-02)
+
+| Sprint | Status | Commit | Summary |
+|--------|--------|--------|---------|
+| S4 — Discovery Flow + Chat | DONE | `efa0331` | Stream protocol fix (toUIMessageStreamResponse), greeting content fallback |
+| S5 — Chameleon Engine | DONE | `4e2832f` | Distinct 3D geometry per persona (dodecahedron/icosahedron/octahedron) |
+| S6 — Generative UI | DONE | `d059767` | Wireframe blocks, demo instructions hardened, mobile breakpoint fix |
+| S7 — Lead Capture + Backend | DONE | `38545aa` | Migration 011, lead pipeline, booking flow, admin stats, cal.com integration |
+
+---
+
+## Phase 3 — Service Modules (COMPLETE — 2026-03-02)
+
+| Sprint | Status | Commit | Summary |
+|--------|--------|--------|---------|
+| S8 — Module 1: The Rebuild | DONE | `1f74701` | Design Direction panel (6 modern trends), rebuild diagnostic complete |
+| S9 — Module 2: The Expansion | DONE | — | SubdomainPitch + ExpansionEstimate components (pre-built in scaffolding) |
+| S10 — Module 3: Express Build | DONE | `c366268` | [EXPRESS_CHECKOUT] token, ExpressCheckoutButton, Stripe webhook founder email |
+| S11 — Module 4: Web App | DONE | — | Architecture diagram + [BOOK_CALL] integration (pre-built) |
+| S12 — Module 5: AI Training | DONE | `c366268` | CrownJewel homepage section, ZK architecture diagram |
+| S12.5 — Revision Management | DONE | `c366268` | Migration 012, change_requests + projects tables, RevisionForm, RevisionManager, admin tab, API routes, 30-day window |
+
+---
+
+## Phase 4 — The Verdict SEO Engine (COMPLETE — 2026-03-02)
+
+| Sprint | Status | Commit | Summary |
+|--------|--------|--------|---------|
+| S13 — Content Pipeline Backend | DONE | `d3078e1` | Migration 013 (articles table), RSS sources (12 feeds), content pipeline (fact extraction → generation → post-processing), velocity limiter, no-dash enforcement, API routes |
+| S14 — Content Pipeline Frontend | DONE | `d3078e1` | /verdict listing page, /verdict/[slug] article page with JSON-LD, nav fix (/booking → /verdict), sitemap updated, LatestVerdict homepage section, share buttons |
+
+---
+
+## Phase 5 — Sovereign Brain (POST-LAUNCH — NOT STARTED)
+
+**Prerequisites** (all must be TRUE):
+- [ ] Platform deployed to production
+- [ ] 500+ real conversation transcripts in Supabase
+- [ ] Founder approves training budget
+
+---
+
+## Build Status (2026-03-02)
+
+- `npx tsc --noEmit` = 0 errors
+- `npx next build` = SUCCESS (55 routes, 18.4s Turbopack)
+- Latest commit: `d3078e1` on `main`
+
+---
+
 ## Founder Pending Actions
-1. Confirm which env vars are set in Vercel production
-2. Provide Module 4 directive (Web App / SaaS) — slot reserved
-3. Approve Phase 2 for execution (Sprint 4 can start now)
-4. Set up complaints@quartermasters.me in Hostinger
-5. Decision D1: Persona visuals (A: 3D variants / B: AI illustrations / C: Lottie)
-6. Decision D3: RESEND_API_KEY set up?
+1. **D3**: Set `RESEND_API_KEY` env var (lead alerts + payment emails)
+2. **D6**: Set `STRIPE_SECRET_KEY` + `STRIPE_WEBHOOK_SECRET` (checkout)
+3. **D7**: Approve Originality.ai $14.95/mo (Verdict anti-plagiarism)
+4. Run migrations 011, 012, 013 in Supabase SQL editor
+5. Set up Vercel production deployment with all env vars
+6. Set up `complaints@quartermasters.me` in Hostinger
+7. Confirm Express Build price (currently "from $2,500")
+8. **D8**: Choose scraper for Verdict RSS (Playwright vs Firecrawl/Jina)
